@@ -6,7 +6,9 @@ import dash_html_components as html
 
 # Flask and html set up
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+#app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__)
+
 
 # Load the data
 data_path = "../../ScotchWhisky/Data/whisky.csv"
