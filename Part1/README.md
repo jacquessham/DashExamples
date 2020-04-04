@@ -26,7 +26,7 @@ And the original Plotly graph looks like:
 <img src="whisky_plotly.png">
 
 ## Using go.Figure on Dash
-Reference here: <a href="https://dash.plotly.com/dash-core-components/graph">Dash Layout</a>
+Reference here: <a href="https://dash.plotly.com/dash-core-components/graph">Plotly Figures on Dash</a>
 <br><br>
 If you know how to make a graph on Plotly and wish to host it on Dash. You may also do this. In this example, I will use my existing Plotly graph and host it on Dash. The Plotly line chart is about the traffic of IPs given in the data set and was a homework I worked on my Data Visualization class in graduate school.
 <br><br>
