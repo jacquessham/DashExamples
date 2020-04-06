@@ -15,21 +15,23 @@ app.layout = html.Div([
     dcc.Graph(id='graph-with-slider'),
     dcc.Slider(
         id='year-slider',
-        min=df['year'].min(),
-        max=df['year'].max(),
-        value=df['year'].min(),
+        min=df['year'].min(), # Min of slidebar
+        max=df['year'].max(), # Max of slidebar
+        value=df['year'].min(), # Default value on the slidebar
         marks={str(year): str(year) for year in df['year'].unique()},
+        # Marks on the slidebar
         step=None
     )
 ])
 
 
 @app.callback(
-    Output('graph-with-slider', 'figure'),
-    [Input('year-slider', 'value')])
+    Output('graph-with-slider', 'figure'), 
+    # Return element will feed figure input in dcc.Graph
+    [Input('year-slider', 'value')]) # Input value
 def update_figure(selected_year):
     filtered_df = df[df.year == selected_year]
-    traces = []
+    traces = [] # Each continent assign to one bucket
     for i in filtered_df.continent.unique():
         df_by_continent = filtered_df[filtered_df['continent'] == i]
         traces.append(dict(
