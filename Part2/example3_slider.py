@@ -15,7 +15,7 @@ selected_column = 'GEO Summary'
 data = data[['Published Airline','Year','Month','Passenger Count',
              'GEO Region',selected_column]]
 
-
+# Declare Dash properties
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
