@@ -24,10 +24,10 @@ Like Flask, you have to add "@app.callback()" above the functions, then, you wil
 
 ## Example 3: Slider
 There are two steps to add slider on your html page. First, add dcc.Slider() in app.layout. Second, add a function to define how the slider re-generate the visualization.<br><br>
-Following the [code](/dash_slider.py) from the Dash tutorial, the result looks like this:
+Following the [code](dash_slider.py) from the Dash tutorial, the result looks like this:
 <img src='dash_slider_pic.png'>
 <br><br><br><br>
-The file [example3_slider.py](/example3_slider.py) is the file built for my practice. The data is the passenger traffic of San Francisco International Airport from [DataSF](https://datasf.org/opendata/). The dashboard is aimed to displaythe passenger traffic of each airline and destination at a given year. The dashboard contains a scatterplot with x-axis of month and y-axis of passenger traffic count using a slider to select the year. Although the visualization violates a lot of principles of data visualization, the purpose of this dashboard is to demostrate how to use a slider to filter the data set. <br><br>
+The file [example3_slider.py](example3_slider.py) is the file built for my practice. The data is the passenger traffic of San Francisco International Airport from [DataSF](https://datasf.org/opendata/). The dashboard is aimed to displaythe passenger traffic of each airline and destination at a given year. The dashboard contains a scatterplot with x-axis of month and y-axis of passenger traffic count using a slider to select the year. Although the visualization violates a lot of principles of data visualization, the purpose of this dashboard is to demostrate how to use a slider to filter the data set. <br><br>
 The result looks like this:
 <img src='example3_cap.png'>
 <br><br>
@@ -40,7 +40,7 @@ Since there are more than 1 input, you have to wrap all Input() in a list in app
 <br><br>
 The example visualization is the same as the visualization in Example 3, except there is one dropbox list and one radio items list for user to filter the data set. 
 <br>
-You may find the code [here](/example4_multinput.py)
+You may find the code [here](example4_multinput.py)
 <br>
 The layout looks like this:
 <img src='example4_cap.png'>
@@ -60,7 +60,7 @@ State display what the user has selected or entered. In the code, you only have 
 <br><br>
 In this example, the dashboard is aimed to let user to enter a number and convert to other units in the same metric system, if I select weight in Imperial metric and enter 1 lb, the dashboard would display 16 oz or 0.0004 ton on a html table. 
 <br>
-You may find the code [here](/example5_multioutputs.py)
+You may find the code [here](example5_multioutputs.py)
 <br>
 The dashboard allow user to choose weight, length, or volume in Imperial Metrics or Metrics. The default page looks like this:
 <img src='example5_cap.png'>
