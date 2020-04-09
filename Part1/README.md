@@ -15,6 +15,13 @@ app.py is the code copied from the plotly dash site for testing.
 <br>
 <br>
 Dash is very similar to using Flask on building a html. In this example, app.layout to outline the html page and build the Plotly figure in here. This is a higher level method to build bar chart on Dash.
+<br>
+<br>
+The goal of Part 1 is:<br>
+1. Understand the basic layout of Dash<br>
+2. Understand the basic of dcc and html packages<br>
+3. Graph a chart using figure in dcc.Graph()<br>
+4. Pass a previous Plotly graph on Dash
 
 ## Practice on my own
 I used whisky.csv to plot a bar chart. You may find the data <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/Data">here</a>. And the result looks like this:
