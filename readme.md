@@ -22,11 +22,11 @@ Dash runs web server in Flask. No need to set up in Flask, easy to host the web 
 ## Tutorial and Examples
 This repositories contains examples from the official Dash site and myself. There are 3 parts for the tutorial with different levels of functionality. 
 <ul>
-	<li>[Part 1 - Basics of Using Dash](/Part1)</li>
-	<li>[Part 2 - Dash Callbacks](/Part2)</li>
-	<li>[Part 3 - Interactive Visualization](/Part3)</li>
+	<li> [Part 1 - Basics of Using Dash](/Part1)</li>
+	<li> [Part 2 - Dash Callbacks](/Part2)</li>
+	<li> [Part 3 - Interactive Visualization](/Part3)</li>
 </ul>
 
 ## Reference
-[Dash User Guide](https://dash.plotly.com/)
+[Dash User Guide](https://dash.plotly.com/)<br>
 [Brief Introduction of Dash](https://medium.com/plotly/introducing-dash-5ecf7191b503)
