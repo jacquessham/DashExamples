@@ -19,9 +19,11 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 # Options Set up
 terminal_options = [{'label': i, 'value': i} for i in data['Terminal'].unique()]
 terminal_options.append({'label': 'All', 'value': '*'})
+terminal_options.sort(key=lambda x: x['label']) # Sort dropdown list label
 geo_summ_options = [{'label': i, 'value': i} for i in 
 				          data['GEO Summary'].unique()]
 geo_summ_options.append({'label': 'All', 'value': '*'})
+geo_summ_options.sort(key=lambda x: x['label']) # Sort radio list label
 
 app.layout = html.Div([
 	html.H1(children='Example 4: Multiple Input'), 
@@ -45,13 +47,13 @@ app.layout = html.Div([
 			dcc.Dropdown(
 				id='terminal-dropdown',
 				options=terminal_options,
-				value='Terminal 1'
+				value='*'
 			)], style={'width':'40%', 'display': 'inline-block'}),
 		html.Div([
 			dcc.RadioItems(
 				id='geo-summary-radio',
 				options=geo_summ_options,
-				value='Domestic'
+				value='*'
 			)
 		], style={'width':'40%', 'display': 'inline-block'})
 		# 'display' : 'inline-block' forces two div to be parallel
