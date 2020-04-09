@@ -4,7 +4,7 @@
 Click [here](../Part1) to go back to the last chapter. 
 
 ## Goals
-In this chapter, we are going over callbacks in Dash, allowing user to filter or select data to update the visualization. The goals of Part 2
+In this chapter, we are going over callbacks in Dash, allowing user to filter or select data to update the visualization. The goals of Part 2 are:
 <br>
 1. Use slider to filter data <br>
 2. Use textbox for inputing data<br>
@@ -20,7 +20,8 @@ You may find the reference [here](https://dash.plotly.com/basic-callbacks)
 ## Input() and Output()
 Under dash.dependencies, import Input() and Output() in order to update the visualization on Dash.<br><br>
 Before using these functions, you have to make sure you have to assign the id's in components you wish to be receiving the input or generating onto.<br><br>
-Like Flask, you have to add "@app.callback()" above the functions, then, you will put Output()'s and Input()'s to locate the components on the html page. 
+Like Flask, you have to add "@app.callback()" above the functions, then, you will put Output()'s and Input()'s to locate the components on the html page. <br><br>
+There are two arguments for Input() and Output(), the first arguement is the html id/class name, the second is the component property of the html element, such as value or children.
 
 ## Example 3: Slider
 There are two steps to add slider on your html page. First, add dcc.Slider() in app.layout. Second, add a function to define how the slider re-generate the visualization.<br><br>
