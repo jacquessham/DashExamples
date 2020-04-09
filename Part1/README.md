@@ -22,6 +22,8 @@ The goal of Part 1 is:<br>
 2. Understand the basic of dcc and html packages<br>
 3. Graph a chart using figure in dcc.Graph()<br>
 4. Pass a previous Plotly graph on Dash
+<br><br>
+[dash_part1.py](dash_part1.py) is the file identical to <b>app.py</b> from the Dash Layout reference page.
 
 ## Practice on my own
 I used whisky.csv to plot a bar chart. You may find the data <a href="https://github.com/jacquessham/ScotchWhisky/tree/master/Data">here</a>. And the result looks like this:
@@ -31,6 +33,8 @@ I used whisky.csv to plot a bar chart. You may find the data <a href="https://gi
 <br>
 And the original Plotly graph looks like:
 <img src="whisky_plotly.png">
+<br><br>
+
 
 ## Using go.Figure on Dash
 Reference here: <a href="https://dash.plotly.com/dash-core-components/graph">Plotly Figures on Dash</a>
@@ -39,3 +43,15 @@ If you know how to make a graph on Plotly and wish to host it on Dash. You may a
 <br><br>
 The result looks like this:
 <img src="computer_security_dash.png">
+
+## Notes
+<ul>
+	<li>Dash's purpose is to build the visualization on a html page.</li>
+	<li>Dash relies on <b>Flask</b>. Once you import Dash, it automatically import Flask. And the code is very similar to Flask.</li>
+	<li>app.layout lists the html page in hierarchical structure</li>
+	<li>You can either define figure outside or within app.layout. If you have done a visualization with Plotly before, you may just pass your previous Plotly figure into app.layout.</li>
+	<li>Flask host your html page at your localhost. To change port, add 'port=xxxx' as an arguement in app.run_server()</li>
+</ul>
+
+## Next Charter
+Clicker [here](../Part2) to advance to next chapter.
