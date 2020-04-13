@@ -22,8 +22,8 @@ Dash runs web server in Flask. No need to set up in Flask, easy to host the web 
 ## Tutorial and Examples
 This repositories contains examples from the official Dash site and myself. There are 3 parts for the tutorial with different levels of functionality.
 <br><br>
-[Part 1 - Basics of Using Dash](/Part1)
-[Part 2 - Dash Callbacks](/Part2)
+[Part 1 - Basics of Using Dash](/Part1) <br>
+[Part 2 - Dash Callbacks](/Part2)<br>
 [Part 3 - Interactive Visualization](/Part3)
 
 
