@@ -1,0 +1,6 @@
+http://gs.statcounter.com/os-market-share/console/hong-kong/2018
+https://gs.statcounter.com/os-market-share/console/united-states-of-america/2018
+https://gs.statcounter.com/os-market-share/console/united-kingdom/2018
+https://gs.statcounter.com/os-market-share/console/canada/2018
+https://gs.statcounter.com/os-market-share/console/japan/2018
+https://gs.statcounter.com/os-market-share/console/south-korea/2018
