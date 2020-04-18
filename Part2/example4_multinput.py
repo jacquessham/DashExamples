@@ -48,13 +48,14 @@ app.layout = html.Div([
 				id='terminal-dropdown',
 				options=terminal_options,
 				value='*'
-			)], style={'width':'40%', 'display': 'inline-block'}),
+			) # End drop down
+			], style={'width':'40%', 'display': 'inline-block'}),
 		html.Div([
 			dcc.RadioItems(
 				id='geo-summary-radio',
 				options=geo_summ_options,
 				value='*'
-			)
+			)# End Ratio items
 		], style={'width':'40%', 'display': 'inline-block'})
 		# 'display' : 'inline-block' forces two div to be parallel
 	]), # End input Div
