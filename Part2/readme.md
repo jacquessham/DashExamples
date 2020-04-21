@@ -22,6 +22,14 @@ Under dash.dependencies, import Input() and Output() in order to update the visu
 Before using these functions, you have to make sure you have to assign the id's in components you wish to be receiving the input or generating onto.<br><br>
 Like Flask, you have to add "@app.callback()" above the functions, then, you will put Output()'s and Input()'s to locate the components on the html page. <br><br>
 There are two arguments for Input() and Output(), the first arguement is the html id/class name, the second is the component property of the html element, such as value or children.
+<br><br>
+For example, if you have a dcc.Graph() with a id of 'vis':<br>
+@app.callback(Output('vis','figure'),[Input('slider-list','value')])<br>
+def generate_graph(year):<br>
+	# Do stuffs<br>
+	return figure<br>
+<br>
+It means getting the value received from the html component with id='slider-list', it will become the first parameter in the function, ie, year. Then, you may use this parameter to manipulate the data and generate a figure object. Once you return this object, it will pass this object to the figure instance in the dcc.Graph() with an id='vis'.
 
 ## Example 3: Slider
 There are two steps to add slider on your html page. First, add dcc.Slider() in app.layout. Second, add a function to define how the slider re-generate the visualization.<br><br>
@@ -55,7 +63,7 @@ If only "International" in the drop-down and "All" radio button, the graph would
 <img src='example4_filter2.png'>
 
 ## Example 5: Multiple Inputs, Multiple Outputs and State
-The way of making Multiple Outputs is similar to making Multiple Inputs. Once you have the html components ready for the outputs, all you have to do is to place the multiple Output() in a list in app.callback() and manipulate the data you want to display.
+The way of making Multiple Outputs is similar to making Multiple Inputs. Once you have the html components ready for the outputs, all you have to do is to place the multiple Output() in a list in app.callback() and manipulate the data you want to display. The numbers of Input()'s in the app.callback() has to match with the number of parameters of the function, as well as the numer of Output's in the app.callback() has to match with the variables of the returned variables in the function. The position of Input()'s and Output()'s in app.callback() matchs with the parameter or return variables in the function.
 <br><br>
 State display what the user has selected or entered. In the code, you only have to gather the input data and display on one of the html components (Or do other command other than displaying).
 <br><br>
@@ -75,9 +83,12 @@ The red-boxed area display the state which I have selected "Length" and "Metrics
 Markdown is available in Dash.
 <br>
 Using Markdown is easy. First, add a html Component in app.layout() and pass the string into dcc.Markdown().
+<br>
+You may find the code [here](example6_markdown.py)
 
 ## Notes
 <ul>
+	<li>@app.callback() is a Flask function.</li>
 	<li>Never have duplicated id's. Follow the rules of naming id's in html.</li>
 	<li>The key and value of tuple in Output/Input is: (id, property)</li>
 	<li>In @app.callback(), use list to include more than 1 Input() or Output()</li>

@@ -24,7 +24,8 @@ This repositories contains examples from the official Dash site and myself. Ther
 <br><br>
 [Part 1 - Basics of Using Dash](/Part1) <br>
 [Part 2 - Dash Callbacks](/Part2)<br>
-[Part 3 - Interactive Visualization](/Part3)
+[Part 3 - Interactive Visualization](/Part3)<br>
+[Dashboard Example - Gaming Console Market Share in 2018](/DashboardExample)
 
 
 ## Reference
