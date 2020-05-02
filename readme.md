@@ -1,6 +1,6 @@
 # Dash Examples
 
-This is the effort to introduce to use Dash with Python to build dashboard for business intelligence purpose. Please also visit my [Medium Post](/) (Coming Soon) to introduce using Plotly Dash to build a dashboard.
+This is the effort to introduce to use Dash with Python to build dashboard for business intelligence purpose. Please also visit my <a href="https://medium.com/@jjsham/building-dashboard-using-plotly-dash-36bf94a1137">Medium Post</a> to introduce using Plotly Dash to build a dashboard.
 
 ## What is Dash?
 Dash is an open source Python library to create a web-based visualiztion application provided by Plotly. This package is great for building dashboard, markdown reports and any kinds of data visualization. This package is built on top of pure Plotly and Flask allow you to build a dashboard using pure Plotly library and host the dashboard via Flask. The ideal use of this library could be building a dashboard using Dash and host it on AWS (Or other cloud computers) and allow views to read it via a link.
