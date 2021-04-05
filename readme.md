@@ -25,6 +25,17 @@ Dash runs web server in Flask. No need to set up in Flask, easy to host the web 
 ### Easy to use
 Although the dashboard is viewed in a web broswer, it is a high level tool that the developers are only required to write in Python and have some understanding of html. It means no Javascript or d3 is needed to be written to produce the same product but you may leverage the interactive elements available in d3. Dash is very customizable that you may custom the dashboard using the html layout which eliminates the contraint of pure Plotly's customizability.
 
+## Plotly Tutorial
+Dash relies on Plotly plots, it is a good idea to understand how Plotly works first. Here are the tutorial and examples for plotting in Plotly:
+[Fundamentals (Coming Soon...)](/)
+[Bar Charts (Coming Soon...)](/)
+[Line Charts (Coming Soon...)](/)
+[Pie/Donut Charts (Coming Soon...)](/)
+[Treemaps (Coming Soon...)](/)
+[Heatmaps (Coming Soon...)](/) 
+[Candlestick Charts (Coming Soon...)](/)
+[Choropleth Graphs (Coming Soon...)](/)
+
 
 ## Tutorial and Examples
 This repositories contains examples from the official Dash site and myself. There are 3 parts for the tutorial with different levels of functionality.
