@@ -30,6 +30,7 @@ Dash relies on Plotly plots, it is a good idea to understand how Plotly works fi
 [Fundamentals (Coming Soon...)](/)<br>
 [Bar Charts (Coming Soon...)](/)<br>
 [Line Charts (Coming Soon...)](/)<br>
+[Box Plots (Coming Soon...)](/)<br>
 [Pie/Donut Charts (Coming Soon...)](/)<br>
 [Treemaps (Coming Soon...)](/)<br>
 [Heatmaps (Coming Soon...)](/) <br>
