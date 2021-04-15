@@ -13,7 +13,7 @@ data = []
 
 for school in df['school'].unique():
 	df_temp = df[df['school']==school]
-	data.append(go.Box(y=df['salary'], name=school))
+	data.append(go.Box(y=df_temp['salary'], name=school, boxmean=True))
 
 layout = dict(title={'text':'Alumni Salary across Schools', 'x':0.5},
               barmode='group', xaxis=dict(tickmode='linear'))
