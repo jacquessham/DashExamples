@@ -7,7 +7,7 @@ from plotly.offline import *
 # To initiate ploty to run offline
 init_notebook_mode(connected=True)
 # Import data
-df = pd.read_csv('expense.csv')
+df = pd.read_csv('../Data/expense.csv')
 df = df.groupby(['name','expense_category'])['amount'].sum().reset_index()
 # Round number for amount column
 df['amount'] = df['amount'].round(2)
@@ -27,4 +27,4 @@ layout = dict(title={'text':fig_title, 'x':0.5},
 
 fig = go.Figure(data=data, layout=layout)
 
-plotly.offline.plot(fig, filename='bar.html')
+plotly.offline.plot(fig, filename='groupbar.html')
