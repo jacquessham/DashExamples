@@ -7,8 +7,8 @@ from plotly.offline import *
 # To initiate ploty to run offline
 init_notebook_mode(connected=True)
 
-df_rent = pd.read_csv('county_avg_rent.csv')
-df_fips = pd.read_csv('countyfips.csv')
+df_rent = pd.read_csv('../Data/county_avg_rent.csv')
+df_fips = pd.read_csv('../Data/countyfips.csv')
 
 df = df_rent.merge(df_fips, on='countyname', how='inner')
 df = df[(df['fips'] >= 6000) & (df['fips'] <= 7000)]

@@ -7,7 +7,7 @@ from plotly.offline import *
 # To initiate ploty to run offline
 init_notebook_mode(connected=True)
 # Import data
-df = pd.read_csv('salary.csv')
+df = pd.read_csv('../Data/salary.csv')
 
 data = []
 
