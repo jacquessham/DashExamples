@@ -24,15 +24,39 @@ This chapter may use the following data from the [Data folder](../Data):
 </ul>
 
 ## Syntax
-Coming Soon...
+### Data
+* Data is a list of <i>go.Bar()</i>, each <i>go.Bar()</i> represents a category of bars. 
+* If the data list has only 1 <i>go.Bar()</i>, it is a simple bar chart: Each attribute has only 1 bar.
+* If it is grouped, each attribute has a group of bars displayed (All bars belong to each attribute stick together) ordered by the order in the data list.
+* If it is stacked, each attribute has one bar, each category value would be stacked on top of other categories order by the the order in the data list.
+<br><br>
+go.Bar() has the following parameters:
+<ul>
+	<li>x: Attribute on x-axis</li>
+	<li>y: Value on y-axis</li>
+	<li>name: Category, which will be displayed on legend</li>
+	<li>text: The text label will displayed on the bars</li>
+	<li>textposition: Text label position
+		<ul>
+			<li>auto: On the top of the bar</li>
+			<li>inside: On the top of the bar</li>
+			<li>outside: Outside of the bar</li>
+		</ul>
+	</li>
+	<li>textfont: Text label setting (Takes a dictionary)</li>
+</ul>
+<br>
+
+
+### Layout
 
 ## Examples
 ### Example 1 - Simple Bar Chart
-<img src='bar.png'>
+<img src=bar.png>
 Coming Soon...
 
 ### Example 2 - Grouped Bar Chart
-<img src='groupbar.png'>
+<img src=groupbar.png>
 Coming Soon...
 
 ### Example 3 - Stacked Bar Chart
