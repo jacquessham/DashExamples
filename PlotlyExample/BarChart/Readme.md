@@ -51,7 +51,7 @@ go.Bar() has the following parameters:
 <br>
 
 
-### Layout
+### Layout (Under Construction)
 Genetic Layout parameters suggested to use:
 <ul>
 	<li>title (Dictionary): Chart title and fonts 
@@ -71,7 +71,7 @@ Genetic Layout parameters suggested to use:
 </ul>
 <br><br>
 
-Bar Chart Exclusive parameters
+Bar Chart Exclusive parameters:
 <ul>
 	<li>barmode: How the bars are grouped
 		<ul>
