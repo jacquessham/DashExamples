@@ -1,5 +1,5 @@
 # Bar Charts
-In this folder, we will go over how to create bar charts with Python and Plotly.
+Bar charts are charts use rectangles represent data values for each attribute. In this folder, we will go over how to create bar charts with Python and Plotly.
 
 ## Files
 The following scripts are used in this chapter:
@@ -24,7 +24,7 @@ This chapter may use the following data from the [Data folder](../Data):
 </ul>
 
 ## Syntax
-### Data
+### Data (Under Construction)
 Data is a list of <i>go.Bar()</i>, each <i>go.Bar()</i> represents a category of bars.
 <br><br> 
 If the data list has only 1 <i>go.Bar()</i>, it is a simple bar chart: Each attribute has only 1 bar.
@@ -65,9 +65,12 @@ Genetic Layout parameters suggested to use:
 			<li>tickmode: Setting of ticks</li>
 			<li></li>
 		</ul></li>
-	<li></li>
-	<li></li>
-	<li></li>
+	<li>xaxis (Dictionary): y-axis setting
+		<ul>
+			<li>tickmode: Setting of ticks</li>
+			<li></li>
+		</ul></li>
+	<li>barmode: How the bars are grouped (See below for detail)</li>
 </ul>
 <br><br>
 
@@ -83,12 +86,54 @@ Bar Chart Exclusive parameters:
 ## Examples
 ### Example 1 - Simple Bar Chart
 <img src=bar.png>
-Coming Soon...
+```
+# Data
+data = []
+data.append(go.Bar(x=df['name'], y=df['salary'],
+	               text=df['salary'], textposition='auto',
+	               textfont=dict(color='white')))
+# Layout
+layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5}}
+
+fig = go.Figure(data=data, layout=layout)
+```
 
 ### Example 2 - Grouped Bar Chart
 <img src=groupbar.png>
-Coming Soon...
+```
+data =[]
+for cate in df['expense_category'].unique():
+	df_temp = df[df['expense_category']==cate]
+	data.append(go.Bar(name=cate, 
+	               x=df_temp['name'], y=df_temp['amount'],
+	               text=df_temp['amount'], textposition='auto',
+	               textfont=dict(color='white')))
+
+fig_title = 'Everybody\'s Expense'
+layout = dict(title={'text':fig_title, 'x':0.5},
+              barmode='group', xaxis=dict(tickmode='linear'))
+```
+<br>
+Each bar is a stored as an element in data list, and set barmode to <b>group</b>.
+
 
 ### Example 3 - Stacked Bar Chart
 <img src=stackbar.png>
-Coming Soon...
+```
+# Prepare data
+data =[]
+for cate in df['expense_category'].unique():
+	df_temp = df[df['expense_category']==cate]
+	data.append(go.Bar(name=cate, 
+	               x=df_temp['name'], y=df_temp['amount'],
+	               text=df_temp['amount'], textposition='auto',
+	               textfont=dict(color='white')))
+
+fig_title = 'Everybody\'s Expense'
+layout = dict(title={'text':fig_title, 'x':0.5},
+              barmode='stack', xaxis=dict(tickmode='linear'))
+
+```
+
+Each bar is a stored as an element in data list, and set barmode to <b>stack</b>.
+

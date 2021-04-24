@@ -39,13 +39,13 @@ Coming Soon...
 Coming Soon...
 
 ## Bar Charts
-You may find how to create bar charts with Plotly in the [Bar Charts folder](/BarChart).
+You may find how to create bar charts with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/BarChart">Bar Charts folder</a>.
 
 ## Line Charts
 Coming Soon...
 
 ## Box Plots
-You may find how to create bar charts with Plotly in the [BoxPlot folder](/BoxPlot).
+You may find how to create bar charts with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/BoxPlot">BoxPlot folder</a>.
 
 ## Pie/Donut Charts
 Coming Soon...
