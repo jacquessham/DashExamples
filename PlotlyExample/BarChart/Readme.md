@@ -86,6 +86,7 @@ Bar Chart Exclusive parameters:
 ## Examples
 ### Example 1 - Simple Bar Chart
 <img src=bar.png>
+
 ```
 # Data
 data = []
@@ -100,6 +101,7 @@ fig = go.Figure(data=data, layout=layout)
 
 ### Example 2 - Grouped Bar Chart
 <img src=groupbar.png>
+
 ```
 data =[]
 for cate in df['expense_category'].unique():
@@ -113,12 +115,14 @@ fig_title = 'Everybody\'s Expense'
 layout = dict(title={'text':fig_title, 'x':0.5},
               barmode='group', xaxis=dict(tickmode='linear'))
 ```
+
 <br>
 Each bar is a stored as an element in data list, and set barmode to <b>group</b>.
 
 
 ### Example 3 - Stacked Bar Chart
 <img src=stackbar.png>
+
 ```
 # Prepare data
 data =[]
@@ -135,5 +139,6 @@ layout = dict(title={'text':fig_title, 'x':0.5},
 
 ```
 
+<br>
 Each bar is a stored as an element in data list, and set barmode to <b>stack</b>.
 
