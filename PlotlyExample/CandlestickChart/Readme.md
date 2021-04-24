@@ -82,7 +82,7 @@ Candlestick Chart Exclusive parameters:
 
 ## Examples
 ### Simple Candlestick Chart
-<img src=box.png>
+<img src=Candlestick.png>
 
 ```
 # Prepare data

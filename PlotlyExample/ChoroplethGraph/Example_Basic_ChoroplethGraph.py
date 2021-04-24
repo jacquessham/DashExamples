@@ -13,6 +13,7 @@ df_fips = pd.read_csv('../Data/countyfips.csv')
 df = df_rent.merge(df_fips, on='countyname', how='inner')
 df = df[(df['fips'] >= 6000) & (df['fips'] <= 7000)]
 
+# Define the endpoints 
 endpts = list(range(1,6))
 
 fig = ff.create_choropleth(
