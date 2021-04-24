@@ -45,7 +45,7 @@ You may find how to create bar charts with Plotly in the <a href="https://github
 Coming Soon...
 
 ## Box Plots
-You may find how to create bar charts with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/BoxPlot">BoxPlot folder</a>.
+You may find how to create bar charts with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/BoxPlot">Box Plot folder</a>.
 
 ## Pie/Donut Charts
 Coming Soon...

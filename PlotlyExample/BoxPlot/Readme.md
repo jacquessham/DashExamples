@@ -67,3 +67,16 @@ One difference between box plot and bar chart is syntax used for attribute and v
 
 ## Examples
 <img src=box.png>
+
+```
+# Prepare data
+data = []
+for school in df['school'].unique():
+	df_temp = df[df['school']==school]
+	data.append(go.Box(y=df_temp['salary'], name=school, boxmean=True))
+
+# Layout
+layout = dict(title={'text':'Alumni Salary across Schools', 'x':0.5},
+              barmode='group', xaxis=dict(tickmode='linear'))
+```
+

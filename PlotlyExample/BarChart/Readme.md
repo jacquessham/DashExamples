@@ -96,7 +96,6 @@ data.append(go.Bar(x=df['name'], y=df['salary'],
 # Layout
 layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5}}
 
-fig = go.Figure(data=data, layout=layout)
 ```
 
 ### Example 2 - Grouped Bar Chart
