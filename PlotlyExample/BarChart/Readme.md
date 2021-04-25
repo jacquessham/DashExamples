@@ -65,7 +65,7 @@ Genetic Layout parameters suggested to use:
 			<li>tickmode: Setting of ticks</li>
 			<li></li>
 		</ul></li>
-	<li>xaxis (Dictionary): y-axis setting
+	<li>yaxis (Dictionary): y-axis setting
 		<ul>
 			<li>tickmode: Setting of ticks</li>
 			<li></li>
