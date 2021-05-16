@@ -47,6 +47,7 @@ go.Bar() has the following parameters:
 		</ul>
 	</li>
 	<li>textfont (Dictionary): Text label setting</li>
+	<li>marker_color: Bar colour (Take colour spelliing in string or RGB in string)</li>
 </ul>
 <br>
 
@@ -81,6 +82,7 @@ Bar Chart Exclusive parameters:
 			<li>grouped: Bars stick together if they belong to the same attribute</li>
 			<li>stacked: Bars stack on top of each other if they belong to the same attribute</li>
 		</ul></li>
+	<li>marker_color: Bar colour</li>
 </ul>
 
 ## Examples
