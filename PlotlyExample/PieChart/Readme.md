@@ -35,11 +35,38 @@ go.Pie() has the following parameters:
 	<li>value: Value for the given attribute, takes the values (not percentage, unless you insists)</li>
 	<li>name: Category, which will be used for identifying the pie chart (More useful when you have more than 1 pie chart)</li>
 	<li>hole: The size of the hole in the center, takes between 0 and 1. It represents the hole radius relative to the radius of the pie. It defaults at 0, as a pie chart. When hole is greater than 0, it becomes a donut chart</li>
+	<li>hoverinfo: What information to be displayed when user hover over the pie slices, all the options are:
+		<ul>
+			<li>percent</li>
+			<li>label+percent</li>
+			<li>label</li>
+			<li>name</li>
+		</ul></li>
 	<li>textinfo: What information to be displayed on the pie slices, default as <b>percent</b>, all the options are:
 		<ul>
 			<li>percent</li>
 			<li>label+percent</li>
+			<li>label</li>
+			<li>name</li>
 		</ul></li>
+	<li>textfont_size: Font of the text on the pie</li>
+	<li>marker (Dictionary): To define colour of each pie and borders
+		<ul>
+			<li>colors: A list of colours to be used for pies</li>
+			<li>line (Dictionary): To specify color and width for border
+				<ul>
+					<li>color</li>
+					<li>width</li>
+				</ul></li>
+		</ul></li>
+	<li>insidetextorientation: Controls the orientation of the text inside chart sectors
+		<ul>
+			<li>auto: Oriented in any direction to have the largest font possible</li>
+			<li>horizontal: Parallel with the bottom line (Horizaontal)</li>
+			<li>radial: Oriented along the radius</li>
+			<li>tangential: Perpendicular to the radius</li>
+		</ul></li>
+	<li>pull: "Pull-out" the pie from the center, take 0-1 for each pie</li>
 </ul>
 <br>
 
@@ -52,6 +79,12 @@ Genetic Layout parameters suggested to use:
 			<li>text: Chart title to be displayed</li>
 			<li>x: text location on x-dimension, from 0-1</li>
 			<li>y: text location on y-dimension, from 0-1</li>
+		</ul></li>
+	<li>uniformtext_minsize: Threhold of font size to be displayed on the pie, if not, will be handled with instruction stated in <i>uniformtext_mode</i>, default to be 0</li>
+	<li>uniformtext_mode: How to handle text if the font is less than <i>uniformtext_minsize</i>
+		<ul>
+			<li>hide: Do not display</li>
+			<li>show: Display without downscaling</li>
 		</ul></li>
 </ul>
 <br><br>
@@ -84,3 +117,8 @@ data.append(go.Pie(labels=df['category'], values=df['revenue'], hole=0.4))
 # Layout
 layout = {'title':{'text':'Department Store Revenue', 'x':0.5}}
 ```
+
+### Example 3 - Pie Chart with Advance setting
+<img src=prettypie.png>
+<br>
+See [Pretty_pie.py](/Pretty_pie.py) for the code
