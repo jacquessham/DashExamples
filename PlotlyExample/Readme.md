@@ -45,21 +45,21 @@ You may find how to create bar charts with Plotly in the <a href="https://github
 Coming Soon...
 
 ## Box Plots
-You may find how to create bar charts with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/BoxPlot">Box Plots folder</a>.
+You may find how to create Box plots with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/BoxPlot">Box Plots folder</a>.
 
 ## Pie/Donut Charts
-Coming Soon...
+You may find how to create Pie charts/Dount charts with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/PieChart">Pie Chart folder</a>.
 
 ## Treemaps
 Coming Soon...
 
 ## Heatmaps
-Coming Soon...
+You may find how to create Heatmap with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/Heatmap">Heatmp folder</a>.
 
 ## Candlestick Charts
 You may find how to create candlestick charts with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/CandlestickChart">Candlestick Charts folder</a>.
 
 ## Choropleth Graphs
-Coming Soon...
+You may find how to create Choropleth graph with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/ChoroplethGraph">Choropleth Graph folder</a>.
 
 
