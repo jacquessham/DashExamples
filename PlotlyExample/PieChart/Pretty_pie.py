@@ -7,7 +7,7 @@ from plotly.offline import *
 # To initiate ploty to run offline
 init_notebook_mode(connected=True)
 # Import data
-df = pd.read_csv('../Data/revenue.csv')
+df = pd.read_csv('../Data/revenue_dept.csv')
 
 # Data
 colours = ['blue','gold','red','green']

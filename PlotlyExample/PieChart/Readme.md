@@ -18,14 +18,18 @@ This chapter requires the following packages for the scripts used:
 ## Data Used
 This chapter may use the following data from the [Data folder](../Data):
 <ul>
-	<li><i>revenue.csv</i></li>
+	<li><i>revenue_dept.csv</i></li>
+	<li><i>expense_dept.csv</i></li>
 </ul>
 
 ### revenue.csv
 <i>revenue.csv</i> is a data set to display the revenue of a hypothetical department store by category, without a time dimension. 
 
+### expense.csv
+<i>expense.csv</i> is a data set to display the expense of a hypothetical department store by category, without a time dimension. 
+
 ## Syntax
-### Data (Under Construction)
+### Data
 Data is a list of <i>go.Pie()</i>, each <i>go.Pie()</i> represents a pie chart. Each <i>go.Pie()</i> you added in the data list, one more pie chart will be displayed. If you want a donut chart, add a <i>hole</i> parameter in <i>go.Pie()</i> to convert the pie chart to a donut chart
 
 <br><br>
@@ -71,7 +75,7 @@ go.Pie() has the following parameters:
 <br>
 
 
-### Layout (Under Construction)
+### Layout
 Genetic Layout parameters suggested to use:
 <ul>
 	<li>title (Dictionary): Chart title and fonts 
@@ -96,6 +100,8 @@ Pie/Donut Chart Exclusive parameters:
 
 ## Examples
 ### Example 1 - Simple Pie Chart
+Require files: <i>revenue_dept.csv</i> in the [Data folder](../Data)
+<br>
 <img src=simplepie.png>
 
 ```
@@ -108,6 +114,8 @@ layout = {'title':{'text':'Department Store Revenue', 'x':0.5}}
 ```
 
 ### Example 2 - Grouped Donut Chart
+Require files: <i>revenue_dept.csv</i> in the [Data folder](../Data)
+<br>
 <img src=simpledonut.png>
 
 ```
@@ -119,6 +127,15 @@ layout = {'title':{'text':'Department Store Revenue', 'x':0.5}}
 ```
 
 ### Example 3 - Pie Chart with Advance setting
+Require files: <i>revenue_dept.csv</i> in the [Data folder](../Data)
+<br>
 <img src=prettypie.png>
 <br>
-See [Pretty_pie.py](/Pretty_pie.py) for the code
+See <i>Pretty_pie.py</i> in this folder for the code.
+
+### Example 4 - Multiple Pie Charts
+Require files: <i>revenue_dept.csv</i> and <i>expense_dept.csv</i> in the [Data folder](../Data)
+<br>
+<img src=multi_pies.png>
+<br>
+Multiple Pie charts required users to declare subplots in <i>figure</i> first that it requires different style of code to do so, see <i>Multiple_pies.py</i> in this folder for the code.
