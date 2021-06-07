@@ -96,6 +96,7 @@ Genetic Layout parameters suggested to use:
 Pie/Donut Chart Exclusive parameters:
 <ul>
 	<li>hole: The size of the hole in the center</li>
+	<li>pull: "Pull-out" the pie from the center</li>
 </ul>
 
 ## Examples
