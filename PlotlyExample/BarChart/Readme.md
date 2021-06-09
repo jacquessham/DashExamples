@@ -20,11 +20,11 @@ This chapter requires the following packages for the scripts used:
 This chapter may use the following data from the [Data folder](../Data):
 <ul>
 	<li><i>salary.csv</i></li>
-	<li><i>expense.csv</i></li>
+	<li><i>expense_everybody.csv</i></li>
 </ul>
 
 ## Syntax
-### Data (Under Construction)
+### Data
 Data is a list of <i>go.Bar()</i>, each <i>go.Bar()</i> represents a category of bars.
 <br><br> 
 If the data list has only 1 <i>go.Bar()</i>, it is a simple bar chart: Each attribute has only 1 bar.
@@ -53,7 +53,7 @@ go.Bar() has the following parameters:
 <br>
 
 
-### Layout (Under Construction)
+### Layout
 Genetic Layout parameters suggested to use:
 <ul>
 	<li>title (Dictionary): Chart title and fonts 
@@ -80,7 +80,7 @@ Genetic Layout parameters suggested to use:
 					<li>array: Follow the sorting order defined in <b>categoryarray</b></li>
 				</ul>
 			</li>
-			<li>categoryarray: Define the sorting order when <b></b>categoryorder is array</li>
+			<li>categoryarray: Define the sorting order when <b>categoryorder is array</b></li>
 		</ul></li>
 	<li>yaxis (Dictionary): y-axis setting
 		<ul>
