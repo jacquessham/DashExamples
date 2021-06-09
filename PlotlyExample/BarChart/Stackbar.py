@@ -7,7 +7,7 @@ from plotly.offline import *
 # To initiate ploty to run offline
 init_notebook_mode(connected=True)
 # Import data
-df = pd.read_csv('../Data/expense.csv')
+df = pd.read_csv('../Data/expense_everybody.csv')
 df = df.groupby(['name','expense_category'])['amount'].sum().reset_index()
 # Round number for amount column
 df['amount'] = df['amount'].round(2)
@@ -23,7 +23,8 @@ for cate in df['expense_category'].unique():
 
 fig_title = 'Everybody\'s Expense'
 layout = dict(title={'text':fig_title, 'x':0.5},
-              barmode='stack', xaxis=dict(tickmode='linear'))
+              barmode='stack', 
+              xaxis=dict(tickmode='linear',categoryorder='total descending'))
 
 fig = go.Figure(data=data, layout=layout)
 

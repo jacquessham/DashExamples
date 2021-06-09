@@ -48,6 +48,7 @@ go.Bar() has the following parameters:
 	</li>
 	<li>textfont (Dictionary): Text label setting</li>
 	<li>marker_color: Bar colour (Take colour spelliing in string or RGB in string)</li>
+	<li>width: Width of the bar in pixel</li>
 </ul>
 <br>
 
@@ -64,14 +65,35 @@ Genetic Layout parameters suggested to use:
 	<li>xaxis (Dictionary): X-axis setting
 		<ul>
 			<li>tickmode: Setting of ticks</li>
-			<li></li>
+			<li>tickangle: Degree the tick rotate (-: Anticlockwise, +: Clockwise)</li>
+			<li>categoryorder: Sort the order of attributes on X-axis, either ascending or descending
+				<ul>
+					<li>category ascending: Sort attribute (attribute in name in Data) in ascending orders</li>
+					<li>category descending: Sort attribute (attribute in name in Data) in descending orders</li>
+					<li>total ascending: Sort value in ascending orders</li>
+					<li>total descending: Sort value in descending orders</li>
+					<li>min ascending/min descending: Sort by minimum value</li>
+					<li>max ascending/max descending: Sort by maximum value</li>
+					<li>sum ascending/sum descending: Sort by summation value</li>
+					<li>mean ascending/mean descending: Sort by average value</li>
+					<li>median ascending/median descending: Sort by median value</li>
+					<li>array: Follow the sorting order defined in <b>categoryarray</b></li>
+				</ul>
+			</li>
+			<li>categoryarray: Define the sorting order when <b></b>categoryorder is array</li>
 		</ul></li>
 	<li>yaxis (Dictionary): y-axis setting
 		<ul>
 			<li>tickmode: Setting of ticks</li>
-			<li></li>
+			<li>tickangle: Degree the tick rotate (-: Anticlockwise, +: Clockwise)</li>
 		</ul></li>
 	<li>barmode: How the bars are grouped (See below for detail)</li>
+	<li>uniformtext (Dictionary): Allow bar chart becomes Marimekko Chart by forcing bars to stick together
+		<ul>
+			<li>mode: Put "hide" to becomes Marimekko chart</li>
+			<li>minsize: Minimum size of bars</li>
+		</ul>
+	</li>
 </ul>
 <br><br>
 
@@ -81,6 +103,7 @@ Bar Chart Exclusive parameters:
 		<ul>
 			<li>grouped: Bars stick together if they belong to the same attribute</li>
 			<li>stacked: Bars stack on top of each other if they belong to the same attribute</li>
+			<li>relative: Stacked bars, but negative values stack below 0</li>
 		</ul></li>
 	<li>marker_color: Bar colour</li>
 </ul>
@@ -105,16 +128,19 @@ layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5}}
 
 ```
 data =[]
-for cate in df['expense_category'].unique():
+for cate, colour, width in zip(df['expense_category'].unique(),colours, widths):
 	df_temp = df[df['expense_category']==cate]
 	data.append(go.Bar(name=cate, 
 	               x=df_temp['name'], y=df_temp['amount'],
+	               marker_color=colour,
+	               width=[width]*len(df_temp['name']),
 	               text=df_temp['amount'], textposition='auto',
-	               textfont=dict(color='white')))
+	               textfont={'color':'white'}))
 
 fig_title = 'Everybody\'s Expense'
 layout = dict(title={'text':fig_title, 'x':0.5},
-              barmode='group', xaxis=dict(tickmode='linear'))
+              barmode='group', 
+              xaxis=dict(tickmode='linear',tickangle=-45))
 ```
 
 <br>
@@ -136,7 +162,8 @@ for cate in df['expense_category'].unique():
 
 fig_title = 'Everybody\'s Expense'
 layout = dict(title={'text':fig_title, 'x':0.5},
-              barmode='stack', xaxis=dict(tickmode='linear'))
+              barmode='stack', 
+              xaxis=dict(tickmode='linear',categoryorder='total descending'))
 
 ```
 
