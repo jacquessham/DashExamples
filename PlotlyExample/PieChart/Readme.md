@@ -90,6 +90,7 @@ Genetic Layout parameters suggested to use:
 			<li>hide: Do not display</li>
 			<li>show: Display without downscaling</li>
 		</ul></li>
+	<li>texttemplate: What to display on/outside of the bars</li>
 </ul>
 <br><br>
 

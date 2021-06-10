@@ -49,6 +49,13 @@ go.Bar() has the following parameters:
 	<li>textfont (Dictionary): Text label setting</li>
 	<li>marker_color: Bar colour (Take colour spelliing in string or RGB in string)</li>
 	<li>width: Width of the bar in pixel</li>
+	<li>hoverinfo: What information to be displayed when user hover over the bar, all the options are:
+		<ul>
+			<li>percent</li>
+			<li>label+percent</li>
+			<li>label</li>
+			<li>name</li>
+		</ul></li>
 </ul>
 <br>
 
