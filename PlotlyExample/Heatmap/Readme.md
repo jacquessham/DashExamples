@@ -24,7 +24,7 @@ This chapter may use the following data from the [Data folder](../Data):
 <i>cust_num.csv</i> is data set that records the customer traffic of a hypothetical department store by day of week and hours.
 
 ## Syntax
-### Data (Under Construction)
+### Data
 Data is a list to store <i>go.Heatmap()</i>.
 <br><br>
 go.heatmap() has the following parameters:
@@ -33,11 +33,19 @@ go.heatmap() has the following parameters:
 	<li>y: Attribute on y-axis</li>
 	<li>z: Value of the attribute on x and y-axis, and display in colour</li>
 	<li>colorscale: The colour scale on how data is displayed, depends on z</li>
+	<li>hoverongaps: When there is missing value in the data, it will not show hovertext if this column is set to false (Default to true)</li>
+	<li>hoverinfo: What information to be displayed when user hover over the coloured area, all the options are:
+		<ul>
+			<li>percent</li>
+			<li>label+percent</li>
+			<li>label</li>
+			<li>name</li>
+		</ul></li>
 </ul>
 <br>
 
 
-### Layout (Under Construction)
+### Layout
 Genetic Layout parameters suggested to use:
 <ul>
 	<li>title (Dictionary): Chart title and fonts 
@@ -49,12 +57,12 @@ Genetic Layout parameters suggested to use:
 	<li>xaxis (Dictionary): X-axis setting
 		<ul>
 			<li>tickmode: Setting of ticks</li>
-			<li></li>
+			<li>tickangle: Degree the tick rotate (-: Anticlockwise, +: Clockwise)</li>
 		</ul></li>
 	<li>yaxis (Dictionary): y-axis setting
 		<ul>
 			<li>tickmode: Setting of ticks</li>
-			<li></li>
+			<li>tickangle: Degree the tick rotate (-: Anticlockwise, +: Clockwise)</li>
 		</ul></li>
 </ul>
 <br><br>
@@ -62,6 +70,7 @@ Genetic Layout parameters suggested to use:
 Heatmap Exclusive parameters:
 <ul>
 	<li>z: Value of the attribute on x and y-axis</li>
+	<li>hoverongaps: Display or not if data is missing</li>
 </ul>
 
 ## Examples
