@@ -53,6 +53,9 @@ You may find how to create Pie charts/Dount charts with Plotly in the <a href="h
 ## Treemaps
 Coming Soon...
 
+## Histogram
+You may find how to create Histogram with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/Histogram">Histogram folder</a>.
+
 ## Heatmaps
 You may find how to create Heatmap with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/Heatmap">Heatmp folder</a>.
 
