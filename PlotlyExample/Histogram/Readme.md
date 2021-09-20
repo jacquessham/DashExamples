@@ -25,8 +25,10 @@ go.Histogram() has the following parameters:
 	<li>y: Value in a horizontal histogram</li>
 	<li>histnorm: Normalized Histogram
 		<ul>
-			<li>probability: Normalized data</li>
-			<li>percent: Percentage</li>
+			<li>probability: Probability of an event happen of each bin</li>
+			<li>percent: Percentage of the occurrence with respect to total number</li>
+			<li>density: Number of occurrence in a bin divided by the size of the bin interval</li>
+			<li>probability density: The Probility of an event happen of each density bin</li>
 		</ul>
 	</li>
 	<li>cumulative_enabled: Enable Cumulative Histogram, True/False</li>
@@ -105,4 +107,13 @@ data.append(go.Histogram(x=df['salary']))
 layout = {'title':{'text':'Histogram of Salary among Friends', 'x':0.5}}
 
 ```
+### Example 2 - Normalized Histogram
+<img src=normalized_histogram.png>
 
+```
+# Data
+data = []
+data.append(go.Histogram(x=df['salary'], histnorm='probability'))
+# Layout
+layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5}}
+```
