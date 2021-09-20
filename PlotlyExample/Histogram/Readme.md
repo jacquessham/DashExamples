@@ -4,13 +4,14 @@ Histogram are charts use rectangles represent frequency of the range of a contin
 ## Files
 The following scripts are used in this chapter:
 <ul>
-	<li>Histogram.py</li>
+	<li>SimpleHistogram.py</li>
 </ul>
 
 ## Pacakges Needed
 This chapter requires the following packages for the scripts used:
 <ul>
 	<li>Plotly</li>
+	<li>Pandas</li>
 </ul>
 
 
@@ -94,14 +95,12 @@ Histogram Exclusive parameters:
 
 ## Examples
 ### Example 1 - Simple Histogram
-<img src=bar.png>
+<img src=simple_histogram.png>
 
 ```
 # Data
 data = []
-data.append(go.Histogram(x=df['salary'],
-	               text=df['salary'], textposition='auto',
-	               textfont=dict(color='white')))
+data.append(go.Histogram(x=df['salary']))
 # Layout
 layout = {'title':{'text':'Histogram of Salary among Friends', 'x':0.5}}
 
