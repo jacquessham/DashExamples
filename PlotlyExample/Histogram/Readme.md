@@ -31,6 +31,11 @@ go.Histogram() has the following parameters:
 			<li>probability density: The Probility of an event happen of each density bin</li>
 		</ul>
 	</li>
+	<li>xbins: Setting of each bin
+		<ul>
+			<li>size: Define the interval size of each bin</li>
+		</ul>
+	</li>
 	<li>cumulative_enabled: Enable Cumulative Histogram, True/False</li>
 	<li>opacity: Opacity, from 0-1</li>
 	<li>marker_color: Bar colour (Take colour spelliing in string or RGB in string)</li>
@@ -116,4 +121,17 @@ data = []
 data.append(go.Histogram(x=df['salary'], histnorm='probability'))
 # Layout
 layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5}}
+```
+
+### Example 3 - Overlaid Histogram
+<img src=overlaid_histogram.png>
+
+```
+data = []
+for group in df['group'].unique():
+    df_temp = df[df['group']==group]
+    data.append(go.Histogram(x=df_temp['salary'],name=group))
+# Layout
+layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5},
+          'barmode':'overlay'}
 ```
