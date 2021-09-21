@@ -135,3 +135,16 @@ for group in df['group'].unique():
 layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5},
           'barmode':'overlay'}
 ```
+
+### Example 4 - Stacked Histogram
+<img src=stacked_histogram.png>
+
+```
+data = []
+for group in df['group'].unique():
+    df_temp = df[df['group']==group]
+    data.append(go.Histogram(x=df_temp['salary'],name=group))
+# Layout
+layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5},
+          'barmode':'stack'}
+```
