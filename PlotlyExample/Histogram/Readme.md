@@ -1,10 +1,13 @@
-# Histogram (Under Construction...)
+# Histogram
 Histogram are charts use rectangles represent frequency of the range of a continuous attribute. In this folder, we will go over how to create histogram with Python and Plotly.
 
 ## Files
 The following scripts are used in this chapter:
 <ul>
 	<li>SimpleHistogram.py</li>
+	<li>NormalizedHistogram.py</li>
+	<li>OverlaidHistogram.py</li>
+	<li>StackedHistogram.py</li>
 </ul>
 
 ## Pacakges Needed
@@ -33,9 +36,10 @@ go.Histogram() has the following parameters:
 	</li>
 	<li>xbins: Setting of each bin
 		<ul>
-			<li>size: Define the interval size of each bin</li>
+			<li>size: Define the interval size of each bin, number</li>
 		</ul>
 	</li>
+	<li>ybins: Same as xbins but for horizontal bars</li>
 	<li>cumulative_enabled: Enable Cumulative Histogram, True/False</li>
 	<li>opacity: Opacity, from 0-1</li>
 	<li>marker_color: Bar colour (Take colour spelliing in string or RGB in string)</li>
