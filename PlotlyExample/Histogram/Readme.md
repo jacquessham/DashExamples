@@ -155,7 +155,7 @@ layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5},
 ```
 
 ### Example 5 - Cumulative Histogram
-<img src=cumulative_histogram.png.png>
+<img src=cumulative_histogram.png>
 
 ```
 # Data
