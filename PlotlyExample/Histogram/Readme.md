@@ -152,3 +152,12 @@ for group in df['group'].unique():
 layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5},
           'barmode':'stack'}
 ```
+
+### Example 5 - Cumulative Histogram
+```
+# Data
+data = []
+data.append(go.Histogram(x=df['salary'], cumulative_enabled=True))
+# Layout
+layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5}}
+```
