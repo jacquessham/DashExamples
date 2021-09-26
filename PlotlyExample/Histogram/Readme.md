@@ -8,6 +8,7 @@ The following scripts are used in this chapter:
 	<li>NormalizedHistogram.py</li>
 	<li>OverlaidHistogram.py</li>
 	<li>StackedHistogram.py</li>
+	<li>CumulativeHistogram.py</li>
 </ul>
 
 ## Pacakges Needed
@@ -154,6 +155,8 @@ layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5},
 ```
 
 ### Example 5 - Cumulative Histogram
+<img src=cumulative_histogram.png.png>
+
 ```
 # Data
 data = []
