@@ -30,13 +30,15 @@ Dash relies on Plotly plots, it is a good idea to understand how Plotly works fi
 [Fundamentals (Coming Soon...)](/)<br>
 [Bar Charts](/PlotlyExample/BarChart)<br>
 [Line Charts (Coming Soon...)](/PlotlyExample/LineChart)<br>
+[Scatter Plot (Coming Soon...)](/PlotlyExample/ScatterPlot)<br>
 [Box Plots](/PlotlyExample/BoxPlot)<br>
 [Pie/Donut Charts](/PlotlyExample/PieChart)<br>
 [Treemaps (Coming Soon...)](/PlotlyExample/Treemap)<br>
 [Heatmaps](/PlotlyExample/Heatmap) <br>
 [Candlestick Charts](/PlotlyExample/CandlestickChart)<br>
 [Choropleth Graphs](/PlotlyExample/ChoroplethGraph)
-
+<br><br>
+Or click the link here to the [Plotly Example folder](/PlotlyExample) for the selected list of the visualizations can be made with Plotly.
 
 ## Tutorial and Examples
 This repositories contains examples from the official Dash site and myself. There are 3 parts for the tutorial with different levels of functionality.
