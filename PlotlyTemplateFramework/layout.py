@@ -26,11 +26,10 @@ def generate_layout(title=None, xaxis=None, yaxis=None, legend=None,
     else:
         yaxis = {'title': '**Y-axis Type Error!!!', 'gridcolor': 'lightgray'}
 
-    # Handle Legend
-    if type(legend) == dict:
-        pass
-    else:
-        legend = {'x': 0.7, 'y': 1, 'orientation': 'h'}
+    # Only accepting a dictionary or None for legend
+    if legend is not None and type(legend) != dict:
+        legend = None
+
 
     # Put all metadata together
     layout = {
