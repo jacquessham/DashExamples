@@ -48,7 +48,9 @@ This repositories contains examples from the official Dash site and myself. Ther
 [Part 3 - Interactive Visualization](/Part3)<br>
 [Dashboard Example - Gaming Console Market Share in 2018](/DashboardExample)
 
+## Template Framework for Plotly
+You may find the template framework for Plotly when you want to quickly plot something with Plotly. You may find the scripts in the [Template Framework](/PlotlyTemplateFramework) folder.
 
 ## Reference
-[Dash User Guide](https://dash.plotly.com/)<br>
-[Brief Introduction of Dash](https://medium.com/plotly/introducing-dash-5ecf7191b503)
+Official Website of Dash: [Dash User Guide](https://dash.plotly.com/)<br>
+Medium Post: [Brief Introduction of Dash](https://medium.com/plotly/introducing-dash-5ecf7191b503) by <i>Plotly</i>
