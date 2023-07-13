@@ -11,7 +11,7 @@ You may pass all the arguements and metadata to <i>generate_plotly_viz()</i> in 
 A driver script to call <i>generate_plotly.py</i> to generate a Plotly visualization. If you are exporting the <i>figure</i> to Dash, you may ignore this script. In order to work, you must execute <i>arguements.json</i> before executing.
 
 ### arguements.json
-The arguements and metadata to declare the Plotly rending object in <i>call_plotly.py</i>. An example of the minimum requirement is the following:
+The arguements and metadata to declare the Plotly rending object in <i>call_plotly.py</i>. An example of the minimum requirement of generating a bar chart is the following:
 
 ```
 {
@@ -26,6 +26,10 @@ The arguements and metadata to declare the Plotly rending object in <i>call_plot
 }
 ```
 
+<br>
+
+You may find the sample template and requirement details in the [Template Examples](/TemplateExamples) folder.
+
 ### generate_plotly.py
 The script to ingest data and metadata to generate visualization. This script will call <i>data.py</i> and <i>layout.py</i> to construct <i>data</i> and <i>layout</i> and put into the <i>figure</i> object with <i>generate_plotly_viz()</i>. Note that <i>generate_plotly_viz()</i> can be returned to any script, as long as the <i>figure</i> object is passed to Plotly or Dash rendering object.
 
@@ -39,6 +43,7 @@ Currently, it supports:
 			<li>Simple Bar Chart</li>
 		</ul>
 	</li>
+	<li>Box Plot</li>
 	<li>Coming soon...</li>
 </ul>
 <br><br>
@@ -48,6 +53,9 @@ For each visualization type, it would have its <i>generate_(viz_type).py</i> to 
 The module to generate data object for Bar Chart.
 <br><br>
 <b>Currently only support simple 2-D bar chart.</b>
+
+#### generate_boxplot.py
+The module to generate data object for Box Plot
 
 
 ### layout.py

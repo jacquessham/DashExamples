@@ -21,16 +21,15 @@ This chapter may use the following data from the [Data folder](../Data):
 </ul>
 
 ## Syntax
-### Data (Under Construction)
+### Data
 Data is a list of <i>go.Box()</i>, each <i>go.Box()</i> represents an attribute. If the data list has only 1 <i>go.Box()</i>, there is only 1 attribute (Only 1 box bar presents).
 <br><br>
-go.Bar() has the following parameters:
+go.Box() has the following parameters:
 <ul>
 	<li>x: Value on x-axis (Horizontal Box Plot, if used, <b>y</b> should be empty)</li>
 	<li>y: Value on y-axis (Vertical Box Plot, if used, <b>x</b> should be empty)</li>
 	<li>name: Attribute, it will be represented as 1 box bar and displayed on x-axis</li>
 	<li>boxmean: Parameter whether the mean is presented on the chart, takes only <b>True</b> and <b>False</b>, default as <b>False</b></li>
-	<li>textfont (Dictionary): Text label setting</li>
 </ul>
 <br>
 

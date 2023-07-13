@@ -1,6 +1,9 @@
 # iOS related
 .DS_Store
 
+# Repository-specific
+*.html
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
