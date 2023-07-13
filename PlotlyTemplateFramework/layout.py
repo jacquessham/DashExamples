@@ -3,7 +3,7 @@ def generate_layout(title=None, xaxis=None, yaxis=None, legend=None,
     # Handle title
     if type(title) == str:
         title = {'text': title, 'x': 0.5}
-    elif type(title) == dict:
+    elif type(title) == dict or title is None:
         pass
     else:
         title = {'text': '**Title Type Error!!!', 'x': 0.5}
@@ -11,7 +11,7 @@ def generate_layout(title=None, xaxis=None, yaxis=None, legend=None,
     # Handle xaxis
     if type(xaxis) == str:
         xaxis = {'title': xaxis}
-    elif type(xaxis) == dict:
+    elif type(xaxis) == dict or xaxis is None:
         pass
     else:
         xaxis = {'title': '**X-axis Type Error!!!'}
@@ -21,6 +21,8 @@ def generate_layout(title=None, xaxis=None, yaxis=None, legend=None,
         yaxis = {'title': yaxis}
     elif type(yaxis) == dict:
         pass
+    elif yaxis is None:
+        yaxis = {'gridcolor': 'lightgray'}
     else:
         yaxis = {'title': '**Y-axis Type Error!!!', 'gridcolor': 'lightgray'}
 
