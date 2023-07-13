@@ -3,6 +3,8 @@ The goal of this subsection is to provide a framework to easily plot a visualiza
 
 ## How to use it?
 You may pass all the arguements and metadata to <i>generate_plotly_viz()</i> in <i>generate_plotly.py</i> and return to your Plotly or Dash rendering object in your scripts. Alternatively, you may fill out the arguement and metadata in <i>arguements.json</i> and execute <i>call_plotly.py</i> to declare the rendering object in this driver script.
+<br><br>
+<b>The scripts always expect the data frame in Pandas DataFrame!!!</b>
 
 ## Scripts
 ### call_plotly.py
@@ -14,10 +16,13 @@ The arguements and metadata to declare the Plotly rending object in <i>call_plot
 ```
 {
 	"df_directory":"Data/salary.csv", 
-	"x":"name", 
-	"y":"salary", 
 	"viz_type":"Bar", 
-	"viz_name":"Salary by Name"
+	"viz_name":"Salary by Name",
+	"metadata":{
+		"x":"name", 
+		"y":"salary", 
+		"viz_subtype":""
+	},
 }
 ```
 

@@ -1,7 +1,10 @@
 {
-	"df_directory":"", 
-	"x":"", 
-	"y":"", 
-	"viz_type":"", 
-	"viz_name":""
+	"df_directory":"",
+	"viz_type":"",
+	"viz_name":"",
+	"metadata":{
+		"x":"", 
+		"y":"", 
+		"viz_subtype":""
+	}
 }
