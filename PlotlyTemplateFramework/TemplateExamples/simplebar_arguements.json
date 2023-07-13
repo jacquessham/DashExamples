@@ -1,0 +1,10 @@
+{
+	"df_directory":"salary.csv",
+	"viz_type":"bar",
+	"viz_name":"Salary by Name",
+	"metadata":{
+		"x":"name", 
+		"y":"salary", 
+		"viz_subtype":"simple"
+	}
+}

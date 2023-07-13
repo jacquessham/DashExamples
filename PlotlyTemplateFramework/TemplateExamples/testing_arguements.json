@@ -1,0 +1,9 @@
+{
+	"df_directory":"salary.csv",
+	"viz_type":"boxplot",
+	"viz_name":"Salary by School",
+	"metadata":{
+		"x":"school", 
+		"y":"salary"
+	}
+}
