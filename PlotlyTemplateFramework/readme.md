@@ -41,6 +41,8 @@ Currently, it supports:
 	<li>Bar Chart 
 		<ul>
 			<li>Simple Bar Chart</li>
+			<li>Group Bar Chart</li>
+			<li>Stack Bar Chart</li>
 		</ul>
 	</li>
 	<li>Box Plot</li>
@@ -50,12 +52,10 @@ Currently, it supports:
 For each visualization type, it would have its <i>generate_(viz_type).py</i> to utilize the functions to generate the data object.
 
 #### generate_bar.py
-The module to generate data object for Bar Chart.
-<br><br>
-<b>Currently only support simple 2-D bar chart.</b>
+The module to generate data object for Bar Chart. You may create a simple, group, or stack bar chart.
 
 #### generate_boxplot.py
-The module to generate data object for Box Plot
+The module to generate data object for Box Plot.
 
 
 ### layout.py
