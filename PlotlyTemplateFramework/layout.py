@@ -1,8 +1,8 @@
 from generate_bar import barmode_add2_layout
 
 
-def generate_layout(viz_type, metadata, title=None, xaxis=None, yaxis=None,
-                    legend=None, plot_bgcolor='rgba(0,0,0,0)'):
+def generate_layout(viz_type, metadata, title=None,
+                    plot_bgcolor='rgba(0,0,0,0)'):
 
     #### Basic Layout Metadata ####
     # Handle title
@@ -14,26 +14,29 @@ def generate_layout(viz_type, metadata, title=None, xaxis=None, yaxis=None,
         title = {'text': '**Title Type Error!!!', 'x': 0.5}
 
     # Handle xaxis
-    if type(xaxis) == str:
-        xaxis = {'title': xaxis}
-    elif type(xaxis) == dict or xaxis is None:
-        pass
+    if 'xaxis' in metadata:
+        xaxis = metadata['xaxis']
     else:
-        xaxis = {'title': '**X-axis Type Error!!!'}
+        xaxis = None
 
-    # Hand yaxis
-    if type(yaxis) == str:
-        yaxis = {'title': yaxis}
-    elif type(yaxis) == dict:
-        pass
-    elif yaxis is None:
-        yaxis = {'gridcolor': 'lightgray'}
+    # Hand yaxis, forcefully add gridcolour to lightgray if not stated
+    if 'yaxis' in metadata:
+        yaxis = metadata['yaxis']
+
+        # Check if gridcolor is declared in arguement.json
+        # but allow pre-declared colour other than lightgry
+        if 'gridcolor' not in yaxis:
+            yaxis['gridcolor'] = 'lightgray'
     else:
-        yaxis = {'title': '**Y-axis Type Error!!!', 'gridcolor': 'lightgray'}
+        yaxis = {'gridcolor': 'lightgray'}
+
 
     # Only accepting a dictionary or None for legend
-    if legend is not None and type(legend) != dict:
+    if 'legend' in metadata:
+        legend = metadata['legend']
+    else:
         legend = None
+
 
     # Put all metadata together
     layout = {
