@@ -6,6 +6,9 @@ You may pass all the arguements and metadata to <i>generate_plotly_viz()</i> in 
 <br><br>
 <b>The scripts always expect the data frame in Pandas DataFrame!!!</b>
 
+### Integrating with Other Projects
+You may copy all the <b>.py</b> scripts as a package, minus <i>call_plotly.py</i>, to your project or repository. Similarily, you may may pass all the arguements and metadata to <i>generate_plotly_viz()</i> in <i>generate_plotly.py</i> and return to your Plotly or Dash rendering object in stated in your driver script in your project. <b>The framework is purely for personal use, the functionality is very limited. There is no plan to establish the framework as open-source package.</b>
+
 ## Scripts
 ### call_plotly.py
 A driver script to call <i>generate_plotly.py</i> to generate a Plotly visualization. If you are exporting the <i>figure</i> to Dash, you may ignore this script. In order to work, you must execute <i>arguements.json</i> before executing.

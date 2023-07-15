@@ -2,16 +2,17 @@ import plotly
 import plotly.graph_objs as go
 
 
-# Function to prepare data list in data.py for simple bar chart
-def generate_simplebar(x, y, text=None, bar_colour='light blue',
+""" Function to prepare data list in data.py for simple bar chart """
+def generate_simplebar(x, y, text=None, bar_colour=None, width=None,
                        textposition='auto', textfont={'color': 'white'}):
-
-    return go.Bar(x=x, y=y, text=text, textposition=textposition,
+    return go.Bar(x=x, y=y, width=width,
+                  text=text, textposition=textposition,
                   marker_color=bar_colour, textfont=textfont)
 
-# Function to prepare data list in data.py for group or stack bar chart
+
+""" Function to prepare data list in data.py for group or stack bar chart """
 def generate_complexbar(df, x, y, cate_col, text=None, bar_colour=None,
-                        textposition='auto', textfont={'color': 'white'}):
+                        width=None, textposition='auto', textfont={'color': 'white'}):
     data = []
     if bar_colour is None:
         for cate in df[cate_col].unique():
@@ -20,6 +21,7 @@ def generate_complexbar(df, x, y, cate_col, text=None, bar_colour=None,
                 go.Bar(
                     name=cate,
                     x=df_temp[x], y=df_temp[y],
+                    width=width,
                     text=text, textposition=textposition,
                     textfont=textfont
                 )
@@ -38,7 +40,9 @@ def generate_complexbar(df, x, y, cate_col, text=None, bar_colour=None,
             )
     return data
 
-# Function to add metadata in layout.py for group or stack bar chart
+
 def barmode_add2_layout(layout, barmode):
+    """ Function to add metadata in layout.py for group or stack bar chart
+    """
     layout['barmode'] = barmode
     return layout

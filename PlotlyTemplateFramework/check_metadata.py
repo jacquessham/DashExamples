@@ -30,6 +30,12 @@ def check_cate_col(metadata):
         return metadata['category_col']
     return None
 
+# Bar Arg
+def check_width(metadata):
+    if 'width' in metadata:
+        return metadata['width']
+    return None
+
 # Bar, Boxplot Arg
 def check_barcolour(metadata):
     # Allow user to spell English and American English and use of _
