@@ -52,4 +52,19 @@ def generate_layout(viz_type, metadata, title=None,
         barmode = metadata['viz_subtype']
         layout = barmode_add2_layout(layout, barmode)
 
+    #### Candlestick Specific Layout ####
+    if viz_type.lower() == 'candlestick':
+        # If rangeslieder is stated in arguements.json
+        if 'rangeslider' in metadata:
+            if layout['xaxis'] is not None:
+                layout['xaxis']['rangeslider'] = metadata['rangeslider']
+            else:
+                layout['xaxis'] = {'rangeslider': metadata['rangeslider']}
+        # If rangeslieder is not stated in arguements.json
+        else:
+            if layout['xaxis'] is not None:
+                layout['xaxis']['rangeslider'] = {'visible':False}
+            else:
+                layout['xaxis'] = {'rangeslider':{'visible':False}}
+
     return layout

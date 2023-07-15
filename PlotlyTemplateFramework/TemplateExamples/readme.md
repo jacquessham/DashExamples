@@ -14,7 +14,7 @@ This template is for simple bar chart, and here are the required or optional col
 
 ```
 {
-	"df_directory": (Required),
+	"df_directory": (Required) str,
 	"viz_type": (Required) "bar",
 	"viz_name": (Required)  # Title of the visualization,
 	"metadata":{
@@ -35,7 +35,7 @@ This template is for group or stack bar chart, and here are the required or opti
 
 ```
 {
-	"df_directory":".",
+	"df_directory": (Required) str,
 	"viz_type": (Required) "bar",
 	"viz_name": (Required)  # Title of the visualization,
 	"metadata":{
@@ -56,9 +56,9 @@ You may find <i>boxplot_arguements.json</i> for the sample template and here are
 
 ```
 {
-	"df_directory": (Required),
+	"df_directory": (Required) str,
 	"viz_type": (Required)"boxplot|box_plot",
-	"viz_name": (Required),
+	"viz_name": (Required) str,
 	"metadata":{
 		"x|category_col|cate_col": (Required) x-axis/category column name, 
 		"y": (Required) y-axis column name,
@@ -68,3 +68,24 @@ You may find <i>boxplot_arguements.json</i> for the sample template and here are
 	}
 }
 ```
+
+## Candlestick Chart
+You may find <i>candlestick_arguements.json</i> for the sample template and here are the required or optional columns:
+
+```
+{
+	"df_directory":(Required) str,
+	"viz_type": (Required) "candlestick",
+	"viz_name":(Required) str,
+	"metadata":{
+		"x": (Required) str, 
+		"open": (Required) str,
+		"high": (Required) str,
+		"low": (Required) str,
+		"close": (Required) str,
+		"rangeslider": (Optional) "True|False"
+	}
+}
+```
+<br>
+<b>By default, the framework turn off the rangeslider. Set it to True to turn back on.</b>

@@ -12,14 +12,6 @@ def check_textposition(metadata):
         return metadata['text_position']
     return None
 
-# Universal Viz Arg
-def check_textfont(metadata):
-    if 'textfont' in metadata:
-        return metadata['textfont']
-    elif 'text_font' in metadata:
-        return metadata['text_font']
-    return None
-
 # Bar Arg
 def check_cate_col(metadata):
     if 'cate_col' in metadata:
@@ -34,6 +26,14 @@ def check_cate_col(metadata):
 def check_width(metadata):
     if 'width' in metadata:
         return metadata['width']
+    return None
+
+# Bar, Boxplot Arg
+def check_textfont(metadata):
+    if 'textfont' in metadata:
+        return metadata['textfont']
+    elif 'text_font' in metadata:
+        return metadata['text_font']
     return None
 
 # Bar, Boxplot Arg

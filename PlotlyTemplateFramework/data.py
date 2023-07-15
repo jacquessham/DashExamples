@@ -1,6 +1,7 @@
 from check_metadata import *
 from generate_bar import generate_simplebar, generate_complexbar
 from generate_boxplot import generate_boxplot
+from generate_candlestick import generate_candlestick
 
 
 """ Function to distinguish what viz_type and organize the required
@@ -50,6 +51,12 @@ def generate_plotlydata(df, metadata, viz_type):
             category_col = metadata['category_col']
         data = generate_boxplot(df, category_col, metadata['y'],
                                 bar_colour, boxmean, textposition)
+
+    # Candlestick
+    elif viz_type.lower() == 'candlestick':
+        data = generate_candlestick(
+                df[metadata['x']], df[metadata['open']], df[metadata['high']],
+                df[metadata['low']], df[metadata['close']])
 
     else:
         data = None
