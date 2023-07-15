@@ -24,7 +24,7 @@ The arguements and metadata to declare the Plotly rending object in <i>call_plot
 	"metadata":{
 		"x":"name", 
 		"y":"salary", 
-		"viz_subtype":""
+		"viz_subtype":"simple"
 	},
 }
 ```
@@ -63,3 +63,38 @@ The module to generate data object for Box Plot.
 
 ### layout.py
 The script to construct the layout object for <i>figure</i> object with the given metadata. If no metadata is given, the layout object is generated with the default setting (The layout setting suggested by the author).
+<br><br>
+You may add a column(s) of:
+<ul>
+	<li>xaxis</li>
+	<li>yaxis</li>
+	<li>legend</li>
+</ul>
+
+<br>
+in <b>metadata</b> to customize the layout setting. And example is:
+
+```
+{
+	"df_directory":"Data/salary.csv", 
+	"viz_type":"Bar", 
+	"viz_name":"Salary by Name",
+	"metadata":{
+		"x":"name", 
+		"y":"salary", 
+		"viz_subtype":"simple",
+		"xaxis":{
+			"tickmode":"linear",
+			"tickangle":-45
+		},
+		"yaxis":{
+			"tickmode":"linear",
+			"tickangle":-45
+		}
+	},
+}
+```
+<br>
+You may not include those setting in the template, Plotly would use the default setting.
+<br><br>
+For all details of the layout setting, verify the columns details in the <a href=https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample>Plotly Example</a> folder for more details. 
