@@ -19,22 +19,21 @@ This chapter requires the following packages for the scripts used:
 This chapter may obtain Apple stock price via API call using <i>yfinance</i>. In this
 
 ## Syntax
-### Data (Under Construction)
-Data is a list of <i>go.Box()</i>, each <i>go.Box()</i> represents an attribute. If the data list has only 1 <i>go.Box()</i>, there is only 1 attribute (Only 1 box bar presents).
+### Data
+Data is a list of <i>go.Candlestick()</i>. Although you are expected to only have one <i>go.Candlestick()</i> in the list, you should put <i>go.Candlestick()</i> in a list for Plotly.
 <br><br>
-go.Bar() has the following parameters:
+go.Candlestick() has the following parameters:
 <ul>
 	<li>x: Date</li>
 	<li>open: Opening price of the security/derivative</li>
 	<li>high: Highest price of the security/derivative</li>
 	<li>low: Lowest price of the security/derivative</li>
 	<li>close: Closing price of the security/derivative</li>
-	<li>textfont (Dictionary): Text label setting</li>
 </ul>
 <br>
 
 
-### Layout (Under Construction)
+### Layout
 Genetic Layout parameters suggested to use:
 <ul>
 	<li>title (Dictionary): Chart title and fonts 
@@ -86,13 +85,17 @@ Candlestick Chart Exclusive parameters:
 
 ```
 # Prepare data
-data = []
-for school in df['school'].unique():
-	df_temp = df[df['school']==school]
-	data.append(go.Box(y=df_temp['salary'], name=school, boxmean=True))
+data.append(go.Candlestick(x=df['Date'], open=df['Open'],
+	                       high=df['High'], low=df['Low'],
+	                       close=df['Close']))
 
-# Layout
-layout = dict(title={'text':'Alumni Salary across Schools', 'x':0.5},
-              barmode='group', xaxis=dict(tickmode='linear'))
+layout = {'title':{'text':'Year-to-Date Apple Stock Price','x':0.5},
+          'xaxis':{'title':'Date','rangeslider':{'visible':False}},
+		  'yaxis':{'title':'Price ($)'},
+          'hovermode':False}
 ```
 
+<b>By default, Plotly set rangeslider to be visible. You must turn off manually.</b>
+
+## Reference
+Plotly <a href=https://plotly.com/python/candlestick-charts/>Candlestick Chart Documentation</a>
