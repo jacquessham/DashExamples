@@ -48,6 +48,9 @@ This repositories contains examples from the official Dash site and myself. Ther
 [Part 3 - Interactive Visualization](/Part3)<br>
 [Dashboard Example - Gaming Console Market Share in 2018](/DashboardExample)
 
+## Dockerizing Dash
+This section contains the quick-start note for dockerizing Plotly and Dash for your solution. You may find the direction and tips to create Docker Image with Plotly and Dash in the [Dockerize Dash](/DockerizeDash) folder.
+
 ## Template Framework for Plotly
 You may find the template framework for Plotly when you want to quickly plot something with Plotly. You may find the scripts in the [Template Framework](/PlotlyTemplateFramework) folder.
 
