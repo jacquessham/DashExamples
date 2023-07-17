@@ -1,0 +1,11 @@
+{
+	"df_directory":"../PlotlyExample/Data/testing_expense_everybody.csv",
+	"viz_type":"bar",
+	"viz_name":"Expense by Person",
+	"metadata":{
+		"x":"name", 
+		"y":"amount",
+		"cate_col":"expense_category",
+		"viz_subtype":"stack"
+	}
+}

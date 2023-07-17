@@ -51,11 +51,15 @@ go.Bar() has the following parameters:
 	<li>width: Width of the bar in pixel</li>
 	<li>hoverinfo: What information to be displayed when user hover over the bar, all the options are:
 		<ul>
+			<li>all (Default)</li>
+			<li>none/skip (Both keywords in string means no hovering)</li>
 			<li>percent</li>
 			<li>label+percent</li>
 			<li>label</li>
 			<li>name</li>
+			<li>text</li>
 		</ul></li>
+	<li>hovertemplate: The information to be displayed when user hover over the bar, defined in HTML format</li>
 </ul>
 <br>
 

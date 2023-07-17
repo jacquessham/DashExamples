@@ -1,5 +1,10 @@
-def generate_layout(title=None, xaxis=None, yaxis=None, legend=None,
+from generate_bar import barmode_add2_layout
+
+
+def generate_layout(viz_type, metadata, title=None,
                     plot_bgcolor='rgba(0,0,0,0)'):
+
+    #### Basic Layout Metadata ####
     # Handle title
     if type(title) == str:
         title = {'text': title, 'x': 0.5}
@@ -9,28 +14,29 @@ def generate_layout(title=None, xaxis=None, yaxis=None, legend=None,
         title = {'text': '**Title Type Error!!!', 'x': 0.5}
 
     # Handle xaxis
-    if type(xaxis) == str:
-        xaxis = {'title': xaxis}
-    elif type(xaxis) == dict or xaxis is None:
-        pass
+    if 'xaxis' in metadata:
+        xaxis = metadata['xaxis']
     else:
-        xaxis = {'title': '**X-axis Type Error!!!'}
+        xaxis = None
 
-    # Hand yaxis
-    if type(yaxis) == str:
-        yaxis = {'title': yaxis}
-    elif type(yaxis) == dict:
-        pass
-    elif yaxis is None:
+    # Hand yaxis, forcefully add gridcolour to lightgray if not stated
+    if 'yaxis' in metadata:
+        yaxis = metadata['yaxis']
+
+        # Check if gridcolor is declared in arguement.json
+        # but allow pre-declared colour other than lightgry
+        if 'gridcolor' not in yaxis:
+            yaxis['gridcolor'] = 'lightgray'
+    else:
         yaxis = {'gridcolor': 'lightgray'}
-    else:
-        yaxis = {'title': '**Y-axis Type Error!!!', 'gridcolor': 'lightgray'}
 
-    # Handle Legend
-    if type(legend) == dict:
-        pass
+
+    # Only accepting a dictionary or None for legend
+    if 'legend' in metadata:
+        legend = metadata['legend']
     else:
-        legend = {'x': 0.7, 'y': 1, 'orientation': 'h'}
+        legend = None
+
 
     # Put all metadata together
     layout = {
@@ -40,5 +46,25 @@ def generate_layout(title=None, xaxis=None, yaxis=None, legend=None,
         'legend': legend,
         'plot_bgcolor': plot_bgcolor
     }
+
+    #### Bar Chart Specific Layout ####
+    if viz_type.lower() == 'bar':
+        barmode = metadata['viz_subtype']
+        layout = barmode_add2_layout(layout, barmode)
+
+    #### Candlestick Specific Layout ####
+    if viz_type.lower() == 'candlestick':
+        # If rangeslieder is stated in arguements.json
+        if 'rangeslider' in metadata:
+            if layout['xaxis'] is not None:
+                layout['xaxis']['rangeslider'] = metadata['rangeslider']
+            else:
+                layout['xaxis'] = {'rangeslider': metadata['rangeslider']}
+        # If rangeslieder is not stated in arguements.json
+        else:
+            if layout['xaxis'] is not None:
+                layout['xaxis']['rangeslider'] = {'visible':False}
+            else:
+                layout['xaxis'] = {'rangeslider':{'visible':False}}
 
     return layout

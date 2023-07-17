@@ -6,6 +6,9 @@ You may pass all the arguements and metadata to <i>generate_plotly_viz()</i> in 
 <br><br>
 <b>The scripts always expect the data frame in Pandas DataFrame!!!</b>
 
+### Integrating with Other Projects
+You may copy all the <b>.py</b> scripts as a package, minus <i>call_plotly.py</i>, to your project or repository. Similarily, you may may pass all the arguements and metadata to <i>generate_plotly_viz()</i> in <i>generate_plotly.py</i> and return to your Plotly or Dash rendering object in stated in your driver script in your project. <b>The framework is purely for personal use, the functionality is very limited. There is no plan to establish the framework as open-source package.</b>
+
 ## Scripts
 ### call_plotly.py
 A driver script to call <i>generate_plotly.py</i> to generate a Plotly visualization. If you are exporting the <i>figure</i> to Dash, you may ignore this script. In order to work, you must execute <i>arguements.json</i> before executing.
@@ -21,7 +24,7 @@ The arguements and metadata to declare the Plotly rending object in <i>call_plot
 	"metadata":{
 		"x":"name", 
 		"y":"salary", 
-		"viz_subtype":""
+		"viz_subtype":"simple"
 	},
 }
 ```
@@ -41,6 +44,8 @@ Currently, it supports:
 	<li>Bar Chart 
 		<ul>
 			<li>Simple Bar Chart</li>
+			<li>Group Bar Chart</li>
+			<li>Stack Bar Chart</li>
 		</ul>
 	</li>
 	<li>Box Plot</li>
@@ -48,15 +53,54 @@ Currently, it supports:
 </ul>
 <br><br>
 For each visualization type, it would have its <i>generate_(viz_type).py</i> to utilize the functions to generate the data object.
+<br><br>
+<b>Here are the list of the framework do differently with Plotly:</b>
+<ul>
+	<li>Bar Chart: hoverinfo is set to <b>none</b>, you have stated <i>all</i> or other value for hovering</li>
+	<li>Candlestick Chart: the framework turn off the rangeslider.</li>
+</ul>
 
 #### generate_bar.py
-The module to generate data object for Bar Chart.
-<br><br>
-<b>Currently only support simple 2-D bar chart.</b>
+The module to generate data object for Bar Chart. You may create a simple, group, or stack bar chart.
 
 #### generate_boxplot.py
-The module to generate data object for Box Plot
+The module to generate data object for Box Plot.
 
 
 ### layout.py
 The script to construct the layout object for <i>figure</i> object with the given metadata. If no metadata is given, the layout object is generated with the default setting (The layout setting suggested by the author).
+<br><br>
+You may add a column(s) of:
+<ul>
+	<li>xaxis</li>
+	<li>yaxis</li>
+	<li>legend</li>
+</ul>
+
+<br>
+in <b>metadata</b> to customize the layout setting. And example is:
+
+```
+{
+	"df_directory":"Data/salary.csv", 
+	"viz_type":"Bar", 
+	"viz_name":"Salary by Name",
+	"metadata":{
+		"x":"name", 
+		"y":"salary", 
+		"viz_subtype":"simple",
+		"xaxis":{
+			"tickmode":"linear",
+			"tickangle":-45
+		},
+		"yaxis":{
+			"tickmode":"linear",
+			"tickangle":-45
+		}
+	},
+}
+```
+<br>
+You may not include those setting in the template, Plotly would use the default setting.
+<br><br>
+For all details of the layout setting, verify the columns details in the <a href=https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample>Plotly Example</a> folder for more details. 
