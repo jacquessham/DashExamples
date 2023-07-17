@@ -9,6 +9,8 @@ Here is the list of template for the subtype of bar chart.
 	<li><i>complexbar_arguements.json</i>: For group or stack bar chart</li>
 </ul>
 
+Note: <b>The framework turn off hovering by default</b>, which is different from Plotly. You need to turn back on by including this column in <i>metadata</i>.
+
 ### simplebar_arguements.json
 This template is for simple bar chart, and here are the required or optional columns:
 
@@ -24,7 +26,8 @@ This template is for simple bar chart, and here are the required or optional col
 		"bar_colour|bar_color": (Optional) str,
 		"width" : (Optional) float: Between 0 and 1,
 		"textposition": (Optional) str: "auto|inside|outside|...or more",
-		"textfont" (Optional) dict:
+		"textfont" (Optional) dict: {},
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
 	}
 }
 
@@ -46,7 +49,8 @@ This template is for group or stack bar chart, and here are the required or opti
 		"bar_colour|bar_color": (Optional) list,
 		"width" : (Optional) float: Between 0 and 1,
 		"textposition": (Optional) str: "auto|inside|outside|...or more",
-		"textfont" (Optional) dict:
+		"textfont" (Optional) dict: {},
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
 	}
 }
 ```
@@ -88,4 +92,8 @@ You may find <i>candlestick_arguements.json</i> for the sample template and here
 }
 ```
 <br>
-<b>By default, the framework turn off the rangeslider. Set it to True to turn back on.</b>
+Note: 
+<ul>
+	<li><b>By default, the framework turn off the rangeslider. Set it to True to turn back on.</b></li>
+	<li>In terms of bar colour, it is always green for increase and red for decrease. The framework does not allow to change this colour pattern since there is no alternative in normal use cases.</li>
+</ul>

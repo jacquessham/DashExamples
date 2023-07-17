@@ -53,6 +53,12 @@ Currently, it supports:
 </ul>
 <br><br>
 For each visualization type, it would have its <i>generate_(viz_type).py</i> to utilize the functions to generate the data object.
+<br><br>
+<b>Here are the list of the framework do differently with Plotly:</b>
+<ul>
+	<li>Bar Chart: hoverinfo is set to <b>none</b>, you have stated <i>all</i> or other value for hovering</li>
+	<li>Candlestick Chart: the framework turn off the rangeslider.</li>
+</ul>
 
 #### generate_bar.py
 The module to generate data object for Bar Chart. You may create a simple, group, or stack bar chart.

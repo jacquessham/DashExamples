@@ -12,6 +12,12 @@ def check_textposition(metadata):
         return metadata['text_position']
     return None
 
+# Universal Viz Arg
+def check_hoverinfo(metadata):
+    if 'hoverinfo' in metadata:
+        return metadata['hoverinfo']
+    return 'none'
+
 # Bar Arg
 def check_cate_col(metadata):
     if 'cate_col' in metadata:

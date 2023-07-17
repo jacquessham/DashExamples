@@ -13,6 +13,7 @@ def generate_plotlydata(df, metadata, viz_type):
     text = check_text(metadata)
     textposition = check_textposition(metadata)
     textfont = check_textfont(metadata)
+    hoverinfo = check_hoverinfo(metadata)
 
     # Call the function for respective viz_type
     # Bar Chart
@@ -25,16 +26,16 @@ def generate_plotlydata(df, metadata, viz_type):
         if metadata['viz_subtype'].lower() == 'simple':
             data = generate_simplebar(
                 df[metadata['x']], df[metadata['y']], text, bar_colour, width,
-                textposition, textfont)
+                textposition, textfont, hoverinfo)
 
         # Group or Stack Bar Chart
         # Mode whether Group or Stack Bar is set in layout.py
-        if metadata['viz_subtype'].lower() == 'group' \
+        elif metadata['viz_subtype'].lower() == 'group' \
                 or metadata['viz_subtype'].lower() == 'stack':
             cate_col = check_cate_col(metadata)
             data = generate_complexbar(df, metadata['x'], metadata['y'],
                                        cate_col, text, bar_colour, width,
-                                       textposition, textfont)
+                                       textposition, textfont, hoverinfo)
 
     # Boxplot
     elif viz_type.lower() == 'boxplot' or viz_type.lower() == 'box_plot':
