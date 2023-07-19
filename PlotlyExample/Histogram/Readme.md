@@ -164,3 +164,6 @@ data.append(go.Histogram(x=df['salary'], cumulative_enabled=True))
 # Layout
 layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5}}
 ```
+
+## Reference
+Plotly Documentation <a href="https://plotly.com/python/histograms/">Histograms</a>

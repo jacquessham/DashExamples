@@ -6,7 +6,7 @@ from plotly.offline import *
 from generate_plotly import *
 
 
-with open('arguements.json') as f:
+with open('testing_arguements.json') as f:
     args = json.load(f)
 df = pd.read_csv(args['df_directory'])
 fig = generate_plotly_viz(

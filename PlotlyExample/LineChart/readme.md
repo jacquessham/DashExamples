@@ -112,3 +112,6 @@ Line Chart Exclusive parameters:
 
 ## Examples
 Coming Soon...
+
+## Reference
+Plotly Documentation <a href="https://plotly.com/python/line-charts/">Line Chart</a>

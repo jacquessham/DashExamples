@@ -91,3 +91,6 @@ layout = {'title':{'text':'Department Store Traffic',
 	      'yaxis': {'tickmode':'linear'}}
 
 ```
+
+## Reference
+Plotly Documentation <a href="https://plotly.com/python/heatmaps/">Heatmaps</a>

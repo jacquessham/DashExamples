@@ -112,3 +112,6 @@ Scatter Plot Exclusive parameters:
 
 ## Examples
 Coming Soon...
+
+## Reference
+Plotly Documentation <a href="https://plotly.com/python/line-and-scatter/">Scatter Plot</a>

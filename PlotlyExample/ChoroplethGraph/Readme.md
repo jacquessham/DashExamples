@@ -86,3 +86,5 @@ fig = ff.create_choropleth(
 ```
 
 
+## Reference
+Plotly Documentation <a href="https://plotly.com/python/mapbox-county-choropleth/">Choropleth Graph</a>
