@@ -4,7 +4,9 @@ Line chart is a visualization that uses lines to connect a series of data points
 ## Files
 The following scripts are used in this chapter:
 <ul>
-	<li>Coming Soon...</li>
+	<li>SimpleLinechart.py</li>
+	<li>SimpleLinechart_points.py</li>
+	<li>Mutlilines_Linechart.py</li>
 </ul>
 
 ## Pacakges Needed
@@ -17,8 +19,7 @@ This chapter requires the following packages for the scripts used:
 ## Data Used
 This chapter may use the following data from the [Data folder](../Data):
 <ul>
-	<li>Coming Soon</li>
-	<li><i></i></li>
+	<li><i>cust_num.csv</i></li>
 </ul>
 
 ## Syntax

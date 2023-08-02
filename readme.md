@@ -27,9 +27,9 @@ Although the dashboard is viewed in a web broswer, it is a high level tool that 
 
 ## Plotly Tutorial
 Dash relies on Plotly plots, it is a good idea to understand how Plotly works first. Here are the tutorial and examples for plotting in Plotly:<br>
-[Fundamentals (Coming Soon...)](/)<br>
+[Fundamentals](/PlotlyExample)<br>
 [Bar Charts](/PlotlyExample/BarChart)<br>
-[Line Charts (Coming Soon...)](/PlotlyExample/LineChart)<br>
+[Line Charts](/PlotlyExample/LineChart)<br>
 [Scatter Plot/Bubble Chart](/PlotlyExample/ScatterPlot)<br>
 [Box Plots](/PlotlyExample/BoxPlot)<br>
 [Pie/Donut Charts](/PlotlyExample/PieChart)<br>
