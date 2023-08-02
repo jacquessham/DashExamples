@@ -97,3 +97,107 @@ Note:
 	<li><b>By default, the framework turn off the rangeslider. Set it to True to turn back on.</b></li>
 	<li>In terms of bar colour, it is always green for increase and red for decrease. The framework does not allow to change this colour pattern since there is no alternative in normal use cases.</li>
 </ul>
+
+## Scatter Plot
+Here is the list of template for the subtype of scatterplot.
+
+<ul>
+	<li><i>simplescatter_arguements.json</i>: For simple scatter plot</li>
+	<li><i></i>: Coming soon...</li>
+</ul>
+
+Note: <b>The framework turn off hovering by default</b>, which is different from Plotly. You need to turn back on by including this column in <i>metadata</i>.
+
+### simplescatter_arguements.json
+This template is for simple scatter plot, and here are the required or optional columns:
+
+
+```
+{
+	"df_directory": (Required) str,
+	"viz_type": (Required) "scatter|scatterplot|scatter_plot",
+	"viz_name": (Required)  # Title of the visualization,
+	"metadata":{
+		"x": (Required) str: x-axis column name, 
+		"y": (Required) str: y-axis column name, 
+		"viz_subtype": (Required)"simple",
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
+	}
+}
+```
+
+### multidimscatter_arguements.json
+Coming soon...
+
+### bubblechart_arguements.json
+Coming soon...
+
+## Line Chart
+Here is the list of template for the subtype of line chart.
+
+<ul>
+	<li><i>simplescatter_arguements.json</i>: For simple scatter plot</li>
+	<li><i></i>: Coming soon...</li>
+</ul>
+
+Note: <b>The framework turn off hovering by default</b>, which is different from Plotly. You need to turn back on by including this column in <i>metadata</i>.
+
+### simplesline_arguements.json
+This template is for simple line chart, and here are the required or optional columns:
+
+```
+{
+	"df_directory": (Required) str,
+	"viz_type": (Required) "line",
+	"viz_name": (Required)  # Title of the visualization,
+	"metadata":{
+		"x": (Required) str: x-axis column name, 
+		"y": (Required) str: y-axis column name, 
+		"viz_subtype": (Required)"simple",
+		"datapoints": (Optional): "t|true|True|f|false|False(Default)",
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
+	}
+}
+
+```
+
+Note: <b>The framework does not plot data point by default</b>
+
+### Multilines_arguements.json
+This template is for multiple lines chart, while lines are partitioned by categorical value in a data frame. Here are the required or optional columns:
+
+```
+{
+	"df_directory": (Required) str,
+	"viz_type": (Required) "line",
+	"viz_name": (Required)  # Title of the visualization,
+	"metadata":{
+		"x": (Required) str: x-axis column name, 
+		"y": (Required) str: y-axis column name, 
+		"viz_subtype": (Required) "mutlilines|mutliple_lines|mutli_lines",
+		"datapoints": (Optional): "t|true|True|f|false|False(Default)",
+		"cate_col": (Required) categorical column name,
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|...",
+		"line_colour": (Optional) {
+			"category 1": RGB values/Colour Keyword,
+			"category 1": RGB values/Colour Keyword,
+			...
+			"category len(Unique values available in cate_col)": RGB values/Colour Keyword
+		}
+	}
+}
+```
+
+Note: 
+<ul>
+	<li>The framework automatically use the categorical value as the name of each line.</li>
+	<li>If <i>line_colour</i> is presented, the number of colour mapping must match the number of unique values available in <i>cate_col</i></li>
+</ul>
+
+
+### lr_arguements.json
+This template is for line chart along with scatter points, ie, linear regression use cases. Here are the required or optional columns:
+
+```
+Coming soon...
+```

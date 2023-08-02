@@ -2,6 +2,8 @@ from check_metadata import *
 from generate_bar import generate_simplebar, generate_complexbar
 from generate_boxplot import generate_boxplot
 from generate_candlestick import generate_candlestick
+from generate_scatterplot import generate_simplescatter
+from generate_line import generate_simpleline, generate_multiplelines
 
 
 """ Function to distinguish what viz_type and organize the required
@@ -14,6 +16,7 @@ def generate_plotlydata(df, metadata, viz_type):
     textposition = check_textposition(metadata)
     textfont = check_textfont(metadata)
     hoverinfo = check_hoverinfo(metadata)
+    name = check_name(metadata)
 
     # Call the function for respective viz_type
     # Bar Chart
@@ -59,7 +62,45 @@ def generate_plotlydata(df, metadata, viz_type):
                 df[metadata['x']], df[metadata['open']], df[metadata['high']],
                 df[metadata['low']], df[metadata['close']])
 
+    # Scatter Plot/Bubble Chart
+    elif viz_type.lower() in ['scatter', 'scatterplot', 'scatter_plot',
+        'bubblechart', 'bubble_chart']:
+        if metadata['viz_subtype'].lower() == 'simple':
+            data = generate_simplescatter(
+                df[metadata['x']], df[metadata['y']], hoverinfo)
+
+    # Line Chart
+    elif viz_type.lower() == 'line':
+        datapoints = check_datapoints(metadata)
+        if metadata['viz_subtype'].lower() == 'simple':
+            data = generate_simpleline(df[metadata['x']], df[metadata['y']], 
+                datapoints, hoverinfo)
+        elif metadata['viz_subtype'].lower() in ['mutlilines','mutliple_lines',
+            'mutli_lines']:
+            curr_x = []
+            curr_y = []
+            curr_name = []
+            curr_colour = []
+            cate_col = check_cate_col(metadata)
+            colour_scheme = check_line_colour(metadata)
+
+            for unique_val in df[cate_col].unique():
+                df_temp = df[df[cate_col]==unique_val]
+                curr_x.append(df_temp[metadata['x']])
+                curr_y.append(df_temp[metadata['y']])
+                curr_name.append(unique_val)
+                if colour_scheme is not None:
+                    curr_colour.append(colour_scheme[unique_val])
+                else:
+                    curr_colour.append(None)
+
+            data = generate_multiplelines(curr_x, curr_y, curr_name, 
+                curr_colour, datapoints, hoverinfo)
+    
     else:
         data = None
+
+
+
 
     return data

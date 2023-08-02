@@ -16,16 +16,12 @@ def check_textposition(metadata):
 def check_hoverinfo(metadata):
     if 'hoverinfo' in metadata:
         return metadata['hoverinfo']
-    return 'none'
+    return 'none' # To turn it off
 
-# Bar Arg
-def check_cate_col(metadata):
-    if 'cate_col' in metadata:
-        return metadata['cate_col']
-    elif 'category_column' in metadata:
-        return metadata['category_column']
-    elif 'category_col' in metadata:
-        return metadata['category_col']
+# Universal Viz Arg
+def check_name(metadata):
+    if 'name' in metadata:
+        return metadata['name']
     return None
 
 # Bar Arg
@@ -55,8 +51,34 @@ def check_barcolour(metadata):
         return metadata['bar_color']
     return None
 
+# Bar, Line Arg
+def check_cate_col(metadata):
+    if 'cate_col' in metadata:
+        return metadata['cate_col']
+    elif 'category_column' in metadata:
+        return metadata['category_column']
+    elif 'category_col' in metadata:
+        return metadata['category_col']
+    return None
+
 # Boxplot Arg
 def check_boxmean(metadata):
     if 'boxmean' in metadata:
         return metadata['boxmean']
+    return None
+
+# Line Chart
+# Return a boolean value
+def check_datapoints(metadata):
+    if 'datapoints' in metadata:
+        return metadata['datapoints'] in ['t', 'true', 'True']
+    elif 'data_points' in metadata:
+        return metadata['data_points'] in ['t', 'true', 'True']
+    return False
+
+def check_line_colour(metadata):
+    if 'line_colour' in metadata:
+        return metadata['line_colour']
+    elif 'line_color' in metadata:
+        return metadata['line_color']
     return None

@@ -1,0 +1,20 @@
+{
+	"df_directory":"../PlotlyExample/Data/cust_num.csv",
+	"viz_type":"line",
+	"viz_name":"Trend",
+	"metadata":{
+		"x":"hour", 
+		"y":"customers_count", 
+		"cate_col":"day",
+		"viz_subtype":"mutlilines",
+		"line_colour":{
+			"Monday":"red",
+			"Tuesday":"blue",
+			"Wednesday":"black",
+			"Thursday":"orange",
+			"Friday":"yellow",
+			"Saturday":"brown",
+			"Sunday":"green"
+		}
+	}
+}
