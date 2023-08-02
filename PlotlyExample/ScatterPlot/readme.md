@@ -158,7 +158,29 @@ layout = {'title':{'text':'Everybody\'s Tipping Distribution', 'x':0.5}}
 Note 1: marker_color accepts both numeric values or RGB values/Colour keywords.
 <b>Note 2: However, you must convert a categorical label to RGB values/Colour keywords</b>
 
-### Example 4 - Advance Marker Configuration (Bubble Chart)
+### Example 4 - Coloured Scatterplot (With a 3rd Numeric Dimension) with Legend
+<img src=catedim_scatterplot_legend.png>
+
+```
+color_scheme = {'Lunch':'red','Dinner':'blue','Coffee':'brown'}
+
+meal_type_color = [color_scheme[meal] for meal in df['meal_type'].tolist()]
+
+# Data
+data = []
+for meal in df['meal_type'].unique():
+	df_temp = df[df['meal_type']==meal]
+	data.append(go.Scatter(x=df_temp['grand_total'], y=df_temp['tips'],
+						marker_color=color_scheme[meal],
+						name=meal,
+						mode='markers'))
+# Layout
+layout = {'title':{'text':'Everybody\'s Tipping Distribution', 'x':0.5}}
+```
+
+Note: <b><i>name</i> does not accept array values, string only!</b> In order to pass show a legend of the category, you have to pass mutliple <i>go.Scatter()</i> in order to group the data points of the same category together.
+
+### Example 5 - Advance Marker Configuration (Bubble Chart)
 
 <img src=bubblechart.png>
 
