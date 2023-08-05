@@ -103,6 +103,7 @@ Here is the list of template for the subtype of scatterplot.
 
 <ul>
 	<li><i>simplescatter_arguements.json</i>: For simple scatter plot</li>
+	<li><i>numcolour_scatter_arguements.json</i>: For scatter plot with a colour dimension showing numeric value</li>
 	<li><i></i>: Coming soon...</li>
 </ul>
 
@@ -120,11 +121,36 @@ This template is for simple scatter plot, and here are the required or optional 
 	"metadata":{
 		"x": (Required) str: x-axis column name, 
 		"y": (Required) str: y-axis column name, 
-		"viz_subtype": (Required)"simple",
+		"viz_subtype" str: (Required)"simple",
 		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
 	}
 }
 ```
+
+### numcolour_scatter_arguements.json
+```
+{
+	"df_directory": (Required) str,
+	"viz_type": (Required) "scatter|scatterplot|scatter_plot",
+	"viz_name": (Required)  # Title of the visualization,
+	"metadata":{
+		"x": (Required) str: x-axis column name, 
+		"y": (Required) str: y-axis column name, 
+		"z": (Required) str: colour dimension column name (Must be numeric value),
+		"showscale" (Optional) str/boolean: true|false|"true"|"false"|"True"|"False",
+		"colour_scale" (Optional) str : Any colour scale available in Plotly,
+		"viz_subtype" (Required) str: "num_color",
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
+	}
+}
+```
+
+Note:
+<ul>
+	<li><b>This arguement template only works for numeric column for colour dimension</b></li>
+	<li><b>The framework turn on colour scale by default</b>, you have to turn off in the metadata</li>
+	<li>If no colour scale provided, colour scale is picked by Plotly backend</li>
+</ul>
 
 ### multidimscatter_arguements.json
 Coming soon...

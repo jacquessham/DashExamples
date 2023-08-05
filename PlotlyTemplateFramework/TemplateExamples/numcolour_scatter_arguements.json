@@ -1,0 +1,13 @@
+{
+	"df_directory":"../PlotlyExample/Data/tips.csv",
+	"viz_type":"scatter",
+	"viz_name":"Tipping Distribution",
+	"metadata":{
+		"x":"grand_total", 
+		"y":"tips", 
+		"z":"wait_mins",
+		"showscale":"false",
+		"colour_scale":"Viridis",
+		"viz_subtype":"num_color"
+	}
+}

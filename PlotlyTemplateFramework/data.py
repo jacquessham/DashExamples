@@ -2,7 +2,7 @@ from check_metadata import *
 from generate_bar import generate_simplebar, generate_complexbar
 from generate_boxplot import generate_boxplot
 from generate_candlestick import generate_candlestick
-from generate_scatterplot import generate_simplescatter
+from generate_scatterplot import generate_simplescatter, generate_numcolour_scatter
 from generate_line import generate_simpleline, generate_multiplelines
 
 
@@ -65,9 +65,16 @@ def generate_plotlydata(df, metadata, viz_type):
     # Scatter Plot/Bubble Chart
     elif viz_type.lower() in ['scatter', 'scatterplot', 'scatter_plot',
         'bubblechart', 'bubble_chart']:
+        colourscale = check_colourscale(metadata)
+        showscale = check_showscale(metadata)
         if metadata['viz_subtype'].lower() == 'simple':
             data = generate_simplescatter(
                 df[metadata['x']], df[metadata['y']], hoverinfo)
+        elif metadata['viz_subtype'].lower() in ['numeric_colour',
+                'numeric_color','num_colour','num_color']:
+            data = generate_numcolour_scatter(df[metadata['x']], 
+                df[metadata['y']], df[metadata['z']], showscale,
+                colourscale, hoverinfo)
 
     # Line Chart
     elif viz_type.lower() == 'line':

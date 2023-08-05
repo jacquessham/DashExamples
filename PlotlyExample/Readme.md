@@ -12,7 +12,7 @@ This tutorial lets you to generate Plotly graphs office.
 <br><br>
 Required package:
 <ul>
-	li>plotly.graph_objs (go) - To specify the chart type</li>
+	<li>plotly.graph_objs (go) - To specify the chart type</li>
 	<li>plotly.offline - Allow you to generate the plot offline</li>
 </ul>
 
@@ -98,7 +98,7 @@ You may find how to create bar charts with Plotly in the <a href="https://github
 ## Line Charts
 You may find how to create line charts with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/LineChart">Line Charts folder</a>.
 
-## Scatter Plots
+## Scatter Plots/Bubble Charts
 You may find how to create scatter plots with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/ScatterPlot"> Scatter Plots folder</a>.
 
 ## Box Plots

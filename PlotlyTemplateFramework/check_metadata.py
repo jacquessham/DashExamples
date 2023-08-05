@@ -82,3 +82,21 @@ def check_line_colour(metadata):
     elif 'line_color' in metadata:
         return metadata['line_color']
     return None
+
+# Scatterplot/Bubble Chart
+def check_colourscale(metadata):
+    if 'colourscale' in metadata:
+        return metadata['colourscale']
+    elif 'colorscale' in metadata:
+        return metadata['colorscale']
+    elif 'colour_scale' in metadata:
+        return metadata['colour_scale']
+    elif 'color_scale' in metadata:
+        return metadata['color_scale']
+    return None
+
+# Return a boolean value
+def check_showscale(metadata):
+    if 'showscale' in metadata:
+        return metadata['showscale'] in ['t','true','True', True]
+    return True # Should show showscale by default
