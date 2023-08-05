@@ -95,6 +95,19 @@ def check_colourscale(metadata):
         return metadata['color_scale']
     return None
 
+def check_add_colourscale(metadata):
+    if 'addition_colourscale' in metadata:
+        return metadata['addition_colourscale']
+    elif 'addition_colorscale' in metadata:
+        return metadata['addition_colorscale']
+    return None
+
+# Return a boolean value
+def check_showlegend(metadata):
+    if 'showlegend' in metadata:
+        return metadata['showlegend'] in ['t','true','True', True]
+    return True # Should show showscale by default
+
 # Return a boolean value
 def check_showscale(metadata):
     if 'showscale' in metadata:

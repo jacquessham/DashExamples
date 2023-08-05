@@ -128,6 +128,8 @@ This template is for simple scatter plot, and here are the required or optional 
 ```
 
 ### numcolour_scatter_arguements.json
+This template is for scatter plot with a colour dimension with numeric/integer type column, and here are the required or optional columns:
+
 ```
 {
 	"df_directory": (Required) str,
@@ -152,8 +154,34 @@ Note:
 	<li>If no colour scale provided, colour scale is picked by Plotly backend</li>
 </ul>
 
-### multidimscatter_arguements.json
-Coming soon...
+### catecolour_scatter_arguement.json
+This template is for scatter plot with a colour dimension with categorical type column (Non-numeric column), and here are the required or optional columns:
+
+```
+{
+	"df_directory": (Required) str,
+	"viz_type": (Required) "scatter|scatterplot|scatter_plot",
+	"viz_name": (Required)  # Title of the visualization,
+	"metadata":{
+		"x": (Required) str: x-axis column name, 
+		"y": (Required) str: y-axis column name, 
+		"z": (Required) str: colour dimension column name (Must be numeric value),
+		"viz_subtype" (Required) str:"cate_color",
+		"showlegend" (Optional) str/boolean: true|false|"true"|"false"|"True"|"False",
+		"addition_colourscale" (Optional, only apply when there are ~140+ labels):{
+			"low" (Required) str:"rgb(0-255, 0-255, 0-255)",
+			"high" (Required) str: "rgb(0-255, 0-255, 0-255)"
+		}
+	}
+}
+```
+
+Note: 
+<ul>
+	<li><b>Currently the framework only pick the default colour scale in Plotly colour scheme!</b> Optional to customize the colour scale will be released in the future release</li>
+	<li>There are 10 colours in the Plotly default colour scale, when are there are more than 10 but less than ~140, <b>the framework would randomly pick the colours in available in <i>css_colours.py</i></b></li>
+	<li><i>addition_colourscale</i> only be applied when there are ~140+ labels in the colour diemnsion column. When the number of labels is less than that, the whole dictionary would be ignored</li>
+</ul>
 
 ### bubblechart_arguements.json
 Coming soon...

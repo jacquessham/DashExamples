@@ -2,7 +2,7 @@ from check_metadata import *
 from generate_bar import generate_simplebar, generate_complexbar
 from generate_boxplot import generate_boxplot
 from generate_candlestick import generate_candlestick
-from generate_scatterplot import generate_simplescatter, generate_numcolour_scatter
+from generate_scatterplot import generate_simplescatter, generate_numcolour_scatter, generate_catecolour_scatter
 from generate_line import generate_simpleline, generate_multiplelines
 
 
@@ -75,6 +75,14 @@ def generate_plotlydata(df, metadata, viz_type):
             data = generate_numcolour_scatter(df[metadata['x']], 
                 df[metadata['y']], df[metadata['z']], showscale,
                 colourscale, hoverinfo)
+        elif metadata['viz_subtype'].lower() in ['category_colour',
+                'categorical_colour','cate_colour', 'category_color',
+                'categorical_color','cate_color']:
+            addition_colorscale = check_add_colourscale(metadata)
+            showlegend = check_showlegend(metadata)
+            data = generate_catecolour_scatter(df[metadata['x']], 
+                df[metadata['y']], df[metadata['z']], showlegend, 
+                addition_colorscale, hoverinfo)
 
     # Line Chart
     elif viz_type.lower() == 'line':
