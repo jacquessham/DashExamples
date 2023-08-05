@@ -26,4 +26,4 @@ layout = {'title':{'text':'Everybody\'s Tipping Distribution', 'x':0.5}}
 
 fig = go.Figure(data=data, layout=layout)
 
-plotly.offline.plot(fig, filename='catedim_scatterplot.html')
+plotly.offline.plot(fig, filename='bubblechart.html')

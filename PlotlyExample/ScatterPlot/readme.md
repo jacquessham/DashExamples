@@ -158,7 +158,7 @@ layout = {'title':{'text':'Everybody\'s Tipping Distribution', 'x':0.5}}
 Note 1: marker_color accepts both numeric values or RGB values/Colour keywords.
 <b>Note 2: However, you must convert a categorical label to RGB values/Colour keywords</b>
 
-### Example 4 - Coloured Scatterplot (With a 3rd Numeric Dimension) with Legend
+### Example 4 - Coloured Scatterplot (With a 3rd Categorical Dimension) with Legend
 <img src=catedim_scatterplot_legend.png>
 
 ```
@@ -180,7 +180,7 @@ layout = {'title':{'text':'Everybody\'s Tipping Distribution', 'x':0.5}}
 
 Note: <b><i>name</i> does not accept array values, string only!</b> In order to pass show a legend of the category, you have to pass mutliple <i>go.Scatter()</i> in order to group the data points of the same category together.
 
-### Example 5 - Advance Marker Configuration (Bubble Chart)
+### Example 5.0 - Advance Marker Configuration (Bubble Chart)
 
 <img src=bubblechart.png>
 
@@ -200,6 +200,34 @@ layout = {'title':{'text':'Everybody\'s Tipping Distribution', 'x':0.5}}
 
 ```
 
+The simplest way to create a bubble chart is to pass a dictionary with arrays for size and/or color to marker. However, it will not generate a legend.
+
+### Example 5.1 - Advance Marker Configuration (Bubble Chart) with Legend
+
+<img src=bubblechart_legend.png>
+
+```
+color_scheme = {'Lunch': 'red', 'Dinner': 'blue', 'Coffee': 'brown'}
+
+# Data
+data = []
+for meal in df['meal_type'].unique():
+    df_temp = df[df['meal_type'] == meal]
+    meal_type_color = [color_scheme[meal]
+                       for meal in df_temp['meal_type'].tolist()]
+    data.append(go.Scatter(x=df_temp['grand_total'], y=df_temp['tips'],
+                           marker={
+        'size': df_temp['wait_mins'],
+        'color': meal_type_color
+    },
+        name=meal,
+        mode='markers'))
+# Layout
+layout = {'title': {'text': 'Everybody\'s Tipping Distribution', 'x': 0.5},
+          'legend': {'itemsizing': 'constant'}}
+```
+
+If you wish to put a legend on the bubble chart, you would need to partition for each categorical label into each <i>go.scatter()</i>. Also, indicate <b>legend itemsizing to be constant</b> to prevent various size of bubble in the legend.
 
 ## Reference
 Plotly Documentation <a href="https://plotly.com/python/line-and-scatter/">Scatter Plot</a>

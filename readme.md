@@ -33,10 +33,11 @@ Dash relies on Plotly plots, it is a good idea to understand how Plotly works fi
 [Scatter Plot/Bubble Chart](/PlotlyExample/ScatterPlot)<br>
 [Box Plots](/PlotlyExample/BoxPlot)<br>
 [Pie/Donut Charts](/PlotlyExample/PieChart)<br>
+[Histogram](/PlotlyExample/Histogram)<br>
 [Treemaps (Coming Soon...)](/PlotlyExample/Treemap)<br>
 [Heatmaps](/PlotlyExample/Heatmap) <br>
 [Candlestick Charts](/PlotlyExample/CandlestickChart)<br>
-[Choropleth Graphs](/PlotlyExample/ChoroplethGraph)
+[Choropleth Graphs](/PlotlyExample/ChoroplethGraph)<br>
 [Sunburst Charts (Coming Soon...)](/PlotlyExample/Sunburst) <br>
 [Parallel Categories Diagram (Coming Soon...)](/PlotlyExample/ParallelCategories)<br>
 [Sankey Diagram (Coming Soon...)](/PlotlyExample/SankeyDiagram)<br>
