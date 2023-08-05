@@ -102,6 +102,17 @@ def check_add_colourscale(metadata):
         return metadata['addition_colorscale']
     return None
 
+def check_colour_scheme(metadata):
+    if 'colour_scheme' in metadata:
+        return metadata['colour_scheme']
+    elif 'color_scheme' in metadata:
+        return metadata['color_scheme']
+    elif 'colour_choices' in metadata:
+        return metadata['colour_choices']
+    elif 'colour_choices' in metadata:
+        return metadata['color_choices']
+    return None
+
 # Return a boolean value
 def check_showlegend(metadata):
     if 'showlegend' in metadata:

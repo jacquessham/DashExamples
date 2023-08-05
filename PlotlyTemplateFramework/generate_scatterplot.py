@@ -18,25 +18,40 @@ def generate_numcolour_scatter(x, y, z, showscale=True, colorscale=None,
 	return go.Scatter(x=x, y=y, mode='markers', hoverinfo=hoverinfo,
 		marker=marker_config)
 
-def generate_catecolour_scatter(x, y, z, showlegend=True, 
+def generate_catecolour_scatter(x, y, z, showlegend=True, colour_choices=None,
 			addition_colorscale=None, hoverinfo='none'):
 	# Figure out the colour scheme mapping first
 	z_unique_val = z.unique().tolist()
 	z_unique_val_n = len(z_unique_val)
 
-	# If distinct number of labels equal or less than 10
-	if z_unique_val_n < 100:
-		colour_scheme = {z_val: colour for z_val, colour in zip(z_unique_val, px.colors.qualitative.Plotly[:z_unique_val_n])}
-	# If distinct number of labels equal more than 10 but not many
-	elif z_unique_val_n <= len(css_colours):
-		colour_scheme = {z_val: colour for z_val, colour in zip(z_unique_val, choices(css_colours, k=z_unique_val_n))}
-	# If distinct number of labels are too much
+	# Verify if colour_scheme is provided by users	
+	if colour_choices is not None:
+		if type(colour_choices) is dict:
+			colour_scheme = colour_choices
+		elif type(colour_choices) is list:
+			colour_scheme = {z_val: colour 
+					for z_val, colour in zip(z_unique_val, colour_choices)}
+	# If users did not provide
 	else:
-		if addition_colorscale is not None:
-			colour_scheme = {z_val: colour for z_val, colour in zip(z_unique_val, plotly.colors.n_colors(addition_colorscale['low'], addition_colorscale['high'], z_unique_val_n, colortype='rgb'))}
+	# If distinct number of labels equal or less than 10
+		if z_unique_val_n <= 10:
+			colour_choices = px.colors.qualitative.Plotly[:z_unique_val_n]
+		# If distinct number of labels equal more than 10 but not many
+		elif z_unique_val_n <= len(css_colours):
+			colour_choices =  choices(css_colours, k=z_unique_val_n)
+		# If distinct number of labels are too much
 		else:
-			colour_scheme = {z_val: colour for z_val, colour in zip(z_unique_val, plotly.colors.n_colors('rgb(0, 0, 255)', 'rgb(255, 0, 0)', z_unique_val_n, colortype='rgb'))}
-
+			if addition_colorscale is not None:
+				colour_choices = plotly.colors.n_colors(
+					addition_colorscale['low'], addition_colorscale['high'], 
+					z_unique_val_n, colortype='rgb'
+					)
+			else:
+				colour_choices =  plotly.colors.n_colors('rgb(0, 0, 255)', 
+					'rgb(255, 0, 0)', z_unique_val_n, colortype='rgb')
+		colour_scheme = {z_val: colour 
+					for z_val, colour in zip(z_unique_val, colour_choices)}
+	
 	# Prepare data list and partition by label
 	data = []
 	for z_val in z_unique_val:

@@ -104,6 +104,7 @@ Here is the list of template for the subtype of scatterplot.
 <ul>
 	<li><i>simplescatter_arguements.json</i>: For simple scatter plot</li>
 	<li><i>numcolour_scatter_arguements.json</i>: For scatter plot with a colour dimension showing numeric value</li>
+	<li><i>catecolour_scatter_arguement.json</i>: For scatter plot with a colour dimension showing categorical value</li>
 	<li><i></i>: Coming soon...</li>
 </ul>
 
@@ -168,6 +169,13 @@ This template is for scatter plot with a colour dimension with categorical type 
 		"z": (Required) str: colour dimension column name (Must be numeric value),
 		"viz_subtype" (Required) str:"cate_color",
 		"showlegend" (Optional) str/boolean: true|false|"true"|"false"|"True"|"False",
+		"colour_scheme|colour_choice" (Optional) dict/list: ({
+			"unique_value_1":"CSS Colour Keyword/rgb(0-255, 0-255, 0-255)",
+			"unique_value_2":"CSS Colour Keyword/rgb(0-255, 0-255, 0-255)",
+			"unique_value_3":"CSS Colour Keyword/rgb(0-255, 0-255, 0-255)"
+		}|["CSS Colour Keyword/rgb(0-255, 0-255, 0-255)",
+			"CSS Colour Keyword/rgb(0-255, 0-255, 0-255)",
+			"CSS Colour Keyword/rgb(0-255, 0-255, 0-255)"]),
 		"addition_colourscale" (Optional, only apply when there are ~140+ labels):{
 			"low" (Required) str:"rgb(0-255, 0-255, 0-255)",
 			"high" (Required) str: "rgb(0-255, 0-255, 0-255)"
@@ -178,9 +186,10 @@ This template is for scatter plot with a colour dimension with categorical type 
 
 Note: 
 <ul>
-	<li><b>Currently the framework only pick the default colour scale in Plotly colour scheme!</b> Optional to customize the colour scale will be released in the future release</li>
-	<li>There are 10 colours in the Plotly default colour scale, when are there are more than 10 but less than ~140, <b>the framework would randomly pick the colours in available in <i>css_colours.py</i></b></li>
-	<li><i>addition_colourscale</i> only be applied when there are ~140+ labels in the colour diemnsion column. When the number of labels is less than that, the whole dictionary would be ignored</li>
+	<li>The framework would pick the default colour scale in Plotly colour scheme if <i>colour_scheme</i> is not provided</li>
+	<li><b>If colour_scheme is provided, you must provide the exact number of unique values found in the colour column dimension for mapping!</b></li>
+	<li>There are 10 colours in the Plotly default colour scale, when <i>colour_scheme</i> is not provided and there are more than 10 but less than 125 in the colour column, <b>the framework would randomly pick the colours in available in <i>css_colours.py</i></b></li>
+	<li>When <i>colour_scheme</i> is not provided and <i>addition_colourscale</i> only be applied when there are 125 labels in the colour diemnsion column. When the number of labels is less than that, the whole dictionary would be ignored</li>
 </ul>
 
 ### bubblechart_arguements.json

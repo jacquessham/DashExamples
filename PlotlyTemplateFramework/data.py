@@ -67,6 +67,7 @@ def generate_plotlydata(df, metadata, viz_type):
         'bubblechart', 'bubble_chart']:
         colourscale = check_colourscale(metadata)
         showscale = check_showscale(metadata)
+        colour_scheme = check_colour_scheme(metadata)
         if metadata['viz_subtype'].lower() == 'simple':
             data = generate_simplescatter(
                 df[metadata['x']], df[metadata['y']], hoverinfo)
@@ -82,7 +83,7 @@ def generate_plotlydata(df, metadata, viz_type):
             showlegend = check_showlegend(metadata)
             data = generate_catecolour_scatter(df[metadata['x']], 
                 df[metadata['y']], df[metadata['z']], showlegend, 
-                addition_colorscale, hoverinfo)
+                colour_scheme, addition_colorscale, hoverinfo)
 
     # Line Chart
     elif viz_type.lower() == 'line':
