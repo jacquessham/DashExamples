@@ -6,24 +6,8 @@ import plotly.express as px
 from css_colours import css_colours
 
 
-def generate_simplescatter(x, y, hoverinfo='none'):
-	return go.Scatter(x=x, y=y, hoverinfo=hoverinfo,
-		mode='markers')
-
-def generate_numcolour_scatter(x, y, z, showscale=True, colorscale=None,
-			hoverinfo='none'):
-	marker_config = {'color':z, 'showscale':showscale}
-	if colorscale is not None:
-		marker_config['colorscale'] = colorscale 
-	return go.Scatter(x=x, y=y, mode='markers', hoverinfo=hoverinfo,
-		marker=marker_config)
-
-def generate_catecolour_scatter(x, y, z, showlegend=True, colour_choices=None,
-			addition_colorscale=None, hoverinfo='none'):
-	# Figure out the colour scheme mapping first
-	z_unique_val = z.unique().tolist()
-	z_unique_val_n = len(z_unique_val)
-
+# Helper function for mapping colour scheme
+def prepare_colour_scheme(z_unique_val, z_unique_val_n, colour_choices):
 	# Verify if colour_scheme is provided by users	
 	if colour_choices is not None:
 		if type(colour_choices) is dict:
@@ -51,6 +35,28 @@ def generate_catecolour_scatter(x, y, z, showlegend=True, colour_choices=None,
 					'rgb(255, 0, 0)', z_unique_val_n, colortype='rgb')
 		colour_scheme = {z_val: colour 
 					for z_val, colour in zip(z_unique_val, colour_choices)}
+	return colour_scheme
+
+def generate_simplescatter(x, y, hoverinfo='none'):
+	return go.Scatter(x=x, y=y, hoverinfo=hoverinfo,
+		mode='markers')
+
+def generate_numcolour_scatter(x, y, z, showscale=True, colorscale=None,
+			hoverinfo='none'):
+	marker_config = {'color':z, 'showscale':showscale}
+	if colorscale is not None:
+		marker_config['colorscale'] = colorscale 
+	return go.Scatter(x=x, y=y, mode='markers', hoverinfo=hoverinfo,
+		marker=marker_config)
+
+def generate_catecolour_scatter(x, y, z, showlegend=True, colour_choices=None,
+			addition_colorscale=None, hoverinfo='none'):
+	# Figure out the colour scheme mapping first
+	z_unique_val = z.unique().tolist()
+	z_unique_val_n = len(z_unique_val)
+
+	colour_scheme = prepare_colour_scheme(z_unique_val, z_unique_val_n, 
+		colour_choices)
 	
 	# Prepare data list and partition by label
 	data = []
@@ -63,3 +69,31 @@ def generate_catecolour_scatter(x, y, z, showlegend=True, colour_choices=None,
 			showlegend=showlegend, hoverinfo=hoverinfo))
 
 	return data
+
+def generate_bubble_chart(x, y, z_dict, showlegend=True, colour_choices=None,
+			addition_colorscale=None, hoverinfo='none'):
+	data = []
+	# When colour is needed, convert it to label
+	if 'colour' in z_dict:
+		# Figure out the colour scheme mapping first
+		colour_unique_val = z_dict['colour'].unique().tolist()
+		colour_unique_val_n = len(colour_unique_val)
+		colour_scheme = prepare_colour_scheme(colour_unique_val,
+			colour_unique_val_n, colour_choices)
+		for colour_val in colour_unique_val:
+			i_temp = [i for i in z_dict['colour'].index 
+						if z_dict['colour'][i]==colour_val]
+			x_val = x.iloc[i_temp]
+			y_val = y.iloc[i_temp]
+			marker_config = {'color': [colour_scheme[colour_val]]*len(x_val)}
+			if 'size' in z_dict:
+				marker_config['size'] = z_dict['size'].iloc[i_temp]
+			data.append(go.Scatter(x=x_val, y=y_val, name=colour_val,
+			marker=marker_config, mode='markers', showlegend=showlegend, 
+			hoverinfo=hoverinfo))
+	# When colour is not needed, simply pass all parameters to plotly
+	else:
+		data.append(go.Scatter(x=x, y=y, marker={'size':z_dict['size']}, 
+			mode='markers', showlegend=showlegend, hoverinfo=hoverinfo))
+	return data
+

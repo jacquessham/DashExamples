@@ -67,4 +67,21 @@ def generate_layout(viz_type, metadata, title=None,
             else:
                 layout['xaxis'] = {'rangeslider':{'visible':False}}
 
+    #### Bubble Chart Specific Layout
+    if viz_type.lower() in ['bubblechart', 'bubble_chart'] or (
+        viz_type.lower() in ['scatter', 'scatterplot', 'scatter_plot']
+        and metadata['viz_subtype'].lower() in ['bubblechart', 
+        'bubble_chart']):
+        if 'constant_itemsizing' in metadata:
+            if metadata['constant_itemsizing'] in ['t','true','True',True]:
+                if layout['legend'] is not None:
+                    layout['legend']['itemsizing'] = 'constant'
+                else:
+                    layout['legend'] = {'itemsizing':'constant'}  
+        else:
+            if layout['legend'] is not None:
+                    layout['legend']['itemsizing'] = 'constant'
+            else:
+                layout['legend'] = {'itemsizing':'constant'}
+
     return layout

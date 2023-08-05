@@ -2,7 +2,10 @@ from check_metadata import *
 from generate_bar import generate_simplebar, generate_complexbar
 from generate_boxplot import generate_boxplot
 from generate_candlestick import generate_candlestick
-from generate_scatterplot import generate_simplescatter, generate_numcolour_scatter, generate_catecolour_scatter
+from generate_scatterplot import generate_simplescatter, 
+                                    generate_numcolour_scatter, 
+                                    generate_catecolour_scatter, 
+                                    generate_bubble_chart
 from generate_line import generate_simpleline, generate_multiplelines
 
 
@@ -68,6 +71,11 @@ def generate_plotlydata(df, metadata, viz_type):
         colourscale = check_colourscale(metadata)
         showscale = check_showscale(metadata)
         colour_scheme = check_colour_scheme(metadata)
+
+        # If viz_type is bubble chart, viz_subtype is not require
+        if viz_type.lower() in ['bubblechart', 'bubble_chart']:
+            metadata['viz_subtype'] = ''
+
         if metadata['viz_subtype'].lower() == 'simple':
             data = generate_simplescatter(
                 df[metadata['x']], df[metadata['y']], hoverinfo)
@@ -84,6 +92,29 @@ def generate_plotlydata(df, metadata, viz_type):
             data = generate_catecolour_scatter(df[metadata['x']], 
                 df[metadata['y']], df[metadata['z']], showlegend, 
                 colour_scheme, addition_colorscale, hoverinfo)
+        # For Bubble chart
+        elif (viz_type.lower() in ['scatter', 'scatterplot', 'scatter_plot']
+            and metadata['viz_subtype'].lower() in ['bubblechart', 
+            'bubble_chart']) or viz_type.lower() in ['bubblechart', 
+            'bubble_chart']:
+
+            addition_colorscale = check_add_colourscale(metadata)
+            showlegend = check_showlegend(metadata)
+
+            # Prepare the configuration for colour or size dimension
+            z_dict = {}
+            if 'colour' in metadata:
+                z_dict['colour'] = df[metadata['colour']]
+            elif 'color' in metadata:
+                z_dict['colour'] = df[metadata['color']]
+            
+            if 'size' in metadata:
+                z_dict['size'] = df[metadata['size']]
+
+            data = generate_bubble_chart(df[metadata['x']], 
+                df[metadata['y']], z_dict, showlegend, 
+                colour_scheme, addition_colorscale, hoverinfo)
+
 
     # Line Chart
     elif viz_type.lower() == 'line':
