@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import plotly
 import plotly.graph_objs as go
 from plotly.offline import *
@@ -12,11 +11,10 @@ df = pd.read_csv('../Data/salary.csv')
 
 # Data
 data = []
-x = np.random.randn(500)
-data.append(go.Histogram(x=x, histnorm='probability'))
+data.append(go.Histogram(x=df['salary'], y=df['salary'],  histfunc='sum'))
 # Layout
-layout = {'title':{'text':'Distribution of 500 Random Numbers', 'x':0.5}}
+layout = {'title':{'text':'Everybody\'s Salary (Summation by Group)', 'x':0.5}}
 
 fig = go.Figure(data=data, layout=layout)
 
-plotly.offline.plot(fig, filename='normalized_histogram.html')
+plotly.offline.plot(fig, filename='aggregated_histogram.html')
