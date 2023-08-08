@@ -238,8 +238,8 @@ Note:
 Here is the list of template for the subtype of line chart.
 
 <ul>
-	<li><i>simplescatter_arguements.json</i>: For simple scatter plot</li>
-	<li><i></i>: Coming soon...</li>
+	<li><i>simplesline_arguements.json</i>: For single line line chart</li>
+	<li><i>Multilines_arguements.json</i>: For mutliple lines line chart</li>
 </ul>
 
 Note: <b>The framework turn off hovering by default</b>, which is different from Plotly. You need to turn back on by including this column in <i>metadata</i>.
@@ -302,4 +302,85 @@ This template is for line chart along with scatter points, ie, linear regression
 
 ```
 Coming soon...
+```
+
+## Histogram
+Here is the list of template for the subtype of line chart.
+
+<ul>
+	<li><i>simplehistogram_arguements.json</i>: For simple histogram</li>
+	<li><i>normalizedhistogram_arguements.json</i>: For normalized histogram </li>
+	<li><i>catehistogram.json</i>: Histogram with more than 1 categorical value</li>
+	<li><i>aggregatedhistogram_arguements.json</i>: For histogram with aggregated values other than count</li>
+</ul>
+
+### simplehistogram_arguements.json
+This template is for simple histogram, and here are the required or optional columns:
+
+```
+{
+	"df_directory": (Required) str,,
+	"viz_type": (Required) "histogram",
+	"viz_name": (Required)  # Title of the visualization,
+	"metadata":{
+		"x": (Required) str: x-axis column name,
+		"viz_subtype": (Required)"simple",
+		"cumulative|cumulative_enable": (Optional): "t|true|True|f|false|False(Default)"
+	}
+}
+```
+
+### normalizedhistogram_arguements.json
+This template is for normalized histogram, and here are the required or optional columns:
+
+```
+{
+	""df_directory": (Required) str,,
+	"viz_type": (Required) "histogram",
+	"viz_name": (Required)  # Title of the visualization,
+	"metadata":{
+		"x": (Required) str: x-axis column name,
+		"viz_subtype": (Required) "normalized|normalised",
+		"histnorm": (Required) "probability|density|probability density",
+		"cumulative|cumulative_enable": (Optional): "t|true|True|f|false|False(Default)"
+	}
+}
+```
+
+### catehistogram.json
+This template is for normalized histogram, and here are the required or optional columns:
+
+```
+{
+	""df_directory": (Required) str,,
+	"viz_type": (Required) "histogram",
+	"viz_name": (Required)  # Title of the visualization,
+	"metadata":{
+		"x": (Required) str: x-axis column name,
+		"cate_col": (Optional) categorical column name,
+		"viz_subtype": (Required) "cate_histogram|category_histogram|categorical_histogram",
+		"cumulative|cumulative_enable": (Optional): "t|true|True|f|false|False(Default)"
+	}
+}
+```
+
+
+
+### aggregatedhistogram_arguements.json
+This template is for normalized histogram, and here are the required or optional columns:
+
+```
+{
+	""df_directory": (Required) str,,
+	"viz_type": (Required) "histogram",
+	"viz_name": (Required)  # Title of the visualization,
+	"metadata":{
+		"x": (Required) str: x-axis column name,
+		"cate_col": (Optional) categorical column name,
+		"viz_subtype": (Required) "agg_histogram|aggregated_histogram",
+		"cumulative|cumulative_enable": (Optional): "t|true|True|f|false|False(Default)",
+		"barmode": (Optional, Required when cumulateive_enable is true) "stack|overlay",
+		"histfunc": (Optional) "count(Default)|sum|avg|min|max"
+	}
+}
 ```

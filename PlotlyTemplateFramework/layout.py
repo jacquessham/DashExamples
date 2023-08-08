@@ -50,6 +50,7 @@ def generate_layout(viz_type, metadata, title=None,
     #### Bar Chart Specific Layout ####
     if viz_type.lower() == 'bar':
         barmode = metadata['viz_subtype']
+        # barmode = 'simple' is not a option in Plotly, string fixing
         layout = barmode_add2_layout(layout, barmode)
 
     #### Candlestick Specific Layout ####
@@ -83,5 +84,11 @@ def generate_layout(viz_type, metadata, title=None,
                     layout['legend']['itemsizing'] = 'constant'
             else:
                 layout['legend'] = {'itemsizing':'constant'}
+
+    #### Histogram Specific Layout
+    if viz_type.lower() == 'histogram' and (metadata['viz_subtype'].lower() in
+            ['cate_histogram', 'category_histogram', 'categorical_histogram']):
+        layout['barmode'] = metadata['barmode']
+        
 
     return layout

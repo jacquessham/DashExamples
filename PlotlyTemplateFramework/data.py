@@ -2,11 +2,14 @@ from check_metadata import *
 from generate_bar import generate_simplebar, generate_complexbar
 from generate_boxplot import generate_boxplot
 from generate_candlestick import generate_candlestick
-from generate_scatterplot import generate_simplescatter, 
-                                    generate_numcolour_scatter, 
-                                    generate_catecolour_scatter, 
+from generate_scatterplot import generate_simplescatter, \
+                                    generate_numcolour_scatter, \
+                                    generate_catecolour_scatter, \
                                     generate_bubble_chart
 from generate_line import generate_simpleline, generate_multiplelines
+from generate_histogram import generate_simplehistogram, \
+                                generate_categoricalhistogram, \
+                                generate_aggregatedhistogram
 
 
 """ Function to distinguish what viz_type and organize the required
@@ -143,6 +146,29 @@ def generate_plotlydata(df, metadata, viz_type):
 
             data = generate_multiplelines(curr_x, curr_y, curr_name, 
                 curr_colour, datapoints, hoverinfo)
+
+    # Histogram
+    elif viz_type.lower() == 'histogram':
+        histnorm = check_histnorm(metadata)
+        cumulative_enabled = check_cumulative_enabled(metadata)
+        if metadata['viz_subtype'].lower() == 'simple':
+            data = generate_simplehistogram(df[metadata['x']], None, 
+                cumulative_enabled)
+        elif metadata['viz_subtype'].lower() in ['normalized','normalised']:
+            data = generate_simplehistogram(df[metadata['x']], histnorm, 
+                cumulative_enabled)
+        elif metadata['viz_subtype'].lower() in ['cate_histogram', 
+                'category_histogram', 'categorical_histogram']:
+            cate_col = check_cate_col(metadata)
+            data = generate_categoricalhistogram(df, metadata['x'], 
+                                cate_col, cumulative_enabled)
+        elif metadata['viz_subtype'].lower() in ['aggregated_histogram',
+                'agg_histogram']:
+            cate_col = check_cate_col(metadata)
+            histfunc = check_histfunc(metadata)
+            data = generate_aggregatedhistogram(df, metadata['x'], 
+                                cate_col, histfunc, cumulative_enabled)
+
     
     else:
         data = None

@@ -1,10 +1,10 @@
-# Universal Viz Arg
+### Universal Viz Arg
 def check_text(metadata):
     if 'text' in metadata:
         return metadata['text']
     return None
 
-# Universal Viz Arg
+### Universal Viz Arg
 def check_textposition(metadata):
     if 'textposition' in metadata:
         return metadata['textposition']
@@ -12,25 +12,25 @@ def check_textposition(metadata):
         return metadata['text_position']
     return None
 
-# Universal Viz Arg
+### Universal Viz Arg
 def check_hoverinfo(metadata):
     if 'hoverinfo' in metadata:
         return metadata['hoverinfo']
     return 'none' # To turn it off
 
-# Universal Viz Arg
+### Universal Viz Arg
 def check_name(metadata):
     if 'name' in metadata:
         return metadata['name']
     return None
 
-# Bar Arg
+### Bar Arg
 def check_width(metadata):
     if 'width' in metadata:
         return metadata['width']
     return None
 
-# Bar, Boxplot Arg
+### Bar, Boxplot Arg
 def check_textfont(metadata):
     if 'textfont' in metadata:
         return metadata['textfont']
@@ -38,7 +38,7 @@ def check_textfont(metadata):
         return metadata['text_font']
     return None
 
-# Bar, Boxplot Arg
+### Bar, Boxplot Arg
 def check_barcolour(metadata):
     # Allow user to spell English and American English and use of _
     if 'barcolour' in metadata:
@@ -51,7 +51,7 @@ def check_barcolour(metadata):
         return metadata['bar_color']
     return None
 
-# Bar, Line Arg
+### Bar, Line, Histogram Arg
 def check_cate_col(metadata):
     if 'cate_col' in metadata:
         return metadata['cate_col']
@@ -61,13 +61,13 @@ def check_cate_col(metadata):
         return metadata['category_col']
     return None
 
-# Boxplot Arg
+### Boxplot Arg
 def check_boxmean(metadata):
     if 'boxmean' in metadata:
         return metadata['boxmean']
     return None
 
-# Line Chart
+### Line Chart
 # Return a boolean value
 def check_datapoints(metadata):
     if 'datapoints' in metadata:
@@ -76,6 +76,7 @@ def check_datapoints(metadata):
         return metadata['data_points'] in ['t', 'true', 'True']
     return False
 
+### Line Chart
 def check_line_colour(metadata):
     if 'line_colour' in metadata:
         return metadata['line_colour']
@@ -83,7 +84,7 @@ def check_line_colour(metadata):
         return metadata['line_color']
     return None
 
-# Scatterplot/Bubble Chart
+### Scatterplot/Bubble Chart
 def check_colourscale(metadata):
     if 'colourscale' in metadata:
         return metadata['colourscale']
@@ -95,6 +96,7 @@ def check_colourscale(metadata):
         return metadata['color_scale']
     return None
 
+### Scatterplot/Bubble Chart
 def check_add_colourscale(metadata):
     if 'addition_colourscale' in metadata:
         return metadata['addition_colourscale']
@@ -102,6 +104,7 @@ def check_add_colourscale(metadata):
         return metadata['addition_colorscale']
     return None
 
+### Scatterplot/Bubble Chart
 def check_colour_scheme(metadata):
     if 'colour_scheme' in metadata:
         return metadata['colour_scheme']
@@ -113,14 +116,36 @@ def check_colour_scheme(metadata):
         return metadata['color_choices']
     return None
 
+### Scatterplot/Bubble Chart
 # Return a boolean value
 def check_showlegend(metadata):
     if 'showlegend' in metadata:
         return metadata['showlegend'] in ['t','true','True', True]
     return True # Should show showscale by default
 
+### Scatterplot/Bubble Chart
 # Return a boolean value
 def check_showscale(metadata):
     if 'showscale' in metadata:
         return metadata['showscale'] in ['t','true','True', True]
     return True # Should show showscale by default
+
+### Histogram
+def check_histnorm(metadata):
+    if 'histnorm' in metadata:
+        return metadata['histnorm']
+    return None
+
+### Histogram
+def check_cumulative_enabled(metadata):
+    if 'cumulative' in metadata:
+        return metadata['cumulative'] in ['t','true','True', True]
+    elif 'cumulative_enabled' in metadata:
+        return metadata['cumulative_enabled'] in ['t','true','True', True]
+    return False
+
+### Histogram
+def check_histfunc(metadata):
+    if 'histfunc' in metadata:
+        return metadata['histfunc']
+    return 'count' # By default, return count
