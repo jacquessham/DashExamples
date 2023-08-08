@@ -181,3 +181,5 @@ layout = dict(title={'text':fig_title, 'x':0.5},
 <br>
 Each bar is a stored as an element in data list, and set barmode to <b>stack</b>.
 
+## Reference
+Plotly Documentation <a href="https://plotly.com/python/bar-charts/">Bar Chart</a>

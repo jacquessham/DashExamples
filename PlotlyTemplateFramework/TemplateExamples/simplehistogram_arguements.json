@@ -1,0 +1,9 @@
+{
+	"df_directory":"../PlotlyExample/Data/salary.csv",
+	"viz_type":"histogram",
+	"viz_name":"Salary Distribution",
+	"metadata":{
+		"x":"salary",
+		"viz_subtype":"simple"
+	}
+}

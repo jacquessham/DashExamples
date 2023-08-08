@@ -1,0 +1,10 @@
+{
+	"df_directory":"../PlotlyExample/Data/cust_num.csv",
+	"viz_type":"line",
+	"viz_name":"Trend",
+	"metadata":{
+		"x":"hour", 
+		"y":"customers_count", 
+		"viz_subtype":"simple"
+	}
+}

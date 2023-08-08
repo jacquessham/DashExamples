@@ -96,6 +96,8 @@ Genetic Layout parameters suggested to use:
 		</ul>
 	</li>
 	<li>bargap: Gap between bars, in pixel</li>
+	<li>histfunc: Specifies the binning function (count: Count occurrences, sum: Sum the values, avg: Average the values, min/max: Display minimum or maximum value within the bin)</li>
+	<li>histnorm: Type of Normalization used for histogram, None by default (probability: Bar display in %, density: Bar is calculated by occurrences divided by size, probability density: Bar is calculated by occurrences divided by size, all bin sum to 1)</li>
 </ul>
 <br><br>
 
@@ -103,6 +105,15 @@ Histogram Exclusive parameters:
 <ul>
 	<li>cumulative_enabled: Enable Cumulative Histogram, True/False</li>
 	<li>marker_color: Bar colour (Take colour spelliing in string or RGB in string)</li>
+	<li>barmode: How the sets of histogram are displayed
+		<ul>
+			<li>stack: Histograms are drawn on top of another</li>
+			<li>overlay: Have different data set sharing the same bins</li>
+		</ul>
+	</li>
+	<li>bargap: Gap between bars, in pixel</li>
+	<li>histfunc: Specifies the binning function (count: Count occurrences, sum: Sum the values, avg: Average the values, min/max: Display minimum or maximum value within the bin)</li>
+	<li>histnorm: Type of Normalization used for histogram, None by default (probability: Bar display in %, density: Bar is calculated by occurrences divided by size, probability density: Bar is calculated by occurrences divided by size, all bin sum to 1)</li>
 </ul>
 
 ## Examples
@@ -123,9 +134,9 @@ layout = {'title':{'text':'Histogram of Salary among Friends', 'x':0.5}}
 ```
 # Data
 data = []
-data.append(go.Histogram(x=df['salary'], histnorm='probability'))
+data.append(go.Histogram(x=x, histnorm='probability'))
 # Layout
-layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5}}
+layout = {'title':{'text':'Distribution of 500 Random Numbers', 'x':0.5}}
 ```
 
 ### Example 3 - Overlaid Histogram
@@ -164,3 +175,19 @@ data.append(go.Histogram(x=df['salary'], cumulative_enabled=True))
 # Layout
 layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5}}
 ```
+
+### Example 6 - Aggregated Histogram
+<img src=aggregated_histogram.png>
+
+```
+# Data
+data = []
+data.append(go.Histogram(x=df['salary'], y=df['salary'],  histfunc='sum'))
+# Layout
+layout = {'title':{'text':'Everybody\'s Salary (Summation by Group)', 'x':0.5}}
+```
+
+Note: <b><i>histfunc</i> aggreagates from y-axis. A numeric column must provided for y-axis arguement, or else, Plotly treats it as a simple histogram</b>
+
+## Reference
+Plotly Documentation <a href="https://plotly.com/python/histograms/">Histograms</a>

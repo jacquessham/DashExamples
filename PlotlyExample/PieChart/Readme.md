@@ -141,3 +141,6 @@ Require files: <i>revenue_dept.csv</i> and <i>expense_dept.csv</i> in the [Data 
 <img src=multi_pies.png>
 <br>
 Multiple Pie charts required users to declare subplots in <i>figure</i> first that it requires different style of code to do so, see <i>Multiple_pies.py</i> in this folder for the code.
+
+## Reference
+Plotly Documentation <a href="https://plotly.com/python/pie-charts/">Pie Chart</a>

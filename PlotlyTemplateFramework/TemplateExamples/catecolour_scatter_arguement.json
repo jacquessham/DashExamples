@@ -1,0 +1,21 @@
+{
+	"df_directory":"../PlotlyExample/Data/tips.csv",
+	"viz_type":"scatter",
+	"viz_name":"Tipping Distribution",
+	"metadata":{
+		"x":"grand_total", 
+		"y":"tips", 
+		"z":"meal_type",
+		"viz_subtype":"cate_color",
+		"showlegend":false,
+		"colour_scheme":{
+			"Lunch":"red",
+			"Dinner":"blue",
+			"Coffee":"brown"
+		},
+		"addition_colourscale":{
+			"low":"rgb(110, 0, 255)",
+			"high":"rgb(0, 110, 0)"
+		}
+	}
+}

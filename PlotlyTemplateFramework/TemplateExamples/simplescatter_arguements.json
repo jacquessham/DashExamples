@@ -1,0 +1,10 @@
+{
+	"df_directory":"../PlotlyExample/Data/tips.csv",
+	"viz_type":"scatter",
+	"viz_name":"Tipping Distribution",
+	"metadata":{
+		"x":"grand_total", 
+		"y":"tips", 
+		"viz_subtype":"simple"
+	}
+}

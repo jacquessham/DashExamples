@@ -98,4 +98,4 @@ layout = {'title':{'text':'Year-to-Date Apple Stock Price','x':0.5},
 <b>By default, Plotly set rangeslider to be visible. You must turn off manually.</b>
 
 ## Reference
-Plotly <a href=https://plotly.com/python/candlestick-charts/>Candlestick Chart Documentation</a>
+Plotly Documentation <a href=https://plotly.com/python/candlestick-charts/>Candlestick Chart</a>

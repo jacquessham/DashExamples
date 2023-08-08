@@ -1,10 +1,12 @@
 # Line Chart
-Line chart is a visualization that uses lines to connect a series of data points to show the trend of categories of data. Line Chart and Scatter Plot in Plotly use the same module to plot the visualization. In this folder, we are going to go over how to create line charts with Python and Plotly.
+Line chart is a visualization that uses lines to connect a series of data points to show the trend of categories of data. Line Chart, Bubble Chart and Scatter Plot in Plotly use the same module to plot the visualization. In this folder, we are going to go over how to create line charts with Python and Plotly.
 
 ## Files
 The following scripts are used in this chapter:
 <ul>
-	<li>Coming Soon...</li>
+	<li>SimpleLinechart.py</li>
+	<li>SimpleLinechart_points.py</li>
+	<li>Mutlilines_Linechart.py</li>
 </ul>
 
 ## Pacakges Needed
@@ -17,43 +19,34 @@ This chapter requires the following packages for the scripts used:
 ## Data Used
 This chapter may use the following data from the [Data folder](../Data):
 <ul>
-	<li>Coming Soon</li>
-	<li><i></i></li>
+	<li><i>cust_num.csv</i></li>
 </ul>
 
 ## Syntax
 ### Data
 Data is a list of <i>go.Scatter()</i>, each <i>go.Scatter()</i> represents a category of points and/or a line.
 <br><br> 
-If the data list has only 1 <i>go.Scatter()</i>, it is a line or a collection of points (If it is a collection of points, refer to the [ScatterPlot folder](../ScatterPlot)).
+If the data list could have 1 or mutliple <i>go.Scatter()</i>, to represent a line, or mutliple lines. If it is a collection of points, refer to the [ScatterPlot folder](../ScatterPlot).
 <br><br>
 go.Scatter() has the following parameters:
 <ul>
 	<li>x: Attribute on x-axis</li>
 	<li>y: Value on y-axis</li>
-	<li>name: Category, which will be displayed on legend</li>
+	<li>line: In depth setting for data point, including
+		<ul>
+			<li>color: Set color for the line, accept RGB values/Colour keywords</li>
+		</ul>
+	</li>
 	<li>mode: Setting on how to display
 		<ul>
+			<li>markers: Display data points only</li>
 			<li>lines: Display in lines only</li>
 			<li>lines+maker: Dispaly in lines with data points</li>
-			<li></li>
 		</ul>
 	</li>
-	<li>stackgroup: Setting on stacking lines
-		<ul>
-			<li>Coming Soon...</li>
-		</ul>
-	</li>
+	<li>name: Explanation shown in legend</li>
 	<li>text: The text label will displayed on the lines</li>
-	<li>textposition: Text label position
-		<ul>
-			<li>auto: On the top of the bar</li>
-			<li>inside: On the top of the bar</li>
-			<li>outside: Outside of the bar</li>
-		</ul>
-	</li>
 	<li>textfont (Dictionary): Text label setting</li>
-	<li>marker_color: Bar colour (Take colour spelliing in string or RGB in string)</li>
 	<li>hoverinfo: What information to be displayed when user hover over the bar, all the options are:
 		<ul>
 			<li>percent</li>
@@ -62,6 +55,7 @@ go.Scatter() has the following parameters:
 			<li>name</li>
 		</ul></li>
 </ul>
+<br>
 <br>
 
 
@@ -106,9 +100,62 @@ Genetic Layout parameters suggested to use:
 <br><br>
 
 Line Chart Exclusive parameters:
+Scatter Plot Exclusive parameters:
 <ul>
-	<li>Coming Soon...</li>
+	<li>marker_color</li>
+	<li>marker</li>
 </ul>
 
 ## Examples
-Coming Soon...
+### Example 1 - Simple Line Chart
+<img src=simple_linechart.png>
+
+```
+# Data
+data = []
+data.append(go.Scatter(x=df['hour'], y=df['customers_count'],
+					mode='lines'))
+# Layout
+layout = {'title':{'text':'Number of Customer Trend', 'x':0.5}}
+
+fig = go.Figure(data=data, layout=layout)
+```
+
+Note: Simply use <i>go.Scatter()</i> and set mode to <i>lines</i>
+
+### Example 2 - Simple Line Chart with Data Points
+
+<img src=simple_linechart_points.png>
+
+```
+# Data
+data = []
+data.append(go.Scatter(x=df['hour'], y=df['customers_count'],
+					mode='lines+markers'))
+# Layout
+layout = {'title':{'text':'Number of Customer Trend', 'x':0.5}}
+
+fig = go.Figure(data=data, layout=layout)
+```
+
+### Example 3 - Multiple Lines Line Chart
+
+<img src=multilines.png>
+
+```
+colour_scheme = ['red','blue','black','orange','yellow','brown','green']
+
+# Data
+data = []
+for day, colour in zip(df['day'].unique(), colour_scheme):
+	df_temp = df[df['day']==day]
+	data.append(go.Scatter(x=df_temp['hour'], y=df_temp['customers_count'],
+						line={'color': colour},
+						name=day,
+						mode='lines'))
+# Layout
+layout = {'title':{'text':'Number of Customer Trend by Days', 'x':0.5}}
+```
+
+## Reference
+Plotly Documentation <a href="https://plotly.com/python/line-charts/">Line Chart</a>

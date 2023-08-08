@@ -1,0 +1,22 @@
+{
+	"df_directory":"../PlotlyExample/Data/tips.csv",
+	"viz_type":"bubblechart",
+	"viz_name":"Tipping Distribution",
+	"metadata":{
+		"x":"grand_total", 
+		"y":"tips", 
+		"colour":"meal_type",
+		"size":"wait_mins",
+		"showlegend":true,
+		"colour_schema":{
+			"Lunch":"red",
+			"Dinner":"blue",
+			"Coffee":"brown"
+		},
+		"constant_itemsizing":false,
+		"addition_colourscale":{
+			"low":"rgb(110, 0, 255)",
+			"high":"rgb(0, 110, 0)"
+		}
+	}
+}

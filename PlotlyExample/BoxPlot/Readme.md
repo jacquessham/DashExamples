@@ -79,3 +79,5 @@ layout = dict(title={'text':'Alumni Salary across Schools', 'x':0.5},
               barmode='group', xaxis=dict(tickmode='linear'))
 ```
 
+## Reference
+Plotly Documentation <a href="https://plotly.com/python/box-plots/">Box Plot</a>

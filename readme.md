@@ -27,16 +27,21 @@ Although the dashboard is viewed in a web broswer, it is a high level tool that 
 
 ## Plotly Tutorial
 Dash relies on Plotly plots, it is a good idea to understand how Plotly works first. Here are the tutorial and examples for plotting in Plotly:<br>
-[Fundamentals (Coming Soon...)](/)<br>
+[Fundamentals](/PlotlyExample)<br>
 [Bar Charts](/PlotlyExample/BarChart)<br>
-[Line Charts (Coming Soon...)](/PlotlyExample/LineChart)<br>
-[Scatter Plot (Coming Soon...)](/PlotlyExample/ScatterPlot)<br>
+[Line Charts](/PlotlyExample/LineChart)<br>
+[Scatter Plot/Bubble Chart](/PlotlyExample/ScatterPlot)<br>
 [Box Plots](/PlotlyExample/BoxPlot)<br>
 [Pie/Donut Charts](/PlotlyExample/PieChart)<br>
+[Histogram](/PlotlyExample/Histogram)<br>
 [Treemaps (Coming Soon...)](/PlotlyExample/Treemap)<br>
 [Heatmaps](/PlotlyExample/Heatmap) <br>
 [Candlestick Charts](/PlotlyExample/CandlestickChart)<br>
-[Choropleth Graphs](/PlotlyExample/ChoroplethGraph)
+[Choropleth Graphs](/PlotlyExample/ChoroplethGraph)<br>
+[Sunburst Charts (Coming Soon...)](/PlotlyExample/Sunburst) <br>
+[Parallel Categories Diagram (Coming Soon...)](/PlotlyExample/ParallelCategories)<br>
+[Sankey Diagram (Coming Soon...)](/PlotlyExample/SankeyDiagram)<br>
+[Dendrograms (Decision Tree)  (Coming Soon...)](/PlotlyExample/DecisionTree)<br>
 <br><br>
 Or click the link here to the [Plotly Example folder](/PlotlyExample) for the selected list of the visualizations can be made with Plotly.
 
