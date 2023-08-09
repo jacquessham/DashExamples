@@ -10,6 +10,7 @@ from generate_line import generate_simpleline, generate_multiplelines
 from generate_histogram import generate_simplehistogram, \
                                 generate_categoricalhistogram, \
                                 generate_aggregatedhistogram
+from generate_heatmap import generate_heatmap
 
 
 """ Function to distinguish what viz_type and organize the required
@@ -168,6 +169,16 @@ def generate_plotlydata(df, metadata, viz_type):
             histfunc = check_histfunc(metadata)
             data = generate_aggregatedhistogram(df, metadata['x'], 
                                 cate_col, histfunc, cumulative_enabled)
+
+    # Heatmap
+    elif viz_type.lower() == 'heatmap':
+        colourscale = check_colourscale(metadata)
+        if 'colour' in metadata:
+            colour_col = metadata['colour']
+        else:
+            colour_col = metadata['color']
+        data = generate_heatmap(df[metadata['x']], df[metadata['y']],
+                            df[colour_col], colourscale)
 
     
     else:

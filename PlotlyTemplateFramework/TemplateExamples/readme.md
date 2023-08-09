@@ -384,3 +384,20 @@ This template is for normalized histogram, and here are the required or optional
 	}
 }
 ```
+## Heatmap
+You may find <i>simpleheatmap_arguements.json</i> for the sample template and here are the required or optional columns:
+
+```
+{
+	"df_directory":(Required) str,
+	"viz_type": (Required) "heatmap",
+	"viz_name":(Required) str,
+	"metadata":{
+		"x": (Required) str, 
+		"y": (Required) str,
+		"colour": (Required) str,
+		"colourscale": (Optional) str,
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
+	}
+}
+```
