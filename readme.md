@@ -55,6 +55,8 @@ This repositories contains examples from the official Dash site and myself. Ther
 
 ## Dockerizing Dash
 This section contains the quick-start note for dockerizing Plotly and Dash for your solution. You may find the direction and tips to create Docker Image with Plotly and Dash in the [Dockerize Dash](/DockerizeDash) folder.
+<br><br>
+Alternatively, you may read the instructions in this Medium Post: <a href="https://medium.com/@jjsham/dockerizing-plotly-dash-5c23009fc10b">Dockerizing Plotly/Dash</a>
 
 ## Template Framework for Plotly
 You may find the template framework for Plotly when you want to quickly plot something with Plotly. You may find the scripts in the [Template Framework](/PlotlyTemplateFramework) folder.

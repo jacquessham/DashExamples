@@ -1,5 +1,7 @@
 # Dockerize Dash
 This section contains the quick-start note for dockerizing Plotly and Dash for your solution. We would go over the tips on writing the <i>Dockerfile</i> and the dependent Python scripts.
+<br><br>
+You may read the instructions in this Medium Post: <a href="https://medium.com/@jjsham/dockerizing-plotly-dash-5c23009fc10b">Dockerizing Plotly/Dash</a>
 
 ## Dockerfile
 Beside copying the scripts to the docker container, you would need to install the right version of dependencies in order to have Dash run properly. Here are the important note:
