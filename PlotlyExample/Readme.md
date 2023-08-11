@@ -108,7 +108,7 @@ You may find how to create Box plots with Plotly in the <a href="https://github.
 You may find how to create Pie charts/Dount charts with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/PieChart">Pie Chart folder</a>.
 
 ## Treemaps
-Coming Soon...
+You may find how to create Treemap with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/Treemap">Treemap folder</a>.
 
 ## Histogram
 You may find how to create Histogram with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/Histogram">Histogram folder</a>.
