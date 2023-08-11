@@ -6,7 +6,7 @@
 		"x":"hour", 
 		"y":"customers_count", 
 		"cate_col":"day",
-		"viz_subtype":"mutlilines",
+		"viz_subtype":"multilines",
 		"line_colour":{
 			"Monday":"red",
 			"Tuesday":"blue",

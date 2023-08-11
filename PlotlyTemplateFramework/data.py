@@ -126,8 +126,8 @@ def generate_plotlydata(df, metadata, viz_type):
         if metadata['viz_subtype'].lower() == 'simple':
             data = generate_simpleline(df[metadata['x']], df[metadata['y']], 
                 datapoints, hoverinfo)
-        elif metadata['viz_subtype'].lower() in ['mutlilines','mutliple_lines',
-            'mutli_lines']:
+        elif metadata['viz_subtype'].lower() in ['multilines','multiple_lines',
+            'multi_lines']:
             curr_x = []
             curr_y = []
             curr_name = []

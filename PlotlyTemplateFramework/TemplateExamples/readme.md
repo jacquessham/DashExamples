@@ -276,7 +276,7 @@ This template is for multiple lines chart, while lines are partitioned by catego
 	"metadata":{
 		"x": (Required) str: x-axis column name, 
 		"y": (Required) str: y-axis column name, 
-		"viz_subtype": (Required) "mutlilines|mutliple_lines|mutli_lines",
+		"viz_subtype": (Required) "multilines|multiple_lines|multi_lines",
 		"datapoints": (Optional): "t|true|True|f|false|False(Default)",
 		"cate_col": (Required) categorical column name,
 		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|...",
