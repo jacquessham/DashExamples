@@ -92,5 +92,7 @@ layout = {'title':{'text':'Department Store Traffic',
 
 ```
 
+Note: For some reason, <b>z-axis must be declared before x-axis and y-axis in go.Heatmap()</b>!
+
 ## Reference
 Plotly Documentation <a href="https://plotly.com/python/heatmaps/">Heatmaps</a>

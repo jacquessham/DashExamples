@@ -84,7 +84,7 @@ def check_line_colour(metadata):
         return metadata['line_color']
     return None
 
-### Scatterplot/Bubble Chart
+### Scatterplot/Bubble Chart, Heatmap
 def check_colourscale(metadata):
     if 'colourscale' in metadata:
         return metadata['colourscale']

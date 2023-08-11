@@ -276,7 +276,7 @@ This template is for multiple lines chart, while lines are partitioned by catego
 	"metadata":{
 		"x": (Required) str: x-axis column name, 
 		"y": (Required) str: y-axis column name, 
-		"viz_subtype": (Required) "mutlilines|mutliple_lines|mutli_lines",
+		"viz_subtype": (Required) "multilines|multiple_lines|multi_lines",
 		"datapoints": (Optional): "t|true|True|f|false|False(Default)",
 		"cate_col": (Required) categorical column name,
 		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|...",
@@ -381,6 +381,23 @@ This template is for normalized histogram, and here are the required or optional
 		"cumulative|cumulative_enable": (Optional): "t|true|True|f|false|False(Default)",
 		"barmode": (Optional, Required when cumulateive_enable is true) "stack|overlay",
 		"histfunc": (Optional) "count(Default)|sum|avg|min|max"
+	}
+}
+```
+## Heatmap
+You may find <i>simpleheatmap_arguements.json</i> for the sample template and here are the required or optional columns:
+
+```
+{
+	"df_directory":(Required) str,
+	"viz_type": (Required) "heatmap",
+	"viz_name":(Required) str,
+	"metadata":{
+		"x": (Required) str, 
+		"y": (Required) str,
+		"colour": (Required) str,
+		"colourscale": (Optional) str,
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
 	}
 }
 ```

@@ -1,0 +1,10 @@
+{
+	"df_directory":"../PlotlyExample/Data/cust_num.csv",
+	"viz_type":"heatmap",
+	"viz_name":"Department Store Traffic",
+	"metadata":{
+		"x":"day",
+		"y":"hour",
+		"colour":"customers_count"
+	}
+}
