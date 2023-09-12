@@ -1,5 +1,5 @@
 # Treemap
-Treemap. In this folder, we will go over how to create bar charts with Python and Plotly.
+Treemap. In this folder, we will go over how to create a treemap with Python and Plotly.
 
 ## Files
 The following scripts are used in this chapter:
@@ -25,7 +25,7 @@ This chapter may use the following data from the [Data folder](../Data):
 ### Data
 Data is a list to store <i>go.Treemap()</i>. <b>Treemap parameters structure is very different different with standard visualization types. No x or y columns are accepted, but alternative arguements!</b>
 <br><br>
-go.heatmap() has the following parameters:
+go.Treemap() has the following parameters:
 <ul>
 	<li>values: The numeric value of the attribute</li>
 	<li>labels: A categorical attribute</li>
