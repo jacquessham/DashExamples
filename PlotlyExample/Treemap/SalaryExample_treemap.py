@@ -14,7 +14,7 @@ values = df['salary'].tolist() + [0,0]
 labels = df['name'].tolist() + df['school'].unique().tolist()
 parents = df['school'].tolist() + ['','']
 
-data = go.Figure(go.Treemap(
+fig = go.Figure(go.Treemap(
     labels = labels,
     values = values,
     parents = parents,
