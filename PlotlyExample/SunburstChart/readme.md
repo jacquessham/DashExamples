@@ -4,8 +4,8 @@ Sunburst Chart is similar to a treemap but visualize on a pie/donut chart. In th
 ## Files
 The following scripts are used in this chapter:
 <ul>
-	<li>Coming soon...</li>
-	<li></li>
+	<li>simplesunburst.py</li>
+	<li>simplesunburst_colourscale.py</li>
 </ul>
 
 ## Pacakges Needed
@@ -30,6 +30,7 @@ go.Sunburst() has the following parameters:
 	<li>values: The numeric value of the attribute</li>
 	<li>labels: A categorical attribute</li>
 	<li>parents: The parent categorical value of labels</li>
+	<li>marker_colors: The colour of the area of each attribute</li>
 	<li>textinfo: Determines which trace information appear on the graph, it can be:
 		<ul>
 			<li>text</li>
@@ -51,8 +52,7 @@ go.Sunburst() has the following parameters:
 </ul>
 <br>
 
-## Examples
-### Example 1 - Simple Sunburst Chart
+## Example - Simple Sunburst Chart
 <img src=simple_sunburst.png>
 
 ```
@@ -66,10 +66,15 @@ fig = go.Figure(go.Sunburst(
     labels = labels,
     values = values,
     parents = parents,
-    textinfo = 'label+value',
-    marker_colorscale = 'Blues'))
+    textinfo = 'label+value'))
 
 ```
 
 <br>
 Note: We add two data points in order to demostrate the uniqueness of sunburst chart compared to a pie chart
+<br><br>
+Here is the visualization if <i>marker_color</i> is filled with <i>agsunset</i>:
+<img src=simple_sunburst_agsunset.png>
+
+## Reference
+Plotly Documentation <a href="https://plotly.com/python/sunburst-charts/">Sunburst Charts</a>

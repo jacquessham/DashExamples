@@ -18,8 +18,9 @@ fig = go.Figure(go.Sunburst(
     labels = labels,
     values = values,
     parents = parents,
-    textinfo = 'label+value'
+    textinfo = 'label+value',
+    marker_colorscale = 'agsunset'
     ))
 
 
-plotly.offline.plot(fig, filename='simple_sunburst.html')
+plotly.offline.plot(fig, filename='simple_sunburst_agsunset.html')
