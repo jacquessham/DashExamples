@@ -49,8 +49,40 @@ Currently, it supports:
 		</ul>
 	</li>
 	<li>Box Plot</li>
+	<li>Candlestick Chart</li>
+	<li>Scatter Plot
+		<ul>
+			<li>Simple Scatter Plot</li>
+			<li>Scatter Plot with a colour dimension with numeric data</li>
+			<li>Scatter Plot with a colour dimension with categorical data</li>
+			<li>Bubble Chart</li>
+		</ul></li>
+	<li>Line Chart
+		<ul>
+			<li>Simple Line Chart</li>
+			<li>Multilines Line Chart</li>
+			<li>Line Chart for Linear Regression (Coming soon...)</li>
+		</ul></li>
+	<li>Histogram
+		<ul>
+			<li>Simple Histogram</li>
+			<li>Normalized Histogram</li>
+			<li>Histogram with more than 1 categorical value</li>
+			<li>Histogram with aggregated values other than count</li>
+		</ul></li>
+	<li>Heatmap</li>
+	<li>Pie/Donut Chart (Coming soon...)</li>
 	<li>Coming soon...</li>
 </ul>
+
+<br><br>
+Among the chart type examples in the [Plotly Example folder](../PlotlyExample), here are the list that will not support:
+<ul>
+	<li>Choropleth Graph</li>
+	<li>Treemap</li>
+	<li>Sunburst Chart</li>
+	<li>Dendrograms</li>
+</ul> 
 <br><br>
 For each visualization type, it would have its <i>generate_(viz_type).py</i> to utilize the functions to generate the data object.
 <br><br>
