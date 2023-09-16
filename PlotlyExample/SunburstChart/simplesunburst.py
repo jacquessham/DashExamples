@@ -8,11 +8,11 @@ from plotly.offline import *
 init_notebook_mode(connected=True)
 
 # Read data
-df = pd.read_csv('../Data/salary.csv')
+df = pd.read_csv('../Data/hk_population.csv')
 
-values = df['salary'].tolist() + [600000,350000]
-labels = df['name'].tolist() + df['school'].unique().tolist()
-parents = df['school'].tolist() + ['University','University']
+values = df['population'].tolist() + [600000,850000,3000000,0]
+labels = df['district'].tolist() + ['Island','Kowloon','New Territories']
+parents = df['area'].tolist() + ['Hong Kong','Hong Kong','Hong Kong']
 
 fig = go.Figure(go.Sunburst(
     labels = labels,
