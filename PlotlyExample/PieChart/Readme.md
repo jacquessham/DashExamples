@@ -96,13 +96,14 @@ Genetic Layout parameters suggested to use:
 
 Pie/Donut Chart Exclusive parameters:
 <ul>
-	<li>hole: The size of the hole in the center</li>
+	<li>hole: The size (hole radius) of the hole in the center</li>
 	<li>pull: "Pull-out" the pie from the center</li>
+	<li>insidetextorientation: Controls the orientation of the text inside chart sectors</li>
 </ul>
 
 ## Examples
 ### Example 1 - Simple Pie Chart
-Require files: <i>revenue_dept.csv</i> in the [Data folder](../Data)
+Require files: <i>revenue_dept.csv</i> in the [Data folder](../Data).
 <br>
 <img src=simplepie.png>
 
@@ -116,11 +117,12 @@ layout = {'title':{'text':'Department Store Revenue', 'x':0.5}}
 ```
 
 ### Example 2 - Grouped Donut Chart
-Require files: <i>revenue_dept.csv</i> in the [Data folder](../Data)
+Require files: <i>revenue_dept.csv</i> in the [Data folder](../Data).
 <br>
 <img src=simpledonut.png>
 
 ```
+# Data
 data = []
 data.append(go.Pie(labels=df['category'], values=df['revenue'], hole=0.4))
 
@@ -129,16 +131,47 @@ layout = {'title':{'text':'Department Store Revenue', 'x':0.5}}
 ```
 
 ### Example 3 - Pie Chart with Advance setting
-Require files: <i>revenue_dept.csv</i> in the [Data folder](../Data)
+Require files: <i>revenue_dept.csv</i> in the [Data folder](../Data).
 <br>
 <img src=prettypie.png>
 <br>
-See <i>Pretty_pie.py</i> in this folder for the code.
+
+```
+# Data
+colours = ['blue','gold','red','green']
+data = []
+data.append(go.Pie(labels=df['category'], values=df['revenue'],
+				   hoverinfo='label+percent', textinfo='value', textfont_size=25,
+				   marker={'colors':colours, 'line':{'color':'black','width':3}},
+				   insidetextorientation='radial',pull=[0, 0, 0.3, 0]))
+
+# Layout
+layout = {'title':{'text':'Department Store Revenue', 'x':0.5}}
+
+```
 
 ### Example 4 - Multiple Pie Charts
-Require files: <i>revenue_dept.csv</i> and <i>expense_dept.csv</i> in the [Data folder](../Data)
+Require files: <i>revenue_dept.csv</i> and <i>expense_dept.csv</i> in the [Data folder](../Data).
 <br>
 <img src=multi_pies.png>
+
+<br>
+
+```
+# Define fig
+fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]])
+
+# Data
+# marker colors may added in go.Pie
+fig.add_trace(go.Pie(labels=df_revenue['category'], 
+	                 values=df_revenue['revenue'],name='Revenue'),1,1)
+fig.add_trace(go.Pie(labels=df_expense['category'], 
+	                 values=df_expense['expense'],name='Expense'),1,2)
+
+# Layout
+fig.update_layout(title_text='Department Store Revenue',title_x=0.5)
+```
+
 <br>
 Multiple Pie charts required users to declare subplots in <i>figure</i> first that it requires different style of code to do so, see <i>Multiple_pies.py</i> in this folder for the code.
 
