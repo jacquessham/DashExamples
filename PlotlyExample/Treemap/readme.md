@@ -98,3 +98,6 @@ data = go.Figure(go.Treemap(
     textinfo = 'label+value+percent parent+percent entry+percent root',
     marker_colorscale = 'Blues'))
 ```
+
+## Reference
+Plotly Documentation <a href="https://plotly.com/python/treemaps/"></a>
