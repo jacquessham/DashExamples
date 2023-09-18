@@ -401,3 +401,23 @@ You may find <i>simpleheatmap_arguements.json</i> for the sample template and he
 	}
 }
 ```
+
+## Pie/Donut Chart
+You may find <i>simplepie_arguements.json</i> for the sample template and here are the required or optional columns:
+
+```
+{
+	"df_directory":"../PlotlyExample/Data/revenue_dept.csv",
+	"viz_type":"pie chart",
+	"viz_name":"Department Store Revenue Distribution",
+	"metadata":{
+		"x" (Required) str: Label,
+		"y" (Required) str: Value,
+		"hole" (Optional) int: Between 0-1 (Recommend 0.4-0.6 for donut chart),
+		"textinfo" (Optional) str: "percent|label+percent|label|name",
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
+	}
+}
+```
+
+Note: If <b>hole</b> is absent in the arguement file or equal to 0, it will become a pie chart.
