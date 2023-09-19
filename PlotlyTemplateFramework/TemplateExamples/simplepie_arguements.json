@@ -1,0 +1,11 @@
+{
+	"df_directory":"../PlotlyExample/Data/revenue_dept.csv",
+	"viz_type":"pie chart",
+	"viz_name":"Department Store Revenue Distribution",
+	"metadata":{
+		"x":"category",
+		"y":"revenue",
+		"hole":0.4,
+		"textinfo":"label+percent"
+	}
+}

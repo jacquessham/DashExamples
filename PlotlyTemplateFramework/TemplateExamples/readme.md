@@ -298,7 +298,7 @@ Note:
 
 
 ### lr_arguements.json
-This template is for line chart along with scatter points, ie, linear regression use cases. Here are the required or optional columns:
+This template is for line chart along with scatter points, ie, linear regression use cases -- Line Chart for Linear Regression. Here are the required or optional columns:
 
 ```
 Coming soon...
@@ -348,7 +348,7 @@ This template is for normalized histogram, and here are the required or optional
 ```
 
 ### catehistogram.json
-This template is for normalized histogram, and here are the required or optional columns:
+This template is for histogram with more than 1 categorical value, and here are the required or optional columns:
 
 ```
 {
@@ -367,7 +367,7 @@ This template is for normalized histogram, and here are the required or optional
 
 
 ### aggregatedhistogram_arguements.json
-This template is for normalized histogram, and here are the required or optional columns:
+This template is for histogram with aggregated values other than count, and here are the required or optional columns:
 
 ```
 {
@@ -401,3 +401,23 @@ You may find <i>simpleheatmap_arguements.json</i> for the sample template and he
 	}
 }
 ```
+
+## Pie/Donut Chart
+You may find <i>simplepie_arguements.json</i> for the sample template and here are the required or optional columns:
+
+```
+{
+	"df_directory":"../PlotlyExample/Data/revenue_dept.csv",
+	"viz_type":"pie chart",
+	"viz_name":"Department Store Revenue Distribution",
+	"metadata":{
+		"x" (Required) str: Label,
+		"y" (Required) str: Value,
+		"hole" (Optional) int: Between 0-1 (Recommend 0.4-0.6 for donut chart),
+		"textinfo" (Optional) str: "percent|label+percent|label|name",
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
+	}
+}
+```
+
+Note: If <b>hole</b> is absent in the arguement file or equal to 0, it will become a pie chart.

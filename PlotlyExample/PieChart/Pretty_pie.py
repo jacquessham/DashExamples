@@ -18,8 +18,7 @@ data.append(go.Pie(labels=df['category'], values=df['revenue'],
 				   insidetextorientation='radial',pull=[0, 0, 0.3, 0]))
 
 # Layout
-layout = {'title':{'text':'Department Store Revenue', 'x':0.5}
-		  }
+layout = {'title':{'text':'Department Store Revenue', 'x':0.5}}
 
 
 fig = go.Figure(data=data, layout=layout)

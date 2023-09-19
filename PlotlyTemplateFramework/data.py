@@ -11,6 +11,7 @@ from generate_histogram import generate_simplehistogram, \
                                 generate_categoricalhistogram, \
                                 generate_aggregatedhistogram
 from generate_heatmap import generate_heatmap
+from generate_pie import generate_simplepie
 
 
 """ Function to distinguish what viz_type and organize the required
@@ -180,7 +181,13 @@ def generate_plotlydata(df, metadata, viz_type):
         data = generate_heatmap(df[metadata['x']], df[metadata['y']],
                             df[colour_col], colourscale)
 
-    
+    # Pie/Donut Chart
+    elif viz_type.lower() == 'pie chart' or viz_type.lower() == 'donut chart':
+        hole = check_hole(metadata)
+        textinfo = check_textinfo(metadata)
+        data = generate_simplepie(df[metadata['x']], df[metadata['y']], hole,
+                        textinfo, hoverinfo)
+
     else:
         data = None
 

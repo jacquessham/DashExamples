@@ -149,3 +149,17 @@ def check_histfunc(metadata):
     if 'histfunc' in metadata:
         return metadata['histfunc']
     return 'count' # By default, return count
+
+### Pie/Donut Chart
+def check_hole(metadata):
+    if 'hole' in metadata:
+        return metadata['hole']
+    elif 'radius' in metadata:
+        return metadata['radius']
+    return None
+
+### Pie/Donut Chart
+def check_textinfo(metadata):
+    if 'textinfo' in metadata:
+        return metadata['textinfo']
+    return 'percent'
