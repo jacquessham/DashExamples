@@ -124,3 +124,6 @@ You may find how to create Choropleth graph with Plotly in the <a href="https://
 
 ## Sunburst Charts
 You may find how to create Sunburst Charts with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/SunburstChart">Sunburst Charts folder</a>.
+
+## Parallel Coordinates Plot
+You may find how to create Parallel Coordinates Plot with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/ParallelCategories">Parallel Coordinates Plot folder</a>.

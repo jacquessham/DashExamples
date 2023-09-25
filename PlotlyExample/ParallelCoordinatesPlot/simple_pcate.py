@@ -27,8 +27,7 @@ labels = df.columns.tolist()[2:]
 fig = go.Figure(data=go.Parcoords(
 		line={
 			'color': df['student_id'],
-			'colorscale': colourscale_metadata,
-			# 'showscale': True
+			'colorscale': colourscale_metadata
 		},
 		dimensions=[
 			{'range':[70,100],
