@@ -127,3 +127,9 @@ You may find how to create Sunburst Charts with Plotly in the <a href="https://g
 
 ## Parallel Coordinates Plot
 You may find how to create Parallel Coordinates Plot with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/ParallelCategories">Parallel Coordinates Plot folder</a>.
+
+## Sankey Chart
+You may find how to create Sankey Chart with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/ParallelCategories">Sankey Chart folder</a>.
+
+## Funnel Chart
+You may find how to create Funnel Chart with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/FunnelChart">Funnel Chart folder</a>.
