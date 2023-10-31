@@ -41,7 +41,7 @@ Dash relies on Plotly plots, it is a good idea to understand how Plotly works fi
 [Choropleth Graphs](/PlotlyExample/ChoroplethGraph)<br>
 [Sunburst Charts](/PlotlyExample/Sunburst) <br>
 [Parallel Categories Diagram](/PlotlyExample/ParallelCoordinatesPlot)<br>
-[Sankey Diagram (Coming Soon...)](/PlotlyExample/SankeyChart)<br>
+[Sankey Diagram](/PlotlyExample/SankeyChart)<br>
 [Dendrograms (Decision Tree)  (Coming Soon...)](/PlotlyExample/DecisionTree)<br>
 <br><br>
 Or click the link here to the [Plotly Example folder](/PlotlyExample) for the selected list of the visualizations can be made with Plotly.
