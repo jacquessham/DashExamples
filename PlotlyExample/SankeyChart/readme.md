@@ -74,7 +74,7 @@ fig.update_layout(title_text="Hello World!")
 <img src=simple_sankey.png>
 
 <br><br>
-See [simple_sankey.py](/simple_sankey.py) for code example.
+See <a href="https://github.com/jacquessham/DashExamples/blob/master/PlotlyExample/SankeyChart/simple_sankey.py">simple_sankey.py</a> for code example.
 
 
 ## Reference
