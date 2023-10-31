@@ -9,6 +9,7 @@ init_notebook_mode(connected=True)
 
 # Read data
 df = pd.read_csv('../Data/ecom_funnel.csv')
+df = df[df['shop']=='Shop A']
 
 fig = go.Figure(go.Funnel(
     y = df['stage'],

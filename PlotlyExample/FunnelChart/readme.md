@@ -31,7 +31,7 @@ go.Funnel() has the following parameters:
 <ul>
 	<li>x: The numeric value of the attribute</li>
 	<li>y: A categorical value</li>
-	<li></li>
+	<li>name: Category, which will be used for identifying the stacked funnel</li>
 	<li>marker: Setting for the funnel bar
 		<ul>
 			<li>color: The colour of the area of each attribute</li>
@@ -134,8 +134,8 @@ go.Funnelarea() has the following parameters:
 </ul>
 <br>
 
-## Example - Simple Funnel Chart
-<img src=>
+## Example 1 - Simple Funnel Chart
+<img src=simple_funnel.png>
 
 ```
 fig = go.Figure(go.Funnel(
@@ -143,6 +143,23 @@ fig = go.Figure(go.Funnel(
     x = df['count'])
 )
 ```
+
+## Example 2 - Stacked Funnel Chart
+<img src=stack_funnel.png>
+
+```
+data = []
+for shop in df['shop'].unique():
+	df_temp = df[df['shop']==shop]
+	data.append(go.Funnel(
+		name = shop,
+	    y = df_temp['stage'],
+	    x = df_temp['count'])
+	)
+```
+
+## Example 3 - Simple Funnel Area
+Coming soon...
 
 ## Reference
 Plotly Documentation <a href="https://plotly.com/python/funnel-charts/">Funnel Charts</a>
