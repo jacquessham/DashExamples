@@ -1,12 +1,13 @@
 # Funnel Chart
-Coming soon...
+Funnel charts are useful for conversion events or cohort analysis, such as sales cycles.
 
 
 ## Files
 The following scripts are used in this chapter:
 <ul>
-	<li></li>
-	<li></li>
+	<li>simple_funnel.py</li>
+	<li>stack_funnel.py</li>
+	<li>simple_funnelarea.py</li>
 </ul>
 
 ## Pacakges Needed
@@ -85,11 +86,12 @@ go.Funnel() has the following parameters:
 go.Funnelarea() has the following parameters:
 <ul>
 	<li>value: The numeric value of the attribute</li>
-	<li>text: A categorical value</li>
-	<li></li>
+	<li>text: A categorical value (Shown on funnel bars)</li>
+	<li>labels: Categorical values (Shown on legend)</li>
 	<li>marker: Setting for the funnel bar
 		<ul>
 			<li>color: The colour of the area of each attribute</li>
+			<li>pattern: Setting on how to fill the funnel bars, such as full filled or striped filled</li>
 			<li>line: The setting for the line
 				<ul>
 					<li>width</li>
@@ -159,7 +161,29 @@ for shop in df['shop'].unique():
 ```
 
 ## Example 3 - Simple Funnel Area
-Coming soon...
+<img src=simple_funnelarea1.png>
+
+<br><br>
+Use <i>text</i> if you want attribute and values on funnel bars.
+
+```
+fig = go.Figure(go.Funnelarea(
+    text = df['stage'], # Text displayed on funnel bars
+    values = df['count'])
+)
+```
+
+<img src=simple_funnelarea2.png>
+
+<br><br>
+Use <i>labels</i> if you do not want attribute on funnel bars, but on legned. The values will still stated on funnel bars unless you turn it off.
+
+```
+fig = go.Figure(go.Funnelarea(
+    labels = df['stage'], # Text displayed only in legend
+    values = df['count'])
+)
+```
 
 ## Reference
 Plotly Documentation <a href="https://plotly.com/python/funnel-charts/">Funnel Charts</a>

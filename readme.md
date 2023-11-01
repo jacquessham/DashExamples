@@ -37,7 +37,7 @@ Dash relies on Plotly plots, it is a good idea to understand how Plotly works fi
 [Treemaps](/PlotlyExample/Treemap)<br>
 [Heatmaps](/PlotlyExample/Heatmap) <br>
 [Candlestick Charts](/PlotlyExample/CandlestickChart)<br>
-[Funnel Chart (Coming soon...)](/PlotlyExample/FunnelChart)<br>
+[Funnel Chart](/PlotlyExample/FunnelChart)<br>
 [Choropleth Graphs](/PlotlyExample/ChoroplethGraph)<br>
 [Sunburst Charts](/PlotlyExample/Sunburst) <br>
 [Parallel Categories Diagram](/PlotlyExample/ParallelCoordinatesPlot)<br>
