@@ -51,7 +51,7 @@ def check_barcolour(metadata):
         return metadata['bar_color']
     return None
 
-### Bar, Line, Histogram Arg
+### Bar, Line, Histogram, Funnel Chart Arg
 def check_cate_col(metadata):
     if 'cate_col' in metadata:
         return metadata['cate_col']
@@ -59,6 +59,8 @@ def check_cate_col(metadata):
         return metadata['category_column']
     elif 'category_col' in metadata:
         return metadata['category_col']
+    elif 'category' in metadata:
+        return metadata['category']
     return None
 
 ### Boxplot Arg
@@ -163,3 +165,25 @@ def check_textinfo(metadata):
     if 'textinfo' in metadata:
         return metadata['textinfo']
     return 'percent'
+
+
+### Funnel Chart
+def check_marker(metadata):
+    if 'marker' in metadata:
+        return metadata['marker']
+    return None
+
+def check_connector(metadata):
+    if 'connector' in metadata:
+        return metadata['connector']
+    return None
+
+def check_textinfo(metadata):
+    if 'textinfo' in metadata:
+        return metadata['textinfo']
+    return 'value'
+
+def check_labels(metadata):
+    if 'labels' in metadata:
+        return metadata['labels']
+    return None

@@ -1,0 +1,10 @@
+{
+	"df_directory":"../PlotlyExample/Data/ecom_funnel.csv",
+	"viz_type":"funnel chart",
+	"viz_name":"Ecommerce Conversion Funnel Chart",
+	"metadata":{
+		"y":"stage",
+		"x":"stage",
+		"viz_subtype":"simple_funnel"
+	}
+}
