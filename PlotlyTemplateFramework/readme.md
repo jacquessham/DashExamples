@@ -71,8 +71,13 @@ Currently, it supports:
 			<li>Histogram with aggregated values other than count</li>
 		</ul></li>
 	<li>Heatmap</li>
-	<li>Pie/Donut Chart (Coming soon...)</li>
-	<li>Coming soon...</li>
+	<li>Pie/Donut Chart</li>
+	<li>Funnel Chart
+		<ul>
+			<li>Simple Funnel Chart</li>
+			<li>Stacked Funnel Chart</li>
+			<li>Simple Funnel Area Chart</li>
+		</ul></li>
 </ul>
 
 <br><br>
@@ -98,6 +103,23 @@ The module to generate data object for Bar Chart. You may create a simple, group
 #### generate_boxplot.py
 The module to generate data object for Box Plot.
 
+#### generate_candlestick.py
+The module to generate data object for Candlestick Chart.
+
+#### generate_funnel.py
+The module to generate data object for Funnel Chart or Funnel Area Chart. You may create a simple or stack funnel chart, or simple funnel area chart.
+
+#### generate_heatmap.py
+The module to generate data object for Heatmap.
+
+#### generate_histogram.py
+The module to generate data object for Histogram.
+
+#### generate_line.py
+The module to generate data object for Line Chart. You may create a single line chart, multiline chart or linear regression chart (Coming soon...).
+
+#### generate_pie.py
+The module to generate data object for Pie Chart or Donut Chart.
 
 ### layout.py
 The script to construct the layout object for <i>figure</i> object with the given metadata. If no metadata is given, the layout object is generated with the default setting (The layout setting suggested by the author).

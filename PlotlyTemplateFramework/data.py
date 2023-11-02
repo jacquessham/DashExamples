@@ -12,6 +12,8 @@ from generate_histogram import generate_simplehistogram, \
                                 generate_aggregatedhistogram
 from generate_heatmap import generate_heatmap
 from generate_pie import generate_simplepie
+from generate_funnel import generate_simplefunnel, generate_stackfunnel, \
+                            generate_simplefunnelarea
 
 
 """ Function to distinguish what viz_type and organize the required
@@ -188,10 +190,37 @@ def generate_plotlydata(df, metadata, viz_type):
         data = generate_simplepie(df[metadata['x']], df[metadata['y']], hole,
                         textinfo, hoverinfo)
 
+    # Funnel Chart
+    elif viz_type.lower() == 'funnel chart':
+        marker = check_marker(metadata)
+        connector = check_connector(metadata)
+        textinfo = check_textinfo(metadata)
+
+        if metadata['viz_subtype'].lower() == 'simple_funnel':
+            data = generate_simplefunnel(df[metadata['x']], df[metadata['y']], 
+                        marker, connector, textposition, textinfo,hoverinfo)
+
+        elif metadata['viz_subtype'].lower() == 'stack_funnel':
+            cate_col = check_cate_col(metadata)
+            data = generate_stackfunnel(df, metadata['x'], metadata['y'], 
+                        cate_col, marker, connector, textposition, 
+                        textinfo, hoverinfo)
+
+        elif metadata['viz_subtype'].lower() == 'simple_funnel_area':
+            # User expect to pass either labels and values, but code
+            # does not code
+            labels = check_labels(metadata)
+            # Check text column exists or not
+            if text is None:
+                funneltext = None
+            else:
+                funneltext = df[text]
+            data = generate_simplefunnelarea(df[metadata['values']],
+                        funneltext, df[labels], marker, textposition, 
+                        textinfo, hoverinfo)
+
     else:
         data = None
-
-
 
 
     return data

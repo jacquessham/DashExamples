@@ -23,7 +23,7 @@ This chapter may use the following data from the [Data folder](../Data):
 
 ## Syntax
 ### Data
-Data is a list to store <i>go.Sunburst()</i>. <b>Treemap parameters structure is very different different with standard visualization types. No x or y columns are accepted, but alternative arguements!</b>
+Data is a list to store <i>go.Sunburst()</i>. <b>Sunburst parameters structure is very different different with standard visualization types. No x or y columns are accepted, but alternative arguements!</b>
 <br><br>
 go.Sunburst() has the following parameters:
 <ul>

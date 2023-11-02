@@ -44,7 +44,7 @@ This template is for group or stack bar chart, and here are the required or opti
 	"metadata":{
 		"x": (Required) str: x-axis column name, 
 		"y": (Required) y-axis column name, 
-		"cate_col": (Required) ,
+		"cate_col": (Required) Categorical column name,
 		"viz_subtype": (Required) "group|stack",
 		"bar_colour|bar_color": (Optional) list,
 		"width" : (Optional) float: Between 0 and 1,
@@ -278,7 +278,7 @@ This template is for multiple lines chart, while lines are partitioned by catego
 		"y": (Required) str: y-axis column name, 
 		"viz_subtype": (Required) "multilines|multiple_lines|multi_lines",
 		"datapoints": (Optional): "t|true|True|f|false|False(Default)",
-		"cate_col": (Required) categorical column name,
+		"cate_col": (Required) Categorical column name,
 		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|...",
 		"line_colour": (Optional) {
 			"category 1": RGB values/Colour Keyword,
@@ -305,7 +305,7 @@ Coming soon...
 ```
 
 ## Histogram
-Here is the list of template for the subtype of line chart.
+Here is the list of template for the subtype of histogram chart.
 
 <ul>
 	<li><i>simplehistogram_arguements.json</i>: For simple histogram</li>
@@ -352,12 +352,12 @@ This template is for histogram with more than 1 categorical value, and here are 
 
 ```
 {
-	""df_directory": (Required) str,,
+	"df_directory": (Required) str,
 	"viz_type": (Required) "histogram",
 	"viz_name": (Required)  # Title of the visualization,
 	"metadata":{
 		"x": (Required) str: x-axis column name,
-		"cate_col": (Optional) categorical column name,
+		"cate_col": (Optional) Categorical column name,
 		"viz_subtype": (Required) "cate_histogram|category_histogram|categorical_histogram",
 		"cumulative|cumulative_enable": (Optional): "t|true|True|f|false|False(Default)"
 	}
@@ -371,12 +371,12 @@ This template is for histogram with aggregated values other than count, and here
 
 ```
 {
-	""df_directory": (Required) str,,
+	"df_directory": (Required) str,
 	"viz_type": (Required) "histogram",
 	"viz_name": (Required)  # Title of the visualization,
 	"metadata":{
 		"x": (Required) str: x-axis column name,
-		"cate_col": (Optional) categorical column name,
+		"cate_col": (Optional) Categorical column name,
 		"viz_subtype": (Required) "agg_histogram|aggregated_histogram",
 		"cumulative|cumulative_enable": (Optional): "t|true|True|f|false|False(Default)",
 		"barmode": (Optional, Required when cumulateive_enable is true) "stack|overlay",
@@ -407,9 +407,9 @@ You may find <i>simplepie_arguements.json</i> for the sample template and here a
 
 ```
 {
-	"df_directory":"../PlotlyExample/Data/revenue_dept.csv",
+	"df_directory": (Required) str,
 	"viz_type":"pie chart",
-	"viz_name":"Department Store Revenue Distribution",
+	"viz_name":(Required) str,
 	"metadata":{
 		"x" (Required) str: Label,
 		"y" (Required) str: Value,
@@ -421,3 +421,82 @@ You may find <i>simplepie_arguements.json</i> for the sample template and here a
 ```
 
 Note: If <b>hole</b> is absent in the arguement file or equal to 0, it will become a pie chart.
+
+
+## Funnel Chart
+Here is the list of template for the subtype of line chart.
+
+<ul>
+	<li><i>simplefunnel_arguements.json</i>: For simple funnel chart</li>
+	<li><i>stackfunnel_arguements.json</i>: For stack funnel chart</li>
+	<li><i>simplefunnelarea_arguements.json</i>: For simple funnel area chart</li>
+</ul>
+
+### simplefunnel_arguements.json
+This template is for simple funnel chart, and here are the required or optional columns:
+
+```
+{
+	"df_directory": (Required) str,
+	"viz_type":"funnel chart",
+	"viz_name":(Required) str,
+	"metadata":{
+		"x" (Required) str: Values,
+		"y" (Required) str: Label,
+		"viz_subtype":"simple_funnel",
+		"marker" (Optional): dictionary,
+		"connector" (Optional): dictionary,
+		"textposition": (Optional) str: "auto|inside|outside|...or more",
+		"textinfo" (Optional) str: "value|percent|value+percent|...",
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
+	}
+
+}
+```
+
+### stackfunnel_arguements.json
+This template is for simple funnel chart, and here are the required or optional columns:
+
+```
+{
+	"df_directory": (Required) str,
+	"viz_type":"funnel chart",
+	"viz_name":(Required) str,
+	"metadata":{
+		"x" (Required) str: Values,
+		"y" (Required) str: Label,
+		"cate_col": (Required) Categorical column name,
+		"viz_subtype":"stack_funnel",
+		"marker" (Optional): dictionary,
+		"connector" (Optional): dictionary,
+		"textposition": (Optional) str: "auto|inside|outside|...or more",
+		"textinfo" (Optional) str: "value|percent|value+percent|...",
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
+	}
+
+}
+```
+
+### simplefunnelarea_arguements.json
+This template is for simple funnel chart, and here are the required or optional columns:
+
+```
+{
+	"df_directory": (Required) str,
+	"viz_type":"funnel chart",
+	"viz_name":(Required) str,
+	"metadata":{
+		"values" (Required) str: Values,
+		"labels" (Optional) str: Label column,
+		"text" (Optional) str: Text column,
+		"viz_subtype":"simple_funnel_area",
+		"marker" (Optional): dictionary,
+		"textposition": (Optional) str: "auto|inside|outside|...or more",
+		"textinfo" (Optional) str: "value|percent|value+percent|...",
+		"hoverinfo" (Optional) str: "none (Default)|auto|percent|lable|label+percent|..."
+	}
+
+}
+```
+
+Note: User is expected to pass either <b>labels</b> and <b>text</b>, the framework do not check if neither column is filled.
