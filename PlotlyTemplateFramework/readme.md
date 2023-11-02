@@ -71,7 +71,7 @@ Currently, it supports:
 			<li>Histogram with aggregated values other than count</li>
 		</ul></li>
 	<li>Heatmap</li>
-	<li>Pie/Donut Chart (Coming soon...)</li>
+	<li>Pie/Donut Chart</li>
 	<li>Funnel Chart
 		<ul>
 			<li>Simple Funnel Chart</li>
