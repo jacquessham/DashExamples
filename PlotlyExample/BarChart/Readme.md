@@ -46,6 +46,7 @@ go.Bar() has the following parameters:
 			<li>outside: Outside of the bar</li>
 		</ul>
 	</li>
+	<li>orientation: Orientation, use <b>'h'</b> to indicate horizontal bars</li>
 	<li>textfont (Dictionary): Text label setting</li>
 	<li>marker_color: Bar colour (Take colour spelliing in string or RGB in string)</li>
 	<li>width: Width of the bar in pixel</li>
@@ -180,6 +181,24 @@ layout = dict(title={'text':fig_title, 'x':0.5},
 
 <br>
 Each bar is a stored as an element in data list, and set barmode to <b>stack</b>.
+
+### Example 4 - Horizontal Bar Chart
+<img src=hbar.png>
+
+```
+# Data
+data = []
+data.append(go.Bar(y=df['name'], x=df['salary'],
+	               text=df['salary'], textposition='auto',
+	               orientation='h',
+	               textfont=dict(color='white')))
+# Layout
+layout = {'title':{'text':'Everybody\'s Salary', 'x':0.5}}
+```
+
+<br>
+Besides adding the orientation as arguement, note that you have to <b>swap x and y columns</b> for this use case! 
+
 
 ## Reference
 Plotly Documentation <a href="https://plotly.com/python/bar-charts/">Bar Chart</a>
