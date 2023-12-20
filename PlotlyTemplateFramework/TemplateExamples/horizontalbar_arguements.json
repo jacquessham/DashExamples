@@ -1,0 +1,10 @@
+{
+	"df_directory":"../PlotlyExample/Data/salary.csv",
+	"viz_type":"bar",
+	"viz_name":"Salary by Name",
+	"metadata":{
+		"y":"name", 
+		"x":"salary", 
+		"viz_subtype":"horizontal"
+	}
+}

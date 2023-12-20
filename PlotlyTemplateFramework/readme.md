@@ -44,6 +44,7 @@ Currently, it supports:
 	<li>Bar Chart 
 		<ul>
 			<li>Simple Bar Chart</li>
+			<li>Horizontal Bar Chart</li>
 			<li>Group Bar Chart</li>
 			<li>Stack Bar Chart</li>
 		</ul>
