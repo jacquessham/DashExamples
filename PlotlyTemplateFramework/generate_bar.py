@@ -11,6 +11,15 @@ def generate_simplebar(x, y, text=None, bar_colour=None, width=None,
                   marker_color=bar_colour, textfont=textfont,
                   hoverinfo=hoverinfo)
 
+""" Function to prepare data list in data.py for horizontal bar chart """
+def generate_hbar(x, y, text=None, bar_colour=None, width=None,
+                       textposition='auto', textfont={'color': 'white'},
+                       hoverinfo='none'):
+    return go.Bar(x=x, y=y, width=width,
+                  text=text, textposition=textposition,
+                  marker_color=bar_colour, textfont=textfont,
+                  orientation='h', hoverinfo=hoverinfo)
+
 
 """ Function to prepare data list in data.py for group or stack bar chart """
 def generate_complexbar(df, x, y, cate_col, text=None, bar_colour=None,
@@ -48,7 +57,7 @@ def barmode_add2_layout(layout, barmode):
     """ Function to add metadata in layout.py for group or stack bar chart
     """
     # "simple" is not a Plotly option
-    if barmode == 'simple':
+    if barmode == 'simple' or barmode == 'horizontal':
         return layout
     layout['barmode'] = barmode
     return layout

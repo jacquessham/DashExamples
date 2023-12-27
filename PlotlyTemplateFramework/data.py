@@ -1,5 +1,6 @@
 from check_metadata import *
-from generate_bar import generate_simplebar, generate_complexbar
+from generate_bar import generate_simplebar, generate_hbar, \
+                            generate_complexbar
 from generate_boxplot import generate_boxplot
 from generate_candlestick import generate_candlestick
 from generate_scatterplot import generate_simplescatter, \
@@ -38,6 +39,12 @@ def generate_plotlydata(df, metadata, viz_type):
         # Currently only support 1 column dataset only
         if metadata['viz_subtype'].lower() == 'simple':
             data = generate_simplebar(
+                df[metadata['x']], df[metadata['y']], text, bar_colour, width,
+                textposition, textfont, hoverinfo)
+
+        # Currently only support 1 column dataset only
+        if metadata['viz_subtype'].lower() == 'horizontal':
+            data = generate_hbar(
                 df[metadata['x']], df[metadata['y']], text, bar_colour, width,
                 textposition, textfont, hoverinfo)
 
