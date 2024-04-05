@@ -57,7 +57,7 @@ go.Scatter() has the following parameters:
 		<ul>
 			<li>percent</li>
 			<li>label+percent</li>
-			<li>label</li>
+			<li>text</li>
 			<li>name</li>
 		</ul></li>
 </ul>
