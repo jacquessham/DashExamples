@@ -92,6 +92,35 @@ fig = go.Figure(data=data, layout=layout)
 plotly.offline.plot(fig, filename='simple_scatterplot.html')
 ```
 
+### Logarithm Plots in Plotly
+Creating a logarithm plot is very useful when visualizing very skewed data. Plotly allows you to simply pass one parameter in the layout dictionary to turn a regular plot to a logarithm plot without manually adjust the data points. Add the <i>type</i> parameter equals to <i>log</i> under the desired columns. Here is the example to take logarithm on the observations on both X-axis and Y-axis:
+
+```
+layout = {'title':{'text':'Everybody\'s Tipping Distribution', 'x':0.5},
+	'xaxis':{'type':'log'}, 'yaxis':{'type':'log'}}
+
+```
+
+<br>
+Reference: <a href="https://plotly.com/python/log-plot/#logarithmic-axes-with-graph-objects"> Plotly Documentation</a>
+
+### Background Colour
+The default background colour on Plotly plots are gray, but you may adjust it by adding the <i>plot_bgcolor</i> parameter along with the RGBA colour scale to the layout dictionary. Here is the example to turn the background colour to white:
+
+```
+layout = {'title':{'text':'Everybody\'s Tipping Distribution', 'x':0.5},
+	'xaxis':{'gridcolor':'lightgray'}, 'yaxis':{'gridcolor':'lightgray'},
+	'plot_bgcolor': 'rgba(0,0,0,0)'}
+```
+
+<br>
+Note:
+<ul>
+	<li>Because after Plot BG colour is turned to white, it is hard to compare data value with the axis ticks. Therefore, it is recommended to add <i>'gridcolor':'lightgray'</i> to both X-axis and Y-axis</li>
+	<li>White background and light gray grid colour is the default setting to the Template Framework</li>
+</ul>
+
+
 ## Bar Charts
 You may find how to create bar charts with Plotly in the <a href="https://github.com/jacquessham/DashExamples/tree/master/PlotlyExample/BarChart">Bar Charts folder</a>.
 
