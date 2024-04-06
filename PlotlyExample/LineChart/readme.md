@@ -51,7 +51,7 @@ go.Scatter() has the following parameters:
 		<ul>
 			<li>percent</li>
 			<li>label+percent</li>
-			<li>label</li>
+			<li>text</li>
 			<li>name</li>
 		</ul></li>
 </ul>
@@ -88,12 +88,14 @@ Genetic Layout parameters suggested to use:
 			</li>
 			<li>dtick: The frequency the labels appear, the default setting is determined automatically</li>
 			<li>categoryarray: Define the sorting order when <b>categoryorder is array</b></li>
+			<li>type: Set axis scale, default is linear (linear, log, date, category, multicategory)</li>
 		</ul></li>
 	<li>yaxis (Dictionary): y-axis setting
 		<ul>
 			<li>tickmode: Setting of ticks</li>
 			<li>tickangle: Degree the tick rotate (-: Anticlockwise, +: Clockwise)</li>
 			<li>dtick: The frequency the labels appear, the default setting is determined automatically</li>
+			<li>type: Set axis scale, default is linear (linear, log, date, category, multicategory)</li>
 		</ul></li>
 	</li>
 </ul>
