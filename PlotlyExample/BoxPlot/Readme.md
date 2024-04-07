@@ -29,12 +29,17 @@ go.Box() has the following parameters:
 	<li>x: Value on x-axis (Horizontal Box Plot, if used, <b>y</b> should be empty)</li>
 	<li>y: Value on y-axis (Vertical Box Plot, if used, <b>x</b> should be empty)</li>
 	<li>name: Attribute, it will be represented as 1 box bar and displayed on x-axis</li>
+	<li>marker_color: Box bar colour (Take colour spelliing in string or RGB in string)</li>
+	<li>quartilemethod: The method to calculate quartile, takes only <b>linear</b>, <b>inclusive</b>, and <b>exclusive</b></li>
 	<li>boxmean: Parameter whether the mean is presented on the chart, takes only <b>True</b> and <b>False</b>, default as <b>False</b></li>
+	<li>boxpoints: What data point is plotted, takes only <b>all</b>, <b>outliers</b>, <b>suspectedoutliers</b>, and <b>False</b></li>
+	<li>jitter: Space created to separate data points and box bars, takes between 0 and 1</li>
+	<li>pointpos: Relative position of points wrt box</li>
 </ul>
 <br>
 
 
-### Layout (Under Construction)
+### Layout
 Genetic Layout parameters suggested to use:
 <ul>
 	<li>title (Dictionary): Chart title and fonts 
@@ -46,25 +51,27 @@ Genetic Layout parameters suggested to use:
 	<li>xaxis (Dictionary): X-axis setting
 		<ul>
 			<li>tickmode: Setting of ticks</li>
-			<li></li>
 		</ul></li>
 	<li>yaxis (Dictionary): y-axis setting
 		<ul>
 			<li>tickmode: Setting of ticks</li>
-			<li></li>
 		</ul></li>
-	<li></li>
+	<li>boxmode: Use <b>group</b> to group together boxes of different traces</li>
 </ul>
 <br><br>
 Box Plot Exclusive parameters:
 <ul>
 	<li>boxmean: Parameter whether the mean is presented on the chart</li>
+	<li>boxpoints: What data point is plotted, takes only <b>all</b>, <b>outliers</b>, <b>suspectedoutliers</b>, and <b>False</b></li>
+	<li>jitter: Space created to separate data points and box bars, takes between 0 and 1</li>
+	<li>pointpos: Relative position of points wrt box</li>
+	<li>boxmode: Use <b>group</b> to group together boxes of different traces</li>
 </ul>
 
 ### Syntax Difference with Bar Chart
 One difference between box plot and bar chart is syntax used for attribute and values. In box plot's <i>go.Box()</i>, <b>name</b> is used for attribute while either <b>x</b> or <b>y</b> is used for values. Note that, no error will be threw if both x and y are passed with values. However, it does not display the proper box plot as desired. Therefore, only pass the values with x or y, never pass both parameters (Meaning: Only use <b>y</b> and <b>name</b> if you want vertical box plot or use <b>x</b> and <b>name</b> if you want horizontal box plot)
 
-## Examples
+## Example - Simple Box Plot
 <img src=box.png>
 
 ```
@@ -78,6 +85,7 @@ for school in df['school'].unique():
 layout = dict(title={'text':'Alumni Salary across Schools', 'x':0.5},
               barmode='group', xaxis=dict(tickmode='linear'))
 ```
+
 
 ## Reference
 Plotly Documentation <a href="https://plotly.com/python/box-plots/">Box Plot</a>
