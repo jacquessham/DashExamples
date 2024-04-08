@@ -57,7 +57,7 @@ go.Scatter() has the following parameters:
 		<ul>
 			<li>percent</li>
 			<li>label+percent</li>
-			<li>label</li>
+			<li>text</li>
 			<li>name</li>
 		</ul></li>
 </ul>
@@ -93,12 +93,14 @@ Genetic Layout parameters suggested to use:
 			</li>
 			<li>dtick: The frequency the labels appear, the default setting is determined automatically</li>
 			<li>categoryarray: Define the sorting order when <b>categoryorder is array</b></li>
+			<li>type: Set axis scale, default is linear (linear, log, date, category, multicategory)</li>
 		</ul></li>
 	<li>yaxis (Dictionary): y-axis setting
 		<ul>
 			<li>tickmode: Setting of ticks</li>
 			<li>tickangle: Degree the tick rotate (-: Anticlockwise, +: Clockwise)</li>
 			<li>dtick: The frequency the labels appear, the default setting is determined automatically</li>
+			<li>type: Set axis scale, default is linear (linear, log, date, category, multicategory)</li>
 		</ul></li>
 	</li>
 </ul>
@@ -139,7 +141,7 @@ data.append(go.Scatter(x=df['grand_total'], y=df['tips'],
 layout = {'title':{'text':'Everybody\'s Tipping Distribution', 'x':0.5}}
 ```
 
-### Example 3 - Coloured Scatterplot (With a 3rd Numeric Dimension)
+### Example 3 - Coloured Scatterplot (With a 3rd Categorical Dimension)
 
 <img src=catedim_scatterplot.png>
 
@@ -156,6 +158,7 @@ layout = {'title':{'text':'Everybody\'s Tipping Distribution', 'x':0.5}}
 ```
 
 Note 1: marker_color accepts both numeric values or RGB values/Colour keywords.
+<br>
 <b>Note 2: However, you must convert a categorical label to RGB values/Colour keywords</b>
 
 ### Example 4 - Coloured Scatterplot (With a 3rd Categorical Dimension) with Legend
