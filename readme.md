@@ -57,6 +57,9 @@ This repositories contains examples from the official Dash site and myself. Ther
 ## Template Framework for Plotly
 You may find the template framework for Plotly when you want to quickly plot something with Plotly. You may find the scripts in the [Template Framework](/PlotlyTemplateFramework) folder.
 
+## Template Framework for Dash
+There are some template frameworks for Dash when you want to have a prebuilt structure and create a Dash framework right away. You may find the templates in the [](/DashTemplateFramework) folder.
+
 ## Reference
 Official Website of Dash: [Dash User Guide](https://dash.plotly.com/)<br>
 Medium Post: [Brief Introduction of Dash](https://medium.com/plotly/introducing-dash-5ecf7191b503) by <i>Plotly</i>
