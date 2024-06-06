@@ -1,22 +1,23 @@
 from dash import dcc, html
 
 
-def create_tabs(num_tab):
+def create_tabs(labels):
 	tabs = []
-	for i in range(num_tab):
+	for i in labels:
 		tabs.append(
 				dcc.Tab(
-					label=f'label{i+1}', value=f'label{i+1}'
+					label=i, value=i
 				)
 			)
 	return tabs
 
 
 def layout(app, num_tab):
+	labels = [f'label_{i+1}' for i in range(num_tab)]
 	app.layout = html.Div([
 			dcc.Tabs(
-				id='dashboard-tabs',value='label_1',
-				children=create_tabs(num_tab)
+				id='dashboard-tabs',value=labels[0],
+				children=create_tabs(labels)
 			),
 			html.Div(id='content')
 		])
