@@ -16,3 +16,13 @@ Select a choice from the dropdown list, and it will display it in the text box b
 
 ### Example 2 - Multiple Selections
 Coming soon...
+
+### Example 3 - Multiple Dropdown List in one Row
+Placing two dropdown lists side-by-side, and display both selections in the text box below the dropdown list.
+<br><br>
+Note: Adding <b>display:inline-block</b> in the Divs' style parameter to set two Divs to place side-by-side. 
+
+<img src=multiple_dropdowns.png>
+
+## Reference
+Plotly Documentation <a href="https://dash.plotly.com/dash-core-components/dropdown" target="_blank">link</a>

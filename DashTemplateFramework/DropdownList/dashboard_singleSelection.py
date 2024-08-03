@@ -14,6 +14,7 @@ Define Figure here
 """
 # Replace dropdown list here
 dropdown_choices = ['Choice 1', 'Choice 2', 'Choice 3']
+dropdown_alignment = 'left' # left, center, right
 
 # Dash Set up
 num_tab = 2
@@ -24,14 +25,14 @@ app.layout = html.Div([
 				dcc.Dropdown(id='dropdown-choices',
 					options=dropdown_choices,
 					value=dropdown_choices[0],
-					style={'width':'70%','text-align':'left'}
+					style={'width':'70%','text-align':dropdown_alignment}
 					),
 				html.P(id='display')
 				])
 
 
 
-# Display Income Statement
+# Display Dropdown Selection
 @app.callback([Output('display','children')],
     [Input('dropdown-choices','value')])
 def display_choice(choice):
